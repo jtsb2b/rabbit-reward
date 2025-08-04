@@ -1,0 +1,21 @@
+services:
+  mongo:
+    image: mongodb/mongodb-atlas-local:8.0.4
+    container_name: mongo-rabbit-reward
+    restart: always
+    ports:
+      - "27018:27017"
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: admin
+      MONGODB_INITDB_ROOT_PASSWORD: admin
+      # JAVA_TOOL_OPTIONS: "-XX:UseSVE=0"
+    volumes:
+      - mongo_data:/data/db-rabbit
+      # Mount the generated keyfile into a standard location inside the container
+      # Use :ro for read-only access
+      # - ./mongodb.key:/etc/mongo/mongodb-keyfile:ro
+    # Add command arguments to enable auth and use the keyfile
+    # command: ["--auth", "--keyFile", "/etc/mongo/mongodb-keyfile"] # You might also need --replSet rs0 depending on the image's strictness
+
+volumes:
+  mongo_data:

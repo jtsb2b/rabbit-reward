@@ -1,0 +1,9 @@
+.env
+
+*.jsonl
+
+*.pdf
+
+*.ipynb
+
+*.txt
