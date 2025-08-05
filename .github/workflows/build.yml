@@ -74,7 +74,7 @@ jobs:
             # Run backend container
             docker run --add-host=host.docker.internal:host-gateway -d \
               --name ${{ env.BACKEND_CONTAINER_NAME }} \
-              -p 8000:8000 \
+              -p 8000:8005 \
               --link mongo-rabbit-reward:mongo \
               ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
             
