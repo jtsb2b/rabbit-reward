@@ -71,17 +71,38 @@ jobs:
             docker stop ${{ env.FRONTEND_CONTAINER_NAME }} || true
             docker rm -f ${{ env.FRONTEND_CONTAINER_NAME }} 2> /dev/null || true
             
-            # Run backend container
+            # Start MongoDB if not running (use existing keen_vaughan container or create new one)
+            docker start keen_vaughan || docker run -d --name keen_vaughan \
+              -p 27017:27017 \
+              -e MONGODB_INITDB_ROOT_USERNAME=admin \
+              -e MONGODB_INITDB_ROOT_PASSWORD=admin \
+              mongodb/mongodb-atlas-local || true
+            
+            # Run backend container with environment variables from secrets
             docker run --add-host=host.docker.internal:host-gateway -d \
               --name ${{ env.BACKEND_CONTAINER_NAME }} \
-              -p 8000:8005 \
+              -p 8004:8000 \
+              --link keen_vaughan:mongo \
+              -e MONGO_URL="${{ secrets.MONGO_URL }}" \
+              -e OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}" \
+              -e JAI_API_KEY="${{ secrets.JAI_API_KEY }}" \
+              -e JAI_BASE_URL="${{ secrets.JAI_BASE_URL }}" \
+              -e TYPHOON_API_KEY="${{ secrets.TYPHOON_API_KEY }}" \
+              -e TYPHOON_BASE_URL="${{ secrets.TYPHOON_BASE_URL }}" \
+              -e GEMMA_API_KEY="${{ secrets.GEMMA_API_KEY }}" \
+              -e GEMMA_BASE_URL="${{ secrets.GEMMA_BASE_URL }}" \
+              -e LANGFUSE_SECRET_KEY="${{ secrets.LANGFUSE_SECRET_KEY }}" \
+              -e LANGFUSE_PUBLIC_KEY="${{ secrets.LANGFUSE_PUBLIC_KEY }}" \
+              -e LANGFUSE_HOST="${{ secrets.LANGFUSE_HOST }}" \
+              -e GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}" \
               ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
             
-            # Run frontend container
+            # Run frontend container with environment variables from secrets
             docker run --add-host=host.docker.internal:host-gateway -d \
               --name ${{ env.FRONTEND_CONTAINER_NAME }} \
-              -p 8501:8501 \
+              -p 8504:8501 \
               --link ${{ env.BACKEND_CONTAINER_NAME }}:backend \
+              -e BACKEND_API_URL="${{ secrets.BACKEND_API_URL }}" \
               ${{ env.DOCKER_FRONTEND_IMAGE }}:${{ env.DOCKER_TAG }}
             
             # Clean up unused images
