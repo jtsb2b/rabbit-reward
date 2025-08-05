@@ -34,47 +34,59 @@ if "last_debug_info" not in st.session_state:
 # --- Helper Function for Rendering ---
 def render_assistant_message(content: str):
     """
-    Parses the assistant's message to render text and centered images with large captions.
-    Looks for blocks like: <img-name>path/to/img.jpg</img-name><caption>A caption.</caption>
+    Parses the assistant's message to render text and centered images.
+    Handles images both with and without captions.
+    - With caption: <img-name>path.jpg</img-name><caption>A caption.</caption>
+    - Without caption: <img-name>path.jpg</img-name>
     """
-    pattern = re.compile(r"<img-name>(.*?)</img-name><caption>(.*?)</caption>", re.DOTALL)
+    # This single regex finds an image tag and OPTIONALLY a caption tag that follows it.
+    # The (?:...)? makes the caption group non-capturing and optional.
+    pattern = re.compile(r"<img-name>(.*?)</img-name>(?:<caption>(.*?)</caption>)?", re.DOTALL)
     
     last_end = 0
     found_block = False
 
     for match in pattern.finditer(content):
         found_block = True
+        # Render any text that appeared before this image/caption block
         pre_text = content[last_end:match.start()]
         if pre_text.strip():
             st.markdown(pre_text.strip())
 
-        image_path = match.group(1).strip().replace(".jpg", ".png")  # Ensure .png extension
-        caption_text = match.group(2).strip()
+        # Group 1 will always be the image path
+        image_path = match.group(1).strip().replace(".jpg", ".png")
 
-        # Use columns to center the image and caption block
+        # Group 2 is the caption. It will be None if the <caption> tag was not present.
+        caption_text = match.group(2)
+        
+        # Safely handle the caption text
+        if caption_text:
+            caption_text = caption_text.strip()
+        else:
+            caption_text = "" # Default to an empty string if no caption
+
+        # Use columns to center the image and its optional caption
         col1, col2, col3 = st.columns([1, 2, 1])
 
         with col2:
             if os.path.exists(image_path):
-                st.image(image_path, caption = caption_text)
-                # --- CHANGE HERE: Use <center> tag for robust centering ---
-                # st.markdown(
-                #     f'<center><p style="font-size: {CAPTION_FONT_SIZE_PX}px;">{caption_text}</p></center>',
-                #     unsafe_allow_html=True
-                # )
+                # st.image handles an empty caption string gracefully
+                st.image(image_path, caption=caption_text)
             else:
                 st.error(f"⚠️ Image not found at path: `{image_path}`")
-                # --- CHANGE HERE: Also center the error caption ---
-                # st.markdown(
-                #     f'<center><p style="font-size: {CAPTION_FONT_SIZE_PX}px;">(Image not found) {caption_text}</p></center>',
-                #     unsafe_allow_html=True
-                # )
-
+                # Still show the caption text if it exists, even if the image is missing
+                if caption_text:
+                    st.caption(f"(Image not found) {caption_text}")
+        
+        # Update the position for the next part of the string
         last_end = match.end()
 
+    # Render any remaining text after the last block
     remaining_text = content[last_end:]
     if remaining_text.strip():
         st.markdown(remaining_text.strip())
+
+    
 
     # if not found_block:
     #     st.markdown(content)
