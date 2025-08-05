@@ -17,8 +17,9 @@ RUN apt-get update && \
 # Copy the requirements file into the container at /app
 COPY requirements.txt .
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the font files into the container
 # Make sure the path here matches the location relative to this Dockerfile
