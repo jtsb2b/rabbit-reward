@@ -71,6 +71,12 @@ jobs:
             docker stop ${{ env.FRONTEND_CONTAINER_NAME }} || true
             docker rm -f ${{ env.FRONTEND_CONTAINER_NAME }} 2> /dev/null || true
             
+            # Ensure MongoDB container is running (restart if stopped)
+            docker start keen_vaughan || echo "MongoDB container is already running"
+            
+            # Wait for MongoDB to be ready
+            sleep 5
+            
             # Run backend container with environment variables from secrets
             docker run --add-host=host.docker.internal:host-gateway -d \
               --name ${{ env.BACKEND_CONTAINER_NAME }} \
@@ -89,6 +95,9 @@ jobs:
               -e LANGFUSE_HOST="${{ secrets.LANGFUSE_HOST }}" \
               -e GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}" \
               ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
+            
+            # Wait for backend to be ready
+            sleep 3
             
             # Run frontend container with environment variables from secrets
             docker run --add-host=host.docker.internal:host-gateway -d \
