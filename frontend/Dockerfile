@@ -22,7 +22,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy the font files into the container
 # Make sure the path here matches the location relative to this Dockerfile
-COPY ./fonts /app/fonts
 
 # Copy the rest of the frontend application code into the container at /app
 COPY . .
