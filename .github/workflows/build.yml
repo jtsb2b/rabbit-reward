@@ -71,6 +71,12 @@ jobs:
             docker stop ${{ env.FRONTEND_CONTAINER_NAME }} || true
             docker rm -f ${{ env.FRONTEND_CONTAINER_NAME }} 2> /dev/null || true
             
+            # Run backend container
+            docker run --add-host=host.docker.internal:host-gateway -d \
+              --name ${{ env.BACKEND_CONTAINER_NAME }} \
+              -p 8000:8005 \
+              ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
+            
             # Run frontend container
             docker run --add-host=host.docker.internal:host-gateway -d \
               --name ${{ env.FRONTEND_CONTAINER_NAME }} \
