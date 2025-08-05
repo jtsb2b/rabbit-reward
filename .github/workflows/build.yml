@@ -71,13 +71,6 @@ jobs:
             docker stop ${{ env.FRONTEND_CONTAINER_NAME }} || true
             docker rm -f ${{ env.FRONTEND_CONTAINER_NAME }} 2> /dev/null || true
             
-            # Start MongoDB if not running (use existing keen_vaughan container or create new one)
-            docker start keen_vaughan || docker run -d --name keen_vaughan \
-              -p 27017:27017 \
-              -e MONGODB_INITDB_ROOT_USERNAME=admin \
-              -e MONGODB_INITDB_ROOT_PASSWORD=admin \
-              mongodb/mongodb-atlas-local || true
-            
             # Run backend container with environment variables from secrets
             docker run --add-host=host.docker.internal:host-gateway -d \
               --name ${{ env.BACKEND_CONTAINER_NAME }} \
