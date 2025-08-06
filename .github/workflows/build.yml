@@ -1,0 +1,118 @@
+name: Docker CI/CD - Rabbit Reward
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  DOCKER_BACKEND_IMAGE: ghcr.io/${{ github.repository }}/rabbit-reward-backend
+  DOCKER_FRONTEND_IMAGE: ghcr.io/${{ github.repository }}/rabbit-reward-frontend
+  DOCKER_TAG: latest
+  BACKEND_CONTAINER_NAME: "rabbit-reward-backend"
+  FRONTEND_CONTAINER_NAME: "rabbit-reward-frontend"
+
+jobs:
+  build-push:
+    runs-on: ubuntu-22.04
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        run: |
+          echo ${{ secrets.GHCR_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Push Backend Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: true
+          tags: ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
+
+      - name: Build and Push Frontend Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          push: true
+          tags: ${{ env.DOCKER_FRONTEND_IMAGE }}:${{ env.DOCKER_TAG }}
+
+  deploy:
+    needs: build-push
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo ${{ secrets.GHCR_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            # Pull latest images
+            docker pull ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
+            docker pull ${{ env.DOCKER_FRONTEND_IMAGE }}:${{ env.DOCKER_TAG }}
+            
+            # Stop and remove existing containers
+            docker stop ${{ env.BACKEND_CONTAINER_NAME }} || true
+            docker rm -f ${{ env.BACKEND_CONTAINER_NAME }} 2> /dev/null || true
+            docker stop ${{ env.FRONTEND_CONTAINER_NAME }} || true
+            docker rm -f ${{ env.FRONTEND_CONTAINER_NAME }} 2> /dev/null || true
+            
+            # Ensure MongoDB container is running (restart if stopped)
+            docker start keen_vaughan || echo "MongoDB container is already running"
+            
+            # Wait for MongoDB to be ready
+            sleep 5
+            
+            # Run backend container with environment variables from secrets
+            docker run --add-host=host.docker.internal:host-gateway -d \
+              --name ${{ env.BACKEND_CONTAINER_NAME }} \
+              -p 8004:8000 \
+              --link keen_vaughan:mongo \
+              -e MONGO_URL="${{ secrets.MONGO_URL }}" \
+              -e OPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}" \
+              -e JAI_API_KEY="${{ secrets.JAI_API_KEY }}" \
+              -e JAI_BASE_URL="${{ secrets.JAI_BASE_URL }}" \
+              -e TYPHOON_API_KEY="${{ secrets.TYPHOON_API_KEY }}" \
+              -e TYPHOON_BASE_URL="${{ secrets.TYPHOON_BASE_URL }}" \
+              -e GEMMA_API_KEY="${{ secrets.GEMMA_API_KEY }}" \
+              -e GEMMA_BASE_URL="${{ secrets.GEMMA_BASE_URL }}" \
+              -e LANGFUSE_SECRET_KEY="${{ secrets.LANGFUSE_SECRET_KEY }}" \
+              -e LANGFUSE_PUBLIC_KEY="${{ secrets.LANGFUSE_PUBLIC_KEY }}" \
+              -e LANGFUSE_HOST="${{ secrets.LANGFUSE_HOST }}" \
+              -e GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}" \
+              ${{ env.DOCKER_BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
+            
+            # Wait for backend to be ready
+            sleep 3
+            
+            # Run frontend container with environment variables from secrets
+            docker run --add-host=host.docker.internal:host-gateway -d \
+              --name ${{ env.FRONTEND_CONTAINER_NAME }} \
+              -p 8504:8501 \
+              --link ${{ env.BACKEND_CONTAINER_NAME }}:backend \
+              -e BACKEND_API_URL="${{ secrets.BACKEND_API_URL }}" \
+              ${{ env.DOCKER_FRONTEND_IMAGE }}:${{ env.DOCKER_TAG }}
+            
+            # Clean up unused images
+            docker image prune -f
+            
+            # Show running containers and logs
+            docker ps -a 
+            echo "=== Backend Logs ==="
+            docker logs ${{ env.BACKEND_CONTAINER_NAME }}
+            echo "=== Frontend Logs ==="
+            docker logs ${{ env.FRONTEND_CONTAINER_NAME }}
