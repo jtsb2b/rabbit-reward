@@ -26,9 +26,9 @@ ConversationHistory = List[Dict[str, str]]
 
 # --- Constants ---
 CLASSIFICATION_MODEL = "typhoon-gemma-12b"
-SUBQUERY_MODEL = "gpt-4.1-2025-04-14"
-NORMAL_RAG_MODEL = 'gemini-2.0-flash'
-NON_RAG_MODEL = "gemini-2.0-flash"
+SUBQUERY_MODEL = "jai-chat-1-3-2"
+NORMAL_RAG_MODEL = 'jai-chat-1-3-2'
+NON_RAG_MODEL = "jai-chat-1-3-2"
 
 # --- Embedding Setup (Global Scope) ---
 BGE = SentenceTransformer("BAAI/bge-m3")
@@ -183,7 +183,7 @@ class LLMFinanceAnalyzer:
         """Classifies if the latest query requires RAG ('yes' or 'no') using full context."""
         if not conversation:
             return 'no'
-        print(conversation)
+        # print(conversation)
         system_prompt = get_rag_classification_prompt()
         messages = [{"role": "system", "content": system_prompt}] + conversation
 
@@ -196,7 +196,7 @@ class LLMFinanceAnalyzer:
             logger.error(f"RAG classification result '{result}' invalid. Defaulting to 'no'.")
         else:
             logger.error("RAG classification LLM call failed.")
-        return 'no'
+            return 'yes'
 
     @observe()
     async def generate_subquery(self, conversation: ConversationHistory) -> Optional[str]:
@@ -234,10 +234,7 @@ class LLMFinanceAnalyzer:
     async def generate_normal_response(self, data: str, conversation: ConversationHistory) -> AsyncGenerator[str, None]:
         """Generate a RAG response, yielding text chunks."""
         try:
-            max_data_len = 20000
-            if len(data) > max_data_len:
-                logger.warning(f"Data for generate_normal_response truncated to {max_data_len} chars.")
-                data = data[:max_data_len] + "\n... [truncated]"
+            
             
             system_prompt = get_normal_prompt( data)
             messages = [{"role": "system", "content": system_prompt}] + conversation

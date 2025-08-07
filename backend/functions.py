@@ -19,7 +19,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # MongoDB Configuration
-DATABASE_URL = os.getenv("MONGO_URL")
+# DATABASE_URL = os.getenv("MONGO_URL")
+DATABASE_URL = "mongodb://rabbit_reward:rabbit_password@host.docker.internal:27017/?directConnection=true"
 DB_NAME = "rabbit-reward"
 DEFAULT_VECTOR_INDEX = "default" # Example: Make configurable
 DEFAULT_KEYWORD_INDEX = "default" # Example: Make configurable
