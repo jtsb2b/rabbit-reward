@@ -19,8 +19,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # MongoDB Configuration
-# DATABASE_URL = os.getenv("MONGO_URL")
-DATABASE_URL = "mongodb://rabbit_reward:rabbit_password@host.docker.internal:27017/?directConnection=true"
+DATABASE_URL = os.getenv("MONGO_URL")
+# DATABASE_URL = "mongodb://rabbit_reward:rabbit_password@host.docker.internal:27017/?directConnection=true"
 DB_NAME = "rabbit-reward"
 DEFAULT_VECTOR_INDEX = "default" # Example: Make configurable
 DEFAULT_KEYWORD_INDEX = "default" # Example: Make configurable
@@ -60,8 +60,8 @@ class MongoHybridSearch:
             result_content = await self.atlas_hybrid_search(collection_name = self.collection,
                 query=query,
                 
-                top_k=30, # Consider making configurable
-                exact_top_k=10, # Consider making configurable
+                top_k=40, # Consider making configurable
+                exact_top_k=15, # Consider making configurable
                 vector_index_name=DEFAULT_VECTOR_INDEX,
                 keyword_index_name=DEFAULT_KEYWORD_INDEX,
                 

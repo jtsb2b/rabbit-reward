@@ -183,10 +183,9 @@ class LLMFinanceAnalyzer:
         """Classifies if the latest query requires RAG ('yes' or 'no') using full context."""
         if not conversation:
             return 'no'
-        # print(conversation)
+        print(conversation)
         system_prompt = get_rag_classification_prompt()
-        messages = [{"role": "system", "content": system_prompt}] + conversation
-
+        messages = [{"role": "user", "content": system_prompt+"/n"+conversation[0].get("content")}] 
         result = await self._call_llm(model=CLASSIFICATION_MODEL, messages=messages, temperature=0, max_tokens=10, stream=False)
         print(result)
         if isinstance(result, str):

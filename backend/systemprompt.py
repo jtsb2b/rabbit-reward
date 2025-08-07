@@ -17,11 +17,11 @@ def get_rag_classification_prompt():
     """
     return (
         "You are an AI analyzing conversations for a chatbot. The chatbot's purpose is to answer questions about this following topic:"
-        "1. The Rabbit Rewards program in Thailand: This program allows users to earn and redeem points for BTS Skytrain travel and at partner merchants.\n\n"
-        "2. Rabbit reward application and registration"
-        "3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย"
-        "4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว "
-        "Based on the **full conversation context**, does the **LATEST user message** ask a question that requires retrieving specific data? This includes details about promotions, points balance, how to redeem points, station information, or partner stores.\n\n"
+        "1. The Rabbit Rewards program in Thailand and Rabbit reward company: This program allows users to earn and redeem points for BTS Skytrain travel and at partner merchants.\n"
+        "\n2. Rabbit reward application and registration"
+        "\n3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย"
+        "\n4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว ซึ่งมีการพูดถึงกการใช้กับบัตร Account-based ticketing(ABT)  "
+        "\nBased on the **full conversation context**, does the **LATEST user message** ask a question that requires retrieving specific data? This includes details about promotions, points balance, how to redeem points, station information, or partner stores.\n\n"
         "Do NOT classify as 'yes' for simple greetings, conversational filler, or thank yous.\n"
         "Respond with ONLY 'yes' or 'no'. DO NOT EXPLAIN.\n\n"
         "--- START EXAMPLES ---\n\n"
@@ -53,7 +53,7 @@ def get_subquery_prompt():
 3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย
 4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว 
 
-Your task is to rewrite the conversation history and last user message to craft a query(in terms of question) that can be seach in database(hybrid search) to retrive relavent data. Do not include any other information or explanation, just return the query."""
+Your task is to rewrite the conversation history and last user message to craft a query(in terms of question) that can be seach in database(hybrid search) to retrive relavent data. Do not include any other information or explanation, just return the query. \n**RESPONSE IN THAI LANGUAGE but keep the specific word in ENGLISH"""
 
 def get_normal_prompt( data:str):
 
