@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 ConversationHistory = List[Dict[str, str]]
 
 # --- Constants ---
-CLASSIFICATION_MODEL = "typhoon-gemma-12b"
+CLASSIFICATION_MODEL = "jai-chat-1-3-2"
 SUBQUERY_MODEL = "jai-chat-1-3-2"
 NORMAL_RAG_MODEL = 'jai-chat-1-3-2'
 NON_RAG_MODEL = "jai-chat-1-3-2"
