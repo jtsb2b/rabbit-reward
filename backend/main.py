@@ -124,7 +124,7 @@ async def handle_chat(request: ChatRequest) -> Response:
 
         if rag_decision not in ['yes', 'no']:
             logger.warning(f"RAG classification returned an unexpected value: '{rag_decision}'. Defaulting to 'no'.")
-            rag_decision = 'no'
+            rag_decision = 'yes'
 
         logger.info(f"Final Classification: RAG Required = {rag_decision}")
 
