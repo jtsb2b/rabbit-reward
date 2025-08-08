@@ -55,7 +55,7 @@ def render_assistant_message(content: str):
             st.markdown(pre_text.strip())
 
         # Group 1 will always be the image path
-        # image_path = match.group(1).strip().replace(".jpg", ".png")
+        image_path = match.group(1).strip()
         image_path = os.path.join("./frontend",image_path) # Assuming images are stored in an 'images' directory
         print(image_path)
         # Group 2 is the caption. It will be None if the <caption> tag was not present.
