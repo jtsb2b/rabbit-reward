@@ -32,7 +32,6 @@ EXPOSE 8501
 
 # Define environment variable for the backend URL (will be overridden by compose)
 ENV BACKEND_API_URL=""
-ENV STREAMLIT_SERVER_PORT=8501
 
 # Run streamlit when the container launches
-CMD ["streamlit", "run", "app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+CMD ["streamlit", "run", "app.py"]
