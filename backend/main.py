@@ -177,6 +177,7 @@ async def handle_chat(request: ChatRequest) -> Response:
                 try:
                     async for chunk in gen:
                         yield chunk
+                        await asyncio.sleep(0.05)
                     logger.info("Finished RAG stream transmission.")
                 except Exception as e_stream:
                     logger.error(f"Error during stream transmission: {e_stream}", exc_info=True)
