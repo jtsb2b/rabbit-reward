@@ -27,7 +27,7 @@ ConversationHistory = List[Dict[str, str]]
 # --- Constants ---
 CLASSIFICATION_MODEL = "jai-chat-1-3-2"
 SUBQUERY_MODEL = "jai-chat-1-3-2"
-NORMAL_RAG_MODEL = 'jai-chat-1-3-2'
+NORMAL_RAG_MODEL = 'typhoon-gemma-12b'
 NON_RAG_MODEL = "jai-chat-1-3-2"
 
 # --- Embedding Setup (Global Scope) ---
@@ -148,12 +148,13 @@ class LLMFinanceAnalyzer:
             try:
                 if stream:
                     response_stream = await client.chat.completions.create(
-                        model=model, messages=messages, temperature=temperature, stream=True
+                        model=model, messages=messages, stream=True
                     )
                     async def _async_stream_generator():
                         try:
                             async for chunk in response_stream:
-                                delta_content = chunk.choices[0].delta.content
+                                delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
+                                
                                 if delta_content:
                                     yield delta_content
                         except Exception as stream_err:
@@ -162,7 +163,7 @@ class LLMFinanceAnalyzer:
                     return _async_stream_generator()
                 else:
                     response = await client.chat.completions.create(
-                        model=model, messages=messages, temperature=temperature, stream=False
+                        model=model, messages=messages,  stream=False
                     )
                     content = response.choices[0].message.content
                     return content.strip() if content else ""

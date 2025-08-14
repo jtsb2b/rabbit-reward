@@ -60,7 +60,7 @@ class MongoHybridSearch:
             result_content = await self.atlas_hybrid_search(collection_name = self.collection,
                 query=query,
                 
-                top_k=40, # Consider making configurable
+                top_k=100, # Consider making configurable
                 exact_top_k=15, # Consider making configurable
                 vector_index_name=DEFAULT_VECTOR_INDEX,
                 keyword_index_name=DEFAULT_KEYWORD_INDEX,
@@ -268,7 +268,7 @@ if __name__ == "__main__":
         print("Testing MongoHybridSearch...")
         try:
             search_engine = MongoHybridSearch()
-            query_example = 'การให้ทุนการศึกษาของ SCG ในต่างประเทศ ประจำปี 2567'
+            query_example = 'สถานีไหนไม่ได้ร่วมการรับพอยต์ Rabbit Rewards'
             
             results = await search_engine.search_documents(query_example) # Await here
             print("\nSearch Results:")

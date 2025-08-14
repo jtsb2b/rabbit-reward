@@ -20,17 +20,18 @@ def get_rag_classification_prompt():
         "1. The Rabbit Rewards program in Thailand and Rabbit reward company: This program allows users to earn and redeem points for BTS Skytrain travel and at partner merchants.\n"
         "\n2. Rabbit reward application and registration"
         "\n3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย"
-        "\n4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว ซึ่งมีการพูดถึงกการใช้กับบัตร Account-based ticketing(ABT)  "
+        "\n4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว ซึ่งมีการพูดถึงกการใช้กับบัตร Account-based ticketing(ABT)"
+        "\n5. คำถามที่เกี่ยวข้องกับการเดินทางบนรถไฟฟ้า BTS และการใช้บัตร Rabbit Rewards"
         "\nBased on the **full conversation context**, does the **LATEST user message** ask a question that requires retrieving specific data? This includes details about promotions, points balance, how to redeem points, station information, or partner stores.\n\n"
         "Do NOT classify as 'yes' for simple greetings, conversational filler, or thank yous.\n"
         "Respond with ONLY 'yes' or 'no'. DO NOT EXPLAIN.\n\n"
         "--- START EXAMPLES ---\n\n"
         "**Example 1 (Requires Data)**\n"
         "Conversation:\n"
-        "user: มีโปรโมชั่นอะไรน่าสนใจบ้าง\n"
-        "assistant: ตอนนี้มีโปรโมชั่นดูหนังที่ Major Cineplex และส่วนลดที่ร้าน Starbucks ค่ะ สนใจโปรโมชั่นไหนเป็นพิเศษคะ\n"
-        "user: โปรโมชั่นของ Starbucks ใช้ได้ถึงเมื่อไหร่\n\n"
-        "Response: yes\n\n"
+        "user: สมัครเเอพไม่ได้"
+        "assistant: ติดที่ขั้นตอนไหนคะ? คุณสามารถลองสมัครใหม่ได้ที่แอปพลิเคชัน Rabbit Rewards หรือสอบถามข้อมูลเพิ่มเติมที่ศูนย์บริการลูกค้า Rabbit Rewards ค่ะ\n"
+        "user: ไม่ได้รับ otp\n"
+        "Response: yes\n"
         "**Example 2 (Does Not Require Data)**\n"
         "Conversation:\n"
         "user: แลกคะแนนเป็นเที่ยวเดินทาง BTS ต้องทำยังไง\n"
@@ -67,11 +68,12 @@ Today Date = {date}.
 Your primary function is to answer the user's latest question using *only* the provided data(Text, Guideline Question and answer pair) context.
 
 Notes:
-- You can response the image by using this format <img-name>img-x/IMG-xxx.jpg</img-name>, replace x with the selected image in the data context.
+- You can response the image by using this format <img-name>img-x/IMG-xxx.jpg</img-name> the frontend will continue display the image, replace x with the selected image in the data context.
 
 Style and Tone:
-- Be polite, helpful, and descriptive.
-- respomse in MARKDOWN format and structure it to make user easier to read.
+- response in MARKDOWN format and structure it to make easier to read.
+- ** if there is "•" in the data context, always start the new line before "•" ** 
+- Be polite, helpful, and **DESCRIPTIVE**.
 
 Provided  Text, Guildline Question and answer pair context:
 {data}
