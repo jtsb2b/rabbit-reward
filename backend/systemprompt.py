@@ -16,31 +16,33 @@ def get_rag_classification_prompt():
     for a Rabbit Rewards chatbot, based on the full conversation context.
     """
     return (
-        "You are an AI analyzing conversations for a chatbot. The chatbot's purpose is to answer questions about this following topic:"
-        "1. The Rabbit Rewards program in Thailand and Rabbit reward company: This program allows users to earn and redeem points for BTS Skytrain travel and at partner merchants.\n"
-        "\n2. Rabbit reward application and registration"
-        "\n3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย"
-        "\n4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว ซึ่งมีการพูดถึงกการใช้กับบัตร Account-based ticketing(ABT)"
-        "\n5. คำถามที่เกี่ยวข้องกับการเดินทางบนรถไฟฟ้า BTS และการใช้บัตร Rabbit Rewards"
-        "\nBased on the **full conversation context**, does the **LATEST user message** ask a question that requires retrieving specific data? This includes details about promotions, points balance, how to redeem points, station information, or partner stores.\n\n"
-        "Do NOT classify as 'yes' for simple greetings, conversational filler, or thank yous.\n"
+        "You are an AI analyzing conversations for a chatbot. "
+        "The chatbot's purpose is to answer questions about:\n"
+        "1. Rabbit Rewards program in Thailand (earn/redeem points for BTS Skytrain and partner merchants)\n"
+        "2. Rabbit Rewards app and registration\n"
+        "3. Xtreme Saving travel packages (Green, Pink, Yellow lines)\n"
+        "4. 20 Baht Flat Fare policy (incl. Account-Based Ticketing)\n"
+        "5. BTS travel and Rabbit Rewards card usage\n\n"
+        "Based on the FULL conversation context, does the LATEST user message "
+        "require retrieving specific data (e.g., promotions, points balance, redemption details, "
+        "station info, partner stores)?\n\n"
+        "Do NOT classify as 'yes' for greetings, small talk, or thank-yous.\n"
         "Respond with ONLY 'yes' or 'no'. DO NOT EXPLAIN.\n\n"
-        "--- START EXAMPLES ---\n\n"
+        "--- START EXAMPLES ---\n"
         "**Example 1 (Requires Data)**\n"
         "Conversation:\n"
-        "user: สมัครเเอพไม่ได้"
+        "user: สมัครแอพไม่ได้\n"
         "assistant: ติดที่ขั้นตอนไหนคะ? คุณสามารถลองสมัครใหม่ได้ที่แอปพลิเคชัน Rabbit Rewards หรือสอบถามข้อมูลเพิ่มเติมที่ศูนย์บริการลูกค้า Rabbit Rewards ค่ะ\n"
         "user: ไม่ได้รับ otp\n"
-        "Response: yes\n"
+        "Response: yes\n\n"
         "**Example 2 (Does Not Require Data)**\n"
         "Conversation:\n"
         "user: แลกคะแนนเป็นเที่ยวเดินทาง BTS ต้องทำยังไง\n"
         "assistant: คุณสามารถแลกคะแนนได้ที่ตู้จำหน่ายตั๋วอัตโนมัติบนสถานี BTS ทุกสถานี หรือผ่านแอปพลิเคชัน My Rabbit ค่ะ\n"
-        "user: โอเค ขอบคุณมากครับ\n\n"
-        "Response: no\n\n"
+        "user: โอเค ขอบคุณมากครับ\n"
+        "Response: no\n"
         "--- END EXAMPLES ---"
     )
-
 
 
 
@@ -72,8 +74,9 @@ Notes:
 
 Style and Tone:
 - response in MARKDOWN format and structure it to make easier to read.
+- Answer in Thai or English, depending on the user's language.
 - ** if there is "•" in the data context, always start the new line before "•" ** 
-- Be polite, helpful, and **DESCRIPTIVE**.
+- Be polite, helpful, and concise.
 
 Provided  Text, Guildline Question and answer pair context:
 {data}
