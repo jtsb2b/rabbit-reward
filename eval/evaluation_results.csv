@@ -1,0 +1,715 @@
+﻿test_case_id,user_input,history,ref_classification,api_classification,classification_match,ref_output,api_output,llm_score,llm_justification,api_error
+1,"บัตร rabbit มีกี่ประเภท
+",[],yes,yes,True,"บัตรแรบบิทมีการแบ่งประเภทการใช้งานออกเป็น 3 รูปแบบหลัก ๆ ดังนี้ค่ะ:
+บัตรแรบบิท ประเภทการใช้งานมาตรฐานทั่วไป (Rabbit Card Normal / Standard Rabbit Card)
+บัตรประเภทนี้ไม่ได้เชื่อมต่อกับระบบ Wallet ใด ๆ ค่ะ
+บัตรแรบบิท ประเภทการใช้งานที่ผูกเชื่อมกับ Wallet ในแอปพลิเคชัน My Rabbit
+บัตรนี้จะผูกบัญชีผ่านแอปพลิเคชัน My Rabbit ค่ะ
+บัตรแรบบิท ประเภทการใช้งานที่ผูกเชื่อมกับ บัญชีไลน์เพย์ (Rabbit Card Line Pay) ในแอปพลิเคชัน Line
+บัตรนี้จะผูกผ่านแอปพลิเคชัน LINE ค่ะ
+แต่ละประเภทมีข้อกำหนดเรื่องเงินขั้นต่ำในบัตรที่แตกต่างกันด้วยนะคะ เพื่อให้สามารถใช้งานได้ค่ะ","บัตร Rabbit สามารถแบ่งเป็นการใช้งานได้ดังนี้:
+
+1.  **บัตรแรบบิท ประเภทการใช้งานมาตรฐานทั่วไป** (Rabbit Card Normal / Standard Rabbit Card)
+    *   ไม่ได้เชื่อมกับระบบ Wallet ใด ๆ
+    *   ต้องมีเงินคงเหลือในบัตรอย่างน้อย 15 บาท จึงจะสามารถใช้งานได้
+2.  **บัตรแรบบิทที่เชื่อมกับ Rabbit Wallet**
+    *   ผูกบัญชีผ่านแอปพลิเคชัน My Rabbit
+    *   ต้องมีเงินคงเหลือใน Wallet อย่างน้อย 17 บาท จึงจะสามารถใช้งานได้
+3.  **บัตรแรบบิทที่เชื่อมกับบัญชี LINE Pay**
+    *   ผูกผ่านแอปพลิเคชัน LINE
+    *   ต้องมีเงินในบัญชี LINE Pay อย่างน้อย 15 บาท จึงจะสามารถใช้งานได้",5,"The chatbot's response is accurate and fully answers the user's question, closely matching the gold standard. It correctly identifies the three main types of Rabbit cards and provides additional details about the minimum balance required for each type, which enhances the completeness and helpfulness of the response.",
+2,"เเบบปกติ มีกี่ประเภท
+
+
+","[ChatMessage(role='user', content='บัตร rabbit มีกี่ประเภท'), ChatMessage(role='assistant', content='สวัสดีค่ะ! บัตรแรบบิทมีการแบ่งประเภทการใช้งานออกเป็น 3 รูปแบบหลัก ๆ ดังนี้ค่ะ:\n\n1.  **บัตรแรบบิท ประเภทการใช้งานมาตรฐานทั่วไป (Rabbit Card Normal / Standard Rabbit Card)**\n    *   บัตรประเภทนี้ไม่ได้เชื่อมต่อกับระบบ Wallet ใด ๆ ค่ะ\n2.  **บัตรแรบบิท ประเภทการใช้งานที่ผูกเชื่อมกับ Wallet ในแอปพลิเคชัน My Rabbit**\n    *   บัตรนี้จะผูกบัญชีผ่านแอปพลิเคชัน My Rabbit ค่ะ\n3.  **บัตรแรบบิท ประเภทการใช้งานที่ผูกเชื่อมกับ บัญชีไลน์เพย์ (Rabbit Card Line Pay) ในแอปพลิเคชัน Line**\n    *   บัตรนี้จะผูกผ่านแอปพลิเคชัน LINE ค่ะ\n\nแต่ละประเภทมีข้อกำหนดเรื่องเงินขั้นต่ำในบัตรที่แตกต่างกันด้วยนะคะ เพื่อให้สามารถใช้งานได้ค่ะ')]",yes,no,False,"สำหรับบัตรแรบบิทแบบมาตรฐานที่ใช้กันโดยทั่วไป จะแบ่งผู้ใช้ออกเป็น 3 กลุ่มตามช่วงอายุค่ะ ได้แก่:
+บัตรแรบบิทสำหรับบุคคลทั่วไป: บัตรสีส้ม
+บัตรแรบบิทสำหรับนักเรียน-นักศึกษา: (ไม่เกิน 23 ปี) บัตรสีเขียว
+บัตรแรบบิทสำหรับผู้สูงอายุ: (60 ปีขึ้นไป) บัตรสีม่วง
+คุณสามารถดูภาพประกอบได้ที่นี่ค่ะ: <img-name>img-1/IMG-019.jpg</img-name>","ขออภัยค่ะ ฉันเข้าใจคำถามของคุณไม่ถูกต้องค่ะ คุณถามถึง ""บัตรแรบบิท"" ซึ่งมีการแบ่งประเภทการใช้งานออกเป็น 3 รูปแบบหลัก ๆ ตามที่ฉันได้อธิบายไปก่อนหน้านี้ค่ะ หากมีคำถามเพิ่มเติมเกี่ยวกับบัตรแรบบิทหรือเรื่องอื่น ๆ ที่เกี่ยวข้อง ยินดีให้ความช่วยเหลือค่ะ",2,"The chatbot's response acknowledges the user's question about 'Rabbit Rewards' but fails to provide the specific details about the three types of Rabbit cards as outlined in the reference answer. It lacks the necessary information about the card types and their corresponding age groups and colors, which are crucial for a complete and helpful response. The response is also somewhat vague and does not directly address the user's query, making it less relevant and helpful.",
+3,จะได้พอยเท่าไหร่จากการเดินทาง 1 ครั่ง,"[ChatMessage(role='user', content='บัตร rabbit มีกี่ประเภท'), ChatMessage(role='assistant', content='สวัสดีค่ะ! บัตรแรบบิทมีการแบ่งประเภทการใช้งานออกเป็น 3 รูปแบบหลัก ๆ ดังนี้ค่ะ:\n\n1.  **บัตรแรบบิท ประเภทการใช้งานมาตรฐานทั่วไป (Rabbit Card Normal / Standard Rabbit Card)**\n    *   บัตรประเภทนี้ไม่ได้เชื่อมต่อกับระบบ Wallet ใด ๆ ค่ะ\n2.  **บัตรแรบบิท ประเภทการใช้งานที่ผูกเชื่อมกับ Wallet ในแอปพลิเคชัน My Rabbit**\n    *   บัตรนี้จะผูกบัญชีผ่านแอปพลิเคชัน My Rabbit ค่ะ\n3.  **บัตรแรบบิท ประเภทการใช้งานที่ผูกเชื่อมกับ บัญชีไลน์เพย์ (Rabbit Card Line Pay) ในแอปพลิเคชัน Line**\n    *   บัตรนี้จะผูกผ่านแอปพลิเคชัน LINE ค่ะ\n\nแต่ละประเภทมีข้อกำหนดเรื่องเงินขั้นต่ำในบัตรที่แตกต่างกันด้วยนะคะ เพื่อให้สามารถใช้งานได้ค่ะ'), ChatMessage(role='user', content='เเบบปกติ มีกี่ประเภท'), ChatMessage(role='assistant', content='สำหรับบัตรแรบบิทแบบมาตรฐานที่ใช้กันโดยทั่วไป จะแบ่งผู้ใช้ออกเป็น 3 กลุ่มตามช่วงอายุค่ะ ได้แก่:\n\n*   **บัตรแรบบิทสำหรับบุคคลทั่วไป:** บัตรสีส้ม\n*   **บัตรแรบบิทสำหรับนักเรียน-นักศึกษา:** (ไม่เกิน 23 ปี) บัตรสีเขียว\n*   **บัตรแรบบิทสำหรับผู้สูงอายุ:** (60 ปีขึ้นไป) บัตรสีม่วง\n\nคุณสามารถดูภาพประกอบได้ที่นี่ค่ะ: <img-name>img-1/IMG-019.jpg</img-name>')]",yes,yes,True,"การสะสมพอยท์จากการเดินทางด้วยรถไฟฟ้าบีทีเอสจะขึ้นอยู่กับจำนวนสถานีที่คุณเดินทางในแต่ละเที่ยวค่ะ โดยมีรายละเอียดดังนี้:
+
+*   **คุณจะได้รับ 1 พอยท์ ต่อ 1 สถานีที่เดินทาง** (โดยไม่นับสถานีแรกเข้า)
+*   **สูงสุดที่ 8 พอยท์ต่อ 1 เที่ยวเดินทาง** ไม่ว่าคุณจะเดินทางกี่สถานีก็ตาม
+
+**ตารางแสดงจำนวนพอยท์ที่คุณจะได้รับต่อเที่ยวเดินทาง:**
+
+| จำนวนสถานีที่เดินทาง (ไม่นับสถานีแรกเข้า) | จำนวนพอยท์ที่ได้รับ (ต่อเที่ยว) |
+| :-------------------------------------- | :----------------------------- |
+| 1 สถานี                                  | 1 พอยท์                        |
+| 2 สถานี                                  | 2 พอยท์                        |
+| 3 สถานี                                  | 3 พอยท์                        |
+| 4 สถานี                                  | 4 พอยท์                        |
+| 5 สถานี                                  | 5 พอยท์                        |
+| 6 สถานี                                  | 6 พอยท์                        |
+| 7 สถานี                                  | 7 พอยท์                        |
+| 8 สถานีขึ้นไป                            | 8 พอยท์                        |
+
+**ตัวอย่างเช่น:**
+*   หากคุณเดินทางผ่าน 5 สถานี (ไม่นับสถานีแรกเข้า) คุณจะได้รับ 5 พอยท์
+*   หากคุณเดินทางผ่าน 10 สถานี (ไม่นับสถานีแรกเข้า) คุณจะได้รับ 8 พอยท์ (เนื่องจากเป็นจำนวนสูงสุดที่กำหนด)
+
+หวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ",ในการเดินทางด้วยรถไฟฟ้าบีทีเอส 1 ครั้ง สมาชิก Rabbit Rewards จะได้รับพอยท์ ดังนี้ค่ะ:\n\n*   **เส้นทางสุขุมวิท:** 1 พอยท์ต่อ 1 สถานี (เช่น เดินทาง 3 สถานี จะได้รับ 2 พอยท์)\n*   **เส้นทางสีลม:** 1 พอยท์ต่อ 1 สถานี (เช่น เดินทาง 3 สถานี จะได้รับ 2 พอยท์)\n\n**หมายเหตุ:**\n\n*   พอยท์จะถูกเพิ่มในบัญชีสมาชิกทุกวันพุธของสัปดาห์ถัดไป\n*   จำนวนเที่ยวเดินทางสะสมในแต่ละสัปดาห์จะเริ่มนับตั้งแต่เวลา 03:00 น. ของวันจันทร์ และสิ้นสุดในเวลา 02:59 น. ของวันจันทร์ถัดไป\n\nหวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ!,2,"The chatbot's response contains significant inaccuracies compared to the reference answer. It incorrectly states that traveling 3 stations results in 2 points, whereas the reference specifies 3 points for 3 stations. Additionally, the chatbot introduces irrelevant information about the timing of point updates and weekly travel accumulation, which does not address the user's question about points per trip. The response lacks clarity and completeness in explaining the point system, leading to potential confusion for the user.",
+4,Hi,[],no,no,True,สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ,สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ,5,"The chatbot's actual response is identical to the reference answer, making it highly accurate, relevant, complete, and helpful. It appropriately addresses the user's greeting and offers assistance with the Rabbit Rewards program, matching the gold standard perfectly.",
+5,"บริธัท rabbit reward ทำอะไร
+
+
+","[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ')]",yes,yes,True,"บริษัท แรบบิท รีวอร์ดส จำกัด (Rabbit Rewards Company Limited) เป็นหนึ่งในสมาชิกของครอบครัว บีทีเอส กรุ๊ป โฮลดิ้งส์ จำกัด (มหาชน) ค่ะ
+เราคือผู้ให้บริการโปรแกรมสะสมพอยท์อย่างเป็นทางการของบีทีเอส และบริษัทในเครือฯ โดยมีหน้าที่หลักดังนี้ค่ะ:
+สร้างและบริหารโปรแกรม Rabbit Rewards: ซึ่งเป็นโปรแกรมสะสมพอยท์จากการใช้บีทีเอส, บัตรแรบบิท, ไลน์เพย์ และพาร์ทเนอร์ที่ร่วมรายการ เพื่อให้สมาชิกสามารถนำพอยท์ไปแลกสินค้าและสิทธิพิเศษมากมายจากร้านค้าชั้นนำ
+ดูแลสมาชิก: ปัจจุบันมีสมาชิกแรบบิท รีวอร์ดส มากกว่า 6.1 ล้านคน และมีสมาชิกใหม่เพิ่มขึ้นประมาณ 70,000 คนทุกเดือน
+เป็นแพลตฟอร์มดิจิทัล: ผ่าน Rabbit Rewards Mobile Application ที่รวบรวมสิทธิพิเศษ, ดีล, โปรโมชันสุดคุ้ม รวมถึงการซื้อดีลและสมัครโปรแกรมรายเดือนที่คุ้มค่า ให้บริการตลอด 24 ชั่วโมง
+ส่งเสริมการสะสมพอยท์: สมาชิกสามารถสะสมพอยท์จากการเดินทางกับรถไฟฟ้าบีทีเอสในทุกๆ เที่ยวเดินทาง และจากการใช้จ่ายทั้งบนสถานีและร้านค้าต่างๆ ที่เป็นพันธมิตรชั้นนำของบริษัทฯ
+โดยรวมแล้ว แรบบิท รีวอร์ดส มุ่งมั่นที่จะมอบประสบการณ์ที่ดีในการสะสมพอยท์และแลกรับสิทธิพิเศษต่างๆ ให้กับสมาชิกในทุกๆ วันค่ะ","Rabbit Rewards เป็นโปรแกรมสะสมพอยท์จากการใช้บัตร Rabbit, LINE Pay และพาร์ทเนอร์ที่ร่วมรายการ เพื่อแลกสินค้าสุดพิเศษกว่า 100 รางวัล จากหลากหลายร้านค้าชั้นนำ โดยสมาชิกจะสะสมพอยท์ได้:
+
+*   จากการเดินทางโดยสาร BTS ด้วยบัตร Rabbit หรือ LINE Pay BTS/ Rabbit Wallet
+*   ใช้จ่ายบัตร Rabbit ที่ร้านค้าที่ร่วมรายการ
+*   สะสมพอยท์จากกิจกรรมพิเศษจากทาง Rabbit Rewards
+
+นอกจากนี้ ยังมีการเชื่อมต่อกับ My Rabbit App และ LINE Pay เพื่อให้ผู้ใช้บริการสามารถสะสมคะแนนและใช้สิทธิ์ได้สะดวกยิ่งขึ้นค่ะ",4,"The chatbot's response is mostly accurate and relevant, providing a good overview of the Rabbit Rewards program. It mentions the accumulation of points through BTS travel, Rabbit card usage, and special activities, which aligns with the reference answer. However, it lacks some details present in the reference, such as the company's affiliation with BTS Group Holdings, the digital platform aspect, and specific membership statistics. Despite these omissions, the response is still helpful and informative for the user's query.",
+6,"เเต้ม rabbit ทำไรได้บ้าง
+
+
+","[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ'), ChatMessage(role='user', content='บริธัท rabbit reward ทำอะไร'), ChatMessage(role='assistant', content='บริษัท แรบบิท รีวอร์ดส จำกัด (Rabbit Rewards Company Limited) เป็นหนึ่งในสมาชิกของครอบครัว บีทีเอส กรุ๊ป โฮลดิ้งส์ จำกัด (มหาชน) ค่ะ\n\nเราคือผู้ให้บริการโปรแกรมสะสมพอยท์อย่างเป็นทางการของบีทีเอส และบริษัทในเครือฯ โดยมีหน้าที่หลักดังนี้ค่ะ:\n\n*   **สร้างและบริหารโปรแกรม Rabbit Rewards:** ซึ่งเป็นโปรแกรมสะสมพอยท์จากการใช้บีทีเอส, บัตรแรบบิท, ไลน์เพย์ และพาร์ทเนอร์ที่ร่วมรายการ เพื่อให้สมาชิกสามารถนำพอยท์ไปแลกสินค้าและสิทธิพิเศษมากมายจากร้านค้าชั้นนำ\n*   **ดูแลสมาชิก:** ปัจจุบันมีสมาชิกแรบบิท รีวอร์ดส มากกว่า 6.1 ล้านคน และมีสมาชิกใหม่เพิ่มขึ้นประมาณ 70,000 คนทุกเดือน\n*   **เป็นแพลตฟอร์มดิจิทัล:** ผ่าน Rabbit Rewards Mobile Application ที่รวบรวมสิทธิพิเศษ, ดีล, โปรโมชันสุดคุ้ม รวมถึงการซื้อดีลและสมัครโปรแกรมรายเดือนที่คุ้มค่า ให้บริการตลอด 24 ชั่วโมง\n*   **ส่งเสริมการสะสมพอยท์:** สมาชิกสามารถสะสมพอยท์จากการเดินทางกับรถไฟฟ้าบีทีเอสในทุกๆ เที่ยวเดินทาง และจากการใช้จ่ายทั้งบนสถานีและร้านค้าต่างๆ ที่เป็นพันธมิตรชั้นนำของบริษัทฯ\n\nโดยรวมแล้ว แรบบิท รีวอร์ดส มุ่งมั่นที่จะมอบประสบการณ์ที่ดีในการสะสมพอยท์และแลกรับสิทธิพิเศษต่างๆ ให้กับสมาชิกในทุกๆ วันค่ะ')]",yes,yes,True,"แต้ม Rabbit Rewards ของคุณสามารถนำไปใช้ประโยชน์ได้หลากหลายเลยค่ะ สมาชิกสามารถ:
+แลกเป็นเที่ยวเดินทางบีทีเอสฟรี: คุณสามารถนำพอยท์มาแลกเป็นเที่ยวเดินทางรถไฟฟ้าบีทีเอสได้ฟรีค่ะ
+รับส่วนลดจากร้านค้าที่ร่วมรายการ: แลกพอยท์เพื่อรับส่วนลดพิเศษจากร้านค้าพันธมิตรต่างๆ
+แลกเป็นรางวัลจากร้านค้าที่ร่วมรายการ: มีรางวัลให้เลือกแลกกว่า 100 รายการจากร้านค้าชั้นนำที่ร่วมรายการค่ะ
+นอกจากนี้ สมาชิกยังจะได้รับข้อมูลข่าวสารและโปรโมชั่นพิเศษสำหรับสมาชิกเท่านั้นอีกด้วยค่ะ","คะแนน Rabbit Rewards สามารถนำไปใช้ประโยชน์ได้หลากหลายเลยค่ะ โดยหลักๆ แล้ว จะสามารถนำไปใช้ดังนี้ค่ะ
+
+*   **แลกเป็นเที่ยวเดินทางรถไฟฟ้า:** สมาชิกสามารถใช้คะแนนสะสมเพื่อแลกเป็นเที่ยวเดินทางรถไฟฟ้าบีทีเอสได้ฟรี โดยอัตราการแลกเปลี่ยนจะแตกต่างกันไปตามช่วงเวลาและโปรโมชั่นต่างๆ
+*   **รับส่วนลดจากร้านค้าที่ร่วมรายการ:** ใช้คะแนนเพื่อรับส่วนลดเมื่อซื้อสินค้าหรือบริการจากร้านค้าที่เป็นพันธมิตรของ Rabbit Rewards
+*   **แลกรับรางวัล:** แลกคะแนนเพื่อรับรางวัลมากมาย เช่น บัตรกำนัล, สินค้า, บริการต่างๆ จากร้านค้าชั้นนำ
+*   **รับสิทธิพิเศษ:** สมาชิก Rabbit Rewards จะได้รับสิทธิพิเศษต่างๆ เช่น ส่วนลดพิเศษ, โปรโมชั่นสำหรับสมาชิกเท่านั้น, การเข้าถึงกิจกรรมพิเศษ
+*   **จับจ่ายผ่านดีลสุดคุ้ม:** ใช้คะแนนเพื่อซื้อดีลสินค้าและบริการสุดคุ้มจากร้านค้าต่างๆ ที่ร่วมรายการ
+
+นอกจากนี้ ในบางช่วงเวลา Rabbit Rewards อาจจะมีโปรโมชั่นพิเศษที่ให้สมาชิกสามารถนำคะแนนไปใช้ประโยชน์ได้มากขึ้น เช่น โปรโมชั่น X2 หรือ X3 คะแนน เมื่อใช้จ่ายที่ร้านค้าที่ร่วมรายการ โปรโมชั่นแลกเที่ยวเดินทางในราคาพิเศษ หรือโปรโมชั่นอื่นๆ ที่น่าสนใจค่ะ
+
+คุณสามารถติดตามข่าวสารและโปรโมชั่นต่างๆ ของ Rabbit Rewards ได้ผ่านช่องทางต่อไปนี้ค่ะ
+
+*   เว็บไซต์: [https://rewards.rabbit.co.th/](https://rewards.rabbit.co.th/)
+*   แอปพลิเคชัน Rabbit Rewards
+*   Facebook: [https://www.facebook.com/RabbitReward/](https://www.facebook.com/RabbitReward/)",5,"The chatbot's response is highly accurate, relevant, and complete. It thoroughly addresses the user's question by detailing the various ways Rabbit Rewards points can be used, such as exchanging for BTS trips, discounts, and rewards. It also mentions special promotions and provides additional resources for users to stay updated, which enhances its helpfulness. The response closely matches the reference answer, covering all key points and even providing extra useful information.",
+7,"สมัครสมาชิกช่องทางไหนได้บ้าง
+
+
+","[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ'), ChatMessage(role='user', content='บริธัท rabbit reward ทำอะไร'), ChatMessage(role='assistant', content='บริษัท แรบบิท รีวอร์ดส จำกัด (Rabbit Rewards Company Limited) เป็นหนึ่งในสมาชิกของครอบครัว บีทีเอส กรุ๊ป โฮลดิ้งส์ จำกัด (มหาชน) ค่ะ\n\nเราคือผู้ให้บริการโปรแกรมสะสมพอยท์อย่างเป็นทางการของบีทีเอส และบริษัทในเครือฯ โดยมีหน้าที่หลักดังนี้ค่ะ:\n\n*   **สร้างและบริหารโปรแกรม Rabbit Rewards:** ซึ่งเป็นโปรแกรมสะสมพอยท์จากการใช้บีทีเอส, บัตรแรบบิท, ไลน์เพย์ และพาร์ทเนอร์ที่ร่วมรายการ เพื่อให้สมาชิกสามารถนำพอยท์ไปแลกสินค้าและสิทธิพิเศษมากมายจากร้านค้าชั้นนำ\n*   **ดูแลสมาชิก:** ปัจจุบันมีสมาชิกแรบบิท รีวอร์ดส มากกว่า 6.1 ล้านคน และมีสมาชิกใหม่เพิ่มขึ้นประมาณ 70,000 คนทุกเดือน\n*   **เป็นแพลตฟอร์มดิจิทัล:** ผ่าน Rabbit Rewards Mobile Application ที่รวบรวมสิทธิพิเศษ, ดีล, โปรโมชันสุดคุ้ม รวมถึงการซื้อดีลและสมัครโปรแกรมรายเดือนที่คุ้มค่า ให้บริการตลอด 24 ชั่วโมง\n*   **ส่งเสริมการสะสมพอยท์:** สมาชิกสามารถสะสมพอยท์จากการเดินทางกับรถไฟฟ้าบีทีเอสในทุกๆ เที่ยวเดินทาง และจากการใช้จ่ายทั้งบนสถานีและร้านค้าต่างๆ ที่เป็นพันธมิตรชั้นนำของบริษัทฯ\n\nโดยรวมแล้ว แรบบิท รีวอร์ดส มุ่งมั่นที่จะมอบประสบการณ์ที่ดีในการสะสมพอยท์และแลกรับสิทธิพิเศษต่างๆ ให้กับสมาชิกในทุกๆ วันค่ะ'), ChatMessage(role='user', content='เเต้ม rabbit ทำไรได้บ้าง'), ChatMessage(role='assistant', content='แต้ม Rabbit Rewards ของคุณสามารถนำไปใช้ประโยชน์ได้หลากหลายเลยค่ะ สมาชิกสามารถ:\n\n*   **แลกเป็นเที่ยวเดินทางบีทีเอสฟรี:** คุณสามารถนำพอยท์มาแลกเป็นเที่ยวเดินทางรถไฟฟ้าบีทีเอสได้ฟรีค่ะ\n*   **รับส่วนลดจากร้านค้าที่ร่วมรายการ:** แลกพอยท์เพื่อรับส่วนลดพิเศษจากร้านค้าพันธมิตรต่างๆ\n*   **แลกเป็นรางวัลจากร้านค้าที่ร่วมรายการ:** มีรางวัลให้เลือกแลกกว่า 100 รายการจากร้านค้าชั้นนำที่ร่วมรายการค่ะ\n\nนอกจากนี้ สมาชิกยังจะได้รับข้อมูลข่าวสารและโปรโมชั่นพิเศษสำหรับสมาชิกเท่านั้นอีกด้วยค่ะ')]",yes,yes,True,"ท่านสามารถสมัครเป็นสมาชิกแรบบิท รีวอร์ดสได้ 4 ช่องทางหลักๆ เลยค่ะ:
+เว็บไซต์: เข้าไปที่ www.rabbitrewards.co.th
+แอปพลิเคชันแรบบิท รีวอร์ดส: ดาวน์โหลดและสมัครผ่านแอปพลิเคชันได้เลยค่ะ
+ห้องจำหน่ายตั๋วโดยสารบนสถานีบีทีเอส: สามารถสมัครได้ที่ห้องจำหน่ายตั๋วโดยสารบนสถานีบีทีเอสทุกสถานี
+ไลน์ เพย์ หรือ My Rabbit App: สมัครผ่านแอปพลิเคชันเหล่านี้ได้เช่นกันค่ะ
+Partner ที่มีกิจกรรมร่วม: รวมถึง Partner ที่มีกิจกรรมร่วมสำหรับผูกบัญชีและสมัครสะสมพอยท์ด้วยค่ะ",คุณสามารถสมัครเป็นสมาชิก Rabbit Rewards ได้ 4 ช่องทาง ดังนี้ค่ะ:\n\n*   **เว็บไซต์:** [www.rabbitrewards.co.th](http://www.rabbitrewards.co.th)\n*   **แอปพลิเคชัน Rabbit Rewards:** ดาวน์โหลดได้จาก App Store หรือ Google Play\n*   **ห้องจำหน่ายตั๋วโดยสาร:** บนสถานีบีทีเอสทุกสถานี\n*   **LINE Pay หรือ My Rabbit App:** สมัครผ่านแอปพลิเคชันเหล่านี้ได้เลยค่ะ\n*   **Partner:** ที่มีกิจกรรมร่วมสำหรับผูกบัญชีและสมัครสะสมพอยท์,5,"The chatbot's response is accurate and fully answers the user's question, closely matching the gold standard. It provides all the necessary information about the different channels through which a user can register for the Rabbit Rewards program, including the website, app, BTS station ticket offices, LINE Pay, My Rabbit App, and partners. The response is clear, relevant, and helpful, with no significant omissions or inaccuracies.",
+8,"สมัครให้ได้มั้ย
+
+
+","[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ'), ChatMessage(role='user', content='บริธัท rabbit reward ทำอะไร'), ChatMessage(role='assistant', content='บริษัท แรบบิท รีวอร์ดส จำกัด (Rabbit Rewards Company Limited) เป็นหนึ่งในสมาชิกของครอบครัว บีทีเอส กรุ๊ป โฮลดิ้งส์ จำกัด (มหาชน) ค่ะ\n\nเราคือผู้ให้บริการโปรแกรมสะสมพอยท์อย่างเป็นทางการของบีทีเอส และบริษัทในเครือฯ โดยมีหน้าที่หลักดังนี้ค่ะ:\n\n*   **สร้างและบริหารโปรแกรม Rabbit Rewards:** ซึ่งเป็นโปรแกรมสะสมพอยท์จากการใช้บีทีเอส, บัตรแรบบิท, ไลน์เพย์ และพาร์ทเนอร์ที่ร่วมรายการ เพื่อให้สมาชิกสามารถนำพอยท์ไปแลกสินค้าและสิทธิพิเศษมากมายจากร้านค้าชั้นนำ\n*   **ดูแลสมาชิก:** ปัจจุบันมีสมาชิกแรบบิท รีวอร์ดส มากกว่า 6.1 ล้านคน และมีสมาชิกใหม่เพิ่มขึ้นประมาณ 70,000 คนทุกเดือน\n*   **เป็นแพลตฟอร์มดิจิทัล:** ผ่าน Rabbit Rewards Mobile Application ที่รวบรวมสิทธิพิเศษ, ดีล, โปรโมชันสุดคุ้ม รวมถึงการซื้อดีลและสมัครโปรแกรมรายเดือนที่คุ้มค่า ให้บริการตลอด 24 ชั่วโมง\n*   **ส่งเสริมการสะสมพอยท์:** สมาชิกสามารถสะสมพอยท์จากการเดินทางกับรถไฟฟ้าบีทีเอสในทุกๆ เที่ยวเดินทาง และจากการใช้จ่ายทั้งบนสถานีและร้านค้าต่างๆ ที่เป็นพันธมิตรชั้นนำของบริษัทฯ\n\nโดยรวมแล้ว แรบบิท รีวอร์ดส มุ่งมั่นที่จะมอบประสบการณ์ที่ดีในการสะสมพอยท์และแลกรับสิทธิพิเศษต่างๆ ให้กับสมาชิกในทุกๆ วันค่ะ'), ChatMessage(role='user', content='เเต้ม rabbit ทำไรได้บ้าง'), ChatMessage(role='assistant', content='แต้ม Rabbit Rewards ของคุณสามารถนำไปใช้ประโยชน์ได้หลากหลายเลยค่ะ สมาชิกสามารถ:\n\n*   **แลกเป็นเที่ยวเดินทางบีทีเอสฟรี:** คุณสามารถนำพอยท์มาแลกเป็นเที่ยวเดินทางรถไฟฟ้าบีทีเอสได้ฟรีค่ะ\n*   **รับส่วนลดจากร้านค้าที่ร่วมรายการ:** แลกพอยท์เพื่อรับส่วนลดพิเศษจากร้านค้าพันธมิตรต่างๆ\n*   **แลกเป็นรางวัลจากร้านค้าที่ร่วมรายการ:** มีรางวัลให้เลือกแลกกว่า 100 รายการจากร้านค้าชั้นนำที่ร่วมรายการค่ะ\n\nนอกจากนี้ สมาชิกยังจะได้รับข้อมูลข่าวสารและโปรโมชั่นพิเศษสำหรับสมาชิกเท่านั้นอีกด้วยค่ะ'), ChatMessage(role='user', content='สมัครสมาชิกช่องทางไหนได้บ้าง'), ChatMessage(role='assistant', content='ท่านสามารถสมัครเป็นสมาชิกแรบบิท รีวอร์ดสได้ 4 ช่องทางหลักๆ เลยค่ะ:\n\n*   **เว็บไซต์:** เข้าไปที่ www.rabbitrewards.co.th\n*   **แอปพลิเคชันแรบบิท รีวอร์ดส:** ดาวน์โหลดและสมัครผ่านแอปพลิเคชันได้เลยค่ะ\n*   **ห้องจำหน่ายตั๋วโดยสารบนสถานีบีทีเอส:** สามารถสมัครได้ที่ห้องจำหน่ายตั๋วโดยสารบนสถานีบีทีเอสทุกสถานี\n*   **ไลน์ เพย์ หรือ My Rabbit App:** สมัครผ่านแอปพลิเคชันเหล่านี้ได้เช่นกันค่ะ\n*   **Partner ที่มีกิจกรรมร่วม:** รวมถึง Partner ที่มีกิจกรรมร่วมสำหรับผูกบัญชีและสมัครสะสมพอยท์ด้วยค่ะ')]",no,yes,False,"ขออภัยค่ะ ฉันไม่สามารถดำเนินการสมัครสมาชิกให้คุณได้โดยตรงนะคะ
+ฉันเป็นเพียงผู้ช่วย AI ที่ให้ข้อมูลเกี่ยวกับ Rabbit Rewards เท่านั้นค่ะ คุณสามารถสมัครสมาชิกได้ด้วยตัวเองตามช่องทางที่แจ้งไปก่อนหน้านี้ ได้แก่:
+ผ่านเว็บไซต์ www.rabbitrewards.co.th
+ผ่านแอปพลิเคชัน Rabbit Rewards
+ที่ห้องจำหน่ายตั๋วโดยสารบนสถานีบีทีเอส
+ผ่านแอปพลิเคชัน Line Pay หรือ My Rabbit App
+หากคุณมีคำถามเพิ่มเติมเกี่ยวกับขั้นตอนการสมัคร ยินดีให้ข้อมูลค่ะ",ฉันเป็นเพียงแค่แชทบอท ไม่สามารถทำการสมัครสมาชิกให้กับคุณได้โดยตรงนะคะ แต่ฉันสามารถแนะนำขั้นตอนการสมัครสมาชิกแรบบิท รีวอร์ดสให้คุณได้ดังนี้ค่ะ:\n\n1.  **เลือกช่องทางการสมัคร:** คุณสามารถเลือกสมัครได้จากช่องทางที่ฉันได้แจ้งไว้ข้างต้น ไม่ว่าจะเป็นเว็บไซต์ แอปพลิเคชัน หรือห้องจำหน่ายตั๋วโดยสาร\n2.  **กรอกข้อมูล:** กรอกข้อมูลส่วนตัวของคุณให้ครบถ้วนและถูกต้องตามที่ระบบกำหนด\n3.  **ยืนยันตัวตน:** ยืนยันตัวตนของคุณตามขั้นตอนที่ระบบแจ้ง เช่น การยืนยันผ่านเบอร์โทรศัพท์หรืออีเมล\n4.  **ยอมรับข้อตกลง:** อ่านและยอมรับข้อตกลงและเงื่อนไขของโปรแกรมแรบบิท รีวอร์ดส\n5.  **ยืนยันการสมัคร:** ยืนยันการสมัครของคุณและรอรับการยืนยันจากทางแรบบิท รีวอร์ดส\n\nหากคุณมีคำถามเพิ่มเติมเกี่ยวกับการสมัครสมาชิก สามารถติดต่อฝ่ายบริการลูกค้าของแรบบิท รีวอร์ดสได้โดยตรงนะคะ,4,"The chatbot's response is mostly accurate and relevant, providing a detailed step-by-step guide on how to register for the Rabbit Rewards program. It correctly states that it cannot directly register the user, similar to the reference answer. However, it lacks specific details about the registration channels, such as mentioning 'Line Pay' or 'My Rabbit App,' which are included in the reference answer. Despite this minor omission, the response is still helpful and informative.",
+9,"เข้าระบบ rabbit reward เเล้วหน้าจอขาว ทำยังไง
+
+
+",[],yes,yes,True,"สวัสดีค่ะ หากคุณพบปัญหาหน้าจอขาวเมื่อเข้าสู่ระบบแอปพลิเคชัน Rabbit Rewards ไม่ต้องกังวลนะคะ มีขั้นตอนการแก้ไขปัญหาที่คุณสามารถลองทำได้ค่ะ เนื่องจากคุณไม่ได้ระบุระบบปฏิบัติการของโทรศัพท์มือถือ ทางเราจะให้คำแนะนำสำหรับทั้ง iOS และ Android นะคะ
+
+### หากพบปัญหาด้านเทคนิคทั่วไป (สำหรับทั้ง iOS และ Android)
+
+บางครั้งข้อผิดพลาดในการเข้าสู่ระบบอาจเกิดขึ้นเนื่องจากปัญหาทางเทคนิคเบื้องต้น ลองตรวจสอบสิ่งเหล่านี้ก่อนค่ะ:
+
+*   **ตรวจสอบการอัปเดตแอปพลิเคชัน:** ตรวจสอบให้แน่ใจว่าแอปพลิเคชัน Rabbit Rewards ของคุณอัปเดตเป็นเวอร์ชันล่าสุดแล้ว
+*   **ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต:** ตรวจสอบให้แน่ใจว่าคุณกำลังใช้การเชื่อมต่ออินเทอร์เน็ตที่เสถียร (Wi-Fi หรือ Cellular Data)
+*   **ตรวจสอบพื้นที่หน่วยความจำในเครื่อง:** ตรวจสอบว่าข้อมูลความจำในเครื่องของคุณเหลือมากกว่า 300 MB หรือไม่ หากมีน้อยกว่า อาจส่งผลกระทบกับการเปิดแอปพลิเคชันได้
+*   **ตรวจสอบแอปพลิเคชัน VPN:** หากมีแอปพลิเคชันที่ใช้เชื่อมต่อ VPN ในเครื่องของคุณ แนะนำให้ยกเลิกการเชื่อมต่อก่อนการเข้าสู่ระบบ
+*   **ตรวจสอบแอปพลิเคชันล้างแคช/ไฟล์ขยะ/booster:** ตรวจสอบว่าไม่มีแอปพลิเคชันสำหรับการล้างแคช ไฟล์ขยะ หรือ booster ในเครื่องของคุณ
+
+---
+
+### สำหรับผู้ใช้งาน iOS
+
+หากคุณใช้ iPhone หรือ iPad และพบปัญหาหน้าจอค้าง หมุน หรือหน้าจอขาวเมื่อเข้าสู่ระบบ Rabbit Rewards กรุณาทำตามขั้นตอนดังนี้:
+
+1.  **ตรวจสอบวันที่และเวลา:**
+    *   ไปที่ “การตั้งค่า” > “ทั่วไป” > “วันที่และเวลา”
+    *   ตรวจสอบว่าคุณได้เลือกไทม์โซนเวลาถูกต้องหรือไม่ และหากต้องการตั้งวันและเวลาอัตโนมัติ ให้แตะ “ตั้งค่าโดยอัตโนมัติ”
+    <img-name>img-1/IMG-007.jpg</img-name>
+2.  **ตรวจสอบการเชื่อมต่อเครือข่าย:**
+    *   ลองเปิดเว็บบราวเซอร์เพื่อตรวจสอบว่าการเชื่อมต่ออินเทอร์เน็ตของคุณเสถียรหรือไม่
+3.  **ตรวจสอบและซ่อมแซมการตั้งค่า Wi-Fi (หากใช้ Wi-Fi):**
+    *   ไปที่ “การตั้งค่า” > “Wi-Fi” แล้วแตะสัญลักษณ์ “i” ที่คุณเชื่อมต่อ Wi-Fi นั้น ๆ
+    *   แตะ “กำหนดค่าพร็อกซี” > เลือก “กำหนดเอง”
+    *   จากนั้นป้อนข้อมูลเกี่ยวกับ “เซิร์ฟเวอร์และพอร์ต” ให้ถูกต้อง และกด “บันทึก”
+    *   หากเข้าเชื่อมต่อได้แล้ว ให้กลับไปที่ “การตั้งค่า” และไปปิดฟังก์ชันกำหนดค่าพร็อกซี่ เพื่อป้องกันไม่ให้ข้อมูลรั่วไหล
+    <img-name>img-1/IMG-008.jpg</img-name>
+4.  **ตรวจสอบบริการมือถือ (หากใช้ Cellular Data):**
+    *   ไปที่ “การตั้งค่า” > “เซลลูลาร์”
+    *   ตรวจดูว่าแอปฯ ไหนที่ใช้บริการมือถือเยอะมากที่สุด อาจจะกดปิดชั่วคราวไปก่อน อีกทั้งตรวจดูว่าได้อนุญาตให้ App Store เข้าถึงบริการมือถือหรือไม่
+5.  **ตรวจสอบและทำความสะอาดพื้นที่จัดเก็บข้อมูล iPhone:**
+    *   ไปที่ “การตั้งค่า” > “ทั่วไป” > “พื้นที่จัดเก็บข้อมูลของ iPhone”
+    *   คุณสามารถเลือกแอปพลิเคชันที่ไม่ได้ใช้งาน หรือแอปฯ ที่มีพื้นที่เยอะเกินไป จากนั้นกด “ลบแอป” เพื่อถอนการติดตั้งและกู้คืนพื้นที่ข้อมูลให้เยอะขึ้น
+    <img-name>img-1/IMG-009.jpg</img-name>
+6.  **อัปเดตซอฟต์แวร์ iOS:**
+    *   ไปที่ “การตั้งค่า” > “ทั่วไป” > “รายการอัปเดตซอฟต์แวร์”
+    *   หากมีเวอร์ชันใหม่ปรากฏอยู่บนหน้าจอ ให้กด “ดาวน์โหลดและติดตั้ง”
+7.  **ขั้นตอนการเปิดคุกกี้:**
+    *   เปิดแอปฯ การตั้งค่า ในโทรศัพท์
+    *   เลื่อนลงด้านล่างค้นหาคำว่า Safari และแตะ Safari
+    *   เลื่อนลงด้านล่างสุดแตะเลือก ขั้นสูง
+    *   ตรวจสอบคำว่า ปิดกั้นคุกกี้ทั้งหมด หากเป็นสีเขียวให้แตะ 1 ครั้ง เพื่อให้เป็นสีเทา
+    *   ออกจากแอปฯ การตั้งค่า และ เข้าสู่ระบบ แอปฯ แรบบิทรีวอร์ดส
+    <img-name>img-1/IMG-010.jpg</img-name>
+
+---
+
+### สำหรับผู้ใช้งาน Android
+
+หากคุณใช้โทรศัพท์ Android และพบปัญหาหน้าจอค้าง หมุน หรือหน้าจอขาวเมื่อเข้าสู่ระบบ Rabbit Rewards กรุณาทำตามขั้นตอนดังนี้:
+
+1.  **การอัปเดต Rabbit Rewards แอปพลิเคชัน:**
+    *   เปิดแอป Google Play Store
+    *   ค้นหาแอปฯ Rabbit Rewards
+    *   กดอัปเดตแอปฯ เป็นเวอร์ชันล่าสุด
+2.  **ตรวจสอบหน่วยความจำในเครื่อง:**
+    *   ไปที่ การตั้งค่าอุปกรณ์
+    *   แล้วแตะ “การดูแลแบตเตอรี่และอุปกรณ์”
+    *   ที่จัดเก็บข้อมูล
+3.  **ตรวจสอบแอปพลิเคชัน VPN:**
+    *   ตรวจสอบว่าในเครื่องของคุณมีแอปพลิเคชันที่ใช้เชื่อมต่อ VPN หรือไม่ หากมีแนะนำยกเลิกการเชื่อมต่อก่อนการเข้าสู่ระบบ
+4.  **ตรวจสอบการตั้งค่าวันที่และเวลาในเครื่อง:**
+    *   ไปที่ การตั้งค่าอุปกรณ์
+    *   แล้วแตะ “เลือกที่การจัดการทั่วไป”
+5.  **ล้างแคชและคุกกี้ของเบราว์เซอร์ (Chrome):**
+    *   เปิดแอป Chrome ในโทรศัพท์ Android
+    *   ที่ด้านขวาบน ให้แตะ ""เพิ่มเติม"" (ไอคอนจุดสามจุด)
+    *   แตะประวัติการเข้าชม > ล้างข้อมูลการท่องเว็บ
+    *   เลือกช่วงเวลาจากด้านบน หากต้องการลบทุกอย่าง ให้เลือกตั้งแต่เริ่มต้น
+    *   เลือกช่องข้างๆ ""คุกกี้และข้อมูลเว็บไซต์"" และ ""รูปภาพและไฟล์ที่แคชไว้""
+    *   แตะล้างข้อมูล
+6.  **ตั้งค่า Chrome มือถือเป็นเบราว์เซอร์หลัก:**
+    *   เปิดการตั้งค่า ในอุปกรณ์ Android
+    *   แตะแอป
+    *   ในส่วน ""ทั่วไป"" ให้แตะแอปเริ่มต้น
+    *   แตะแอปเบราว์เซอร์ > Chrome
+    <img-name>img-1/IMG-005.jpg</img-name>
+7.  **เปิดใช้งาน (อนุญาต) คุกกี้ใน Google Chrome บน Android:**
+    *   เปิด Chrome ในอุปกรณ์ Android
+    *   ที่ด้านขวาบน ให้แตะเพิ่มเติม (ไอคอนจุดสามจุด) > การตั้งค่า
+    *   แตะการตั้งค่าเว็บไซต์ > คุกกี้ของบุคคลที่สาม
+    *   เลือกตัวเลือก ""อนุญาตคุกกี้ของบุคคลที่สาม""
+8.  **เปิดใช้งาน “การตั้งค่าข้อมูลเว็บไซต์ในอุปกรณ์” ใน Google Chrome บน Android:**
+    *   เปิด Chrome ในอุปกรณ์ Android
+    *   ที่ด้านขวาของแถบที่อยู่ ให้แตะเพิ่มเติม (ไอคอนจุดสามจุด) > การตั้งค่า
+    *   ในส่วน ""ขั้นสูง"" ให้แตะการตั้งค่าเว็บไซต์ > ข้อมูลเว็บไซต์ในอุปกรณ์
+    *   เปิดข้อมูลเว็บไซต์ในอุปกรณ์
+    <img-name>img-1/IMG-006.jpg</img-name>
+
+---
+
+### หากยังพบปัญหาหลังจากทำตามขั้นตอนข้างต้น
+
+*   **ปิดแอปฯ และปิดการทำงานพื้นหลังของแอปฯ**
+*   **ถอนการติดตั้งแอปฯ Rabbit Rewards**
+*   **รีสตาร์ทอุปกรณ์ของคุณ**
+*   **ดาวน์โหลด และติดตั้งแอปฯ Rabbit Rewards ใหม่**
+
+**หมายเหตุ:** ระบบปฏิบัติการมือถือที่รองรับการใช้งานแอปพลิเคชัน Rabbit Rewards คือ iOS ตั้งแต่เวอร์ชัน 12.5.7 ขึ้นไป และ Android ตั้งแต่เวอร์ชัน 8 ขึ้นไป
+
+หากคุณได้ลองทำตามวิธีการข้างต้นทั้งหมดแล้ว แต่ยังพบปัญหาว่าไม่สามารถเข้าสู่ระบบได้เช่นเดิม กรุณาแจ้งรายละเอียดเพิ่มเติมเพื่อให้ฝ่ายที่เกี่ยวข้องตรวจสอบเพิ่มเติมดังนี้:
+
+*   วัน เวลาที่คุณทำการกดเข้าสู่ระบบ
+*   รุ่นมือถือที่ใช้
+*   แคปหน้าจอ หรือคลิปปัญหาที่เข้าสู่ระบบไม่ได้
+*   แจ้งหรือแคปหน้าจอเวอร์ชันมือถือของคุณแนบมาตรวจสอบ
+*   แจ้งหรือแคปหน้าจอเวอร์ชัน Rabbit Rewards Application มาตรวจสอบ
+*   เบราว์เซอร์ที่ใช้เปิด เพื่อเข้าสู่ระบบคืออะไร
+
+หากท่านมีข้อสงสัยหรือต้องการสอบถามรายละเอียดข้อมูลเพิ่มเติม สามารถติดต่อฝ่ายลูกค้าสัมพันธ์แรบบิทรีวอร์ดสหมายเลข 02-150-0523 วันจันทร์-วันอาทิตย์ (ยกเว้นวันหยุดนักขัตฤกษ์) เวลาทำการ 09.00-18.00 น. หรือผ่านช่องทางอีเมล support@rabbit.co.th ค่ะ","หากคุณพบปัญหาหน้าจอขาวหลังจากเข้าสู่ระบบ Rabbit Rewards Application สามารถลองทำตามขั้นตอนเหล่านี้เพื่อแก้ไขปัญหาได้ค่ะ:
+
+1.  **ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต:** ตรวจสอบให้แน่ใจว่าคุณกำลังใช้การเชื่อมต่ออินเทอร์เน็ตที่เสถียร (เครือข่าย Internet ต้องพร้อมใช้งาน)
+2.  **ตรวจสอบหน่วยความจำในเครื่อง:** ตรวจสอบว่าข้อมูลความจำในเครื่องมีความจำเหลือ มากกว่า 300 MB เนื่องจากหากมีน้อยกว่า จะมีผลกระทบกับการเรียกเปิดแอปพลิเคชัน
+3.  **ตรวจสอบแอปพลิเคชัน VPN:** ตรวจสอบว่ามีแอปพลิเคชันที่ใช้เชื่อมต่อ VPN ในเครื่องของท่านหรือไม่ หากมีแนะนำยกเลิกการเชื่อมต่อก่อนการเข้าสู่ระบบ
+4.  **ตรวจสอบเวลาในเครื่อง:** ตรวจสอบว่าเวลาในเครื่องได้ตั้งค่าเป็นเวลาตามประเทศไทย และเป็นเวลาปัจจุบันเรียบร้อย
+5.  **ตรวจสอบแอปพลิเคชันล้างแคช:** ตรวจสอบว่าไม่มีแอปพลิเคชันสำหรับการ ล้างแคช ไฟล์ขยะ หรือ booster ในเครื่องของท่าน
+6.  **อัปเดตแอปพลิเคชัน:** ตรวจสอบให้แน่ใจว่าแอปพลิเคชัน Rabbit Rewards ของคุณอัปเดตเป็นเวอร์ชันล่าสุด
+7.  **ปิดและเปิดแอปพลิเคชันใหม่:** ลองปิดแอปพลิเคชัน Rabbit Rewards และเปิดใหม่อีกครั้ง
+8.  **รีสตาร์ทอุปกรณ์:** รีสตาร์ทอุปกรณ์ของคุณ
+9.  **ถอนการติดตั้งและติดตั้งใหม่:** หากปัญหายังคงอยู่ ลองถอนการติดตั้งแอปพลิเคชัน Rabbit Rewards แล้วดาวน์โหลดและติดตั้งใหม่อีกครั้ง
+
+หากทำตามขั้นตอนเหล่านี้แล้วยังไม่สามารถแก้ไขปัญหาได้ สามารถติดต่อฝ่ายลูกค้าสัมพันธ์ Rabbit Rewards ได้ที่เบอร์ 02-150-0523 หรืออีเมล support@rabbit.co.th เพื่อขอความช่วยเหลือเพิ่มเติมได้เลยค่ะ",4,"The chatbot's response is mostly accurate, relevant, and helpful. It provides a series of troubleshooting steps that align well with the reference answer, covering key areas such as internet connection, memory, VPN, and app updates. However, it lacks some specific details and additional steps provided in the reference answer, such as instructions for both iOS and Android users, and more detailed guidance on settings adjustments. Despite these omissions, the response is still quite comprehensive and useful for addressing the user's issue.",
+10,จะผูกบัตร rabbit กับ line play ได้ไง,[],yes,yes,True,"สวัสดีค่ะ สำหรับขั้นตอนการผูกบัตรแรบบิทกับ LINE Pay สามารถทำได้ง่ายๆ ตามขั้นตอนดังนี้ค่ะ
+
+**1. การเชื่อมบัตรแรบบิท (Rabbit Card) กับ LINE Pay**
+
+สมาชิกสามารถทำตามขั้นตอนในแอปพลิเคชัน LINE บนโทรศัพท์มือถือสมาร์ทโฟนของตนเองได้เลยค่ะ:
+
+1.  เข้าแอปพลิเคชัน LINE เลือกเมนู **“Wallet”**
+2.  กดแถบหลังโลโก้ Pay เพื่อเข้าสู่หน้าบริการหลัก
+3.  กรอกรหัสผ่าน Passcode ของ LINE Pay ของท่านที่ตั้งค่าไว้
+4.  หลังจากนั้นกดไอคอน **“BTS”**
+5.  กด **“ลงทะเบียนบัตรแรบบิทของคุณ”** และกด **“ยอมรับข้อตกลงและเงื่อนไข”**
+6.  ระบุหมายเลขบัตรแรบบิท 13 หลัก และเลือกรูปแบบการชำระเงิน
+7.  กรอกรหัสผ่านของ LINE Pay, ตรวจสอบความถูกต้องของข้อมูล และกด **“ลงทะเบียน”**
+8.  หลังจากลงทะเบียนเรียบร้อยแล้ว กรุณาติดต่อห้องจำหน่ายบัตรโดยสารบีทีเอสทุกสถานีเพื่อเปิดการใช้งาน
+
+<img-name>img-1/IMG-014.jpg</img-name>
+
+**หมายเหตุสำคัญ:**
+
+*   โปรดนำบัตรแรบบิท, บัตรประชาชน และมือถือที่ทำการลงทะเบียนติดต่อที่ห้องจำหน่ายตั๋วโดยสารบีทีเอสทุกสถานีเพื่อเปิดใช้บริการ
+*   กรณีบัตรประเภทที่ผูกเชื่อมกับบัญชี LINE Pay การลงทะเบียนยืนยันตัวตนกับทาง LINE Pay จะครอบคลุมเฉพาะการใช้งานที่อยู่ภายในแอปพลิเคชัน LINE เท่านั้น หากต้องการใช้งานในรูปแบบของบัตรแรบบิททั่วไป จะต้องลงทะเบียนยืนยันตัวตนตามขั้นตอนของบัตรแรบบิท หรือสอบถามเพิ่มเติมได้ที่ แรบบิท ฮอตไลน์ โทร. 02-617-8383 เวลา 6.00 - 24.00 น.
+
+หากมีข้อสงสัยเพิ่มเติมเกี่ยวกับการผูกบัตรแรบบิทกับ LINE Pay สามารถติดต่อ LINE Pay contact center ได้ผ่าน 3 ช่องทางดังนี้ค่ะ:
+
+*   **ติดต่อ Contact Center:** 02-026-3779 เวลา 09.00 - 22.00 น.
+*   **ผ่าน LINE Official account:** @LPCS เวลา 07.00 - 22.00 น.
+*   **ส่งเรื่องได้ที่:** https://contact-cc.line.me/th (ได้ตลอด 24 ชั่วโมง)","Here's a breakdown of how to link your Rabbit Card with LINE Pay:
+
+**1. Initial Setup (LINE Pay & Rabbit Rewards)**
+
+*   **LINE Pay:**
+    *   Make sure you have the LINE app installed and a LINE Pay account set up.
+    *   Your Rabbit Card needs to be of a type that supports LINE Pay linkage.
+*   **Rabbit Rewards:**  You'll want to have a Rabbit Rewards account to link your LINE Pay to.
+
+**2. Linking Steps (Within the LINE App)**
+
+1.  **Open LINE:** Launch the LINE app on your smartphone.
+2.  **Go to Wallet/Pay:** Navigate to the ""Wallet"" or ""Pay"" (Services) tab.
+3.  **LINE Pay Setup:** Ensure you've set up your LINE Pay (if you haven't, follow the prompts to create it).
+4.  **BTS Menu:** Look for and tap the ""BTS"" icon.
+5.  **Register Rabbit Card:** Select ""Register Your Rabbit Card"" and accept the terms and conditions.
+6.  **Enter Card Number:** Enter the 13-digit Rabbit Card number and choose your payment method.
+7.  **LINE Pay Passcode:** Enter your LINE Pay passcode.
+8.  **Verification:** Review the information and tap ""Register.""
+9.  **Activate at Ticket Office:** After registration, you *must* visit a BTS ticket office to activate the card. Bring your Rabbit Card, ID card, and the phone used for registration.
+
+**3. Linking to Rabbit Rewards**
+
+There are two ways to link your LINE Pay to Rabbit Rewards:
+
+*   **Via Rabbit Rewards App:**
+    1.  Open the Rabbit Rewards app.
+    2.  Go to ""My Account.""
+    3.  Select ""Link Rabbit Card.""
+    4.  Log in with your Rabbit Rewards account or create one.
+    5.  Confirm the linking.
+*   **Via BTS Menu in LINE:**
+    1.  Open LINE and tap the BTS icon.
+    2.  Go to ""My Pass"" > ""My Points.""
+    3.  Select ""Sign up for Rabbit Rewards.""
+    4.  Tap ""Sign up"" to confirm the linking.
+
+**Important Notes:**
+
+*   You can link a maximum of 7 Rabbit Card numbers to one Rabbit Rewards account.
+*   Always double-check that you're using the correct LINE Pay and Rabbit Rewards accounts before linking.
+*   Visit [https://rewards.rabbit.co.th/en](https://rewards.rabbit.co.th/en) or the Rabbit Rewards app for more details.
+*   You can contact Line Pay contact center for help: 02-026-3779, @LPCS (LINE Official account), or [https://contact-cc.line.me/th](https://contact-cc.line.me/th).
+
+<img-name>img-1/IMG-014.jpg</img-name><caption>A five-step visual guide on how to bind a Rabbit Card with LINE Pay within the LINE app. The steps include pressing the BTS menu, registering the Rabbit Card, filling in the card number, choosing a payment method, and finally visiting a ticket office to complete the process.</caption>
+",4,"The chatbot's response is mostly accurate and relevant to the user's question about linking a Rabbit Card with LINE Pay. It provides a detailed step-by-step guide similar to the reference answer, including the need to visit a BTS ticket office for activation. However, it introduces additional information about linking to Rabbit Rewards, which, while potentially useful, is not directly requested by the user. This extra detail could cause slight confusion. Overall, the response is helpful and mostly complete, with only minor deviations from the reference.",
+11,เเล้วผูกเเอพ rabbit reward ละ,"[ChatMessage(role='user', content='จะผูกบัตร rabbit กับ line play ได้ไง'), ChatMessage(role='assistant', content='สวัสดีค่ะ สำหรับขั้นตอนการผูกบัตรแรบบิทกับ LINE Pay สามารถทำได้ง่ายๆ ตามขั้นตอนดังนี้ค่ะ\n\n**1. การเชื่อมบัตรแรบบิท (Rabbit Card) กับ LINE Pay**\n\nสมาชิกสามารถทำตามขั้นตอนในแอปพลิเคชัน LINE บนโทรศัพท์มือถือสมาร์ทโฟนของตนเองได้เลยค่ะ:\n\n1.  เข้าแอปพลิเคชัน LINE เลือกเมนู **“Wallet”**\n2.  กดแถบหลังโลโก้ Pay เพื่อเข้าสู่หน้าบริการหลัก\n3.  กรอกรหัสผ่าน Passcode ของ LINE Pay ของท่านที่ตั้งค่าไว้\n4.  หลังจากนั้นกดไอคอน **“BTS”**\n5.  กด **“ลงทะเบียนบัตรแรบบิทของคุณ”** และกด **“ยอมรับข้อตกลงและเงื่อนไข”**\n6.  ระบุหมายเลขบัตรแรบบิท 13 หลัก และเลือกรูปแบบการชำระเงิน\n7.  กรอกรหัสผ่านของ LINE Pay, ตรวจสอบความถูกต้องของข้อมูล และกด **“ลงทะเบียน”**\n8.  หลังจากลงทะเบียนเรียบร้อยแล้ว กรุณาติดต่อห้องจำหน่ายบัตรโดยสารบีทีเอสทุกสถานีเพื่อเปิดการใช้งาน\n\n<img-name>img-1/IMG-014.jpg</img-name>\n\n**หมายเหตุสำคัญ:**\n\n*   โปรดนำบัตรแรบบิท, บัตรประชาชน และมือถือที่ทำการลงทะเบียนติดต่อที่ห้องจำหน่ายตั๋วโดยสารบีทีเอสทุกสถานีเพื่อเปิดใช้บริการ\n*   กรณีบัตรประเภทที่ผูกเชื่อมกับบัญชี LINE Pay การลงทะเบียนยืนยันตัวตนกับทาง LINE Pay จะครอบคลุมเฉพาะการใช้งานที่อยู่ภายในแอปพลิเคชัน LINE เท่านั้น หากต้องการใช้งานในรูปแบบของบัตรแรบบิททั่วไป จะต้องลงทะเบียนยืนยันตัวตนตามขั้นตอนของบัตรแรบบิท หรือสอบถามเพิ่มเติมได้ที่ แรบบิท ฮอตไลน์ โทร. 02-617-8383 เวลา 6.00 - 24.00 น.\n\nหากมีข้อสงสัยเพิ่มเติมเกี่ยวกับการผูกบัตรแรบบิทกับ LINE Pay สามารถติดต่อ LINE Pay contact center ได้ผ่าน 3 ช่องทางดังนี้ค่ะ:\n\n*   **ติดต่อ Contact Center:** 02-026-3779 เวลา 09.00 - 22.00 น.\n*   **ผ่าน LINE Official account:** @LPCS เวลา 07.00 - 22.00 น.\n*   **ส่งเรื่องได้ที่:** https://contact-cc.line.me/th (ได้ตลอด 24 ชั่วโมง)')]",yes,yes,True,"แน่นอนค่ะ หลังจากที่ท่านได้ผูกบัตรแรบบิทกับ LINE Pay แล้ว ท่านสามารถผูกบัญชี LINE Pay กับแอปพลิเคชัน Rabbit Rewards เพื่อสะสมพอยท์และรับสิทธิประโยชน์ต่างๆ ได้ตาม 2 วิธีดังนี้ค่ะ
+
+**2. วิธีผูกบัญชี LINE Pay กับ Rabbit Rewards**
+
+**วิธีที่ 1: ผูกผ่านเมนู Rabbit Rewards บนแอป LINE**
+
+1.  เปิดแอป LINE แล้วไปที่แท็บ **Wallet** หรือ **Pay (Services)**
+2.  สมัคร LINE Pay (ถ้ายังไม่เคยสมัคร)
+3.  เลือกเมนู **Rabbit Rewards** (หากไม่เห็น ให้กด 'ดูทั้งหมด')
+4.  เข้าสู่ระบบด้วยบัญชี Rabbit Rewards หรือสมัครใหม่
+5.  ยืนยันการเชื่อมบัญชี
+    *   ระบบจะผูกบัญชี LINE Pay กับ Rabbit Rewards อัตโนมัติ
+    *   ท่านจะสามารถสะสมพอยท์จากการใช้บัตรแรบบิทใน LINE Pay แลกเที่ยวเดินทาง หรือซื้อแพ็กเกจได้ทันที
+
+<img-name>img-1/IMG-015.jpg</img-name>
+<img-name>img-1/IMG-016.jpg</img-name>
+
+**วิธีที่ 2: ผูกผ่านเมนู BTS บนแอป LINE**
+
+1.  เปิด LINE แล้วแตะที่ ไอคอน **BTS**
+2.  ไปที่เมนู **“My Pass / บัตรของฉัน”** > **“My Points / พอยท์ของฉัน”**
+3.  เลือก **“Sign up for Rabbit Rewards / สมัครสมาชิก”**
+4.  กด **“สมัครสมาชิก”** เพื่อยืนยันการเชื่อม
+5.  เชื่อมบัญชีสำเร็จ
+
+**ข้อควรรู้:**
+
+*   1 บัญชี LINE Pay สามารถเชื่อมได้กับ 1 บัญชี Rabbit Rewards เท่านั้น
+*   เมื่อบัตรแรบบิทถูกผูกกับ LINE Pay แล้ว และ LINE Pay นั้นเชื่อมกับ Rabbit Rewards บัตรแรบบิทจะปรากฏในแอป Rabbit Rewards ที่เมนู “บัตรแรบบิทของฉัน” (แถบ LINE Pay)
+*   โปรดตรวจสอบว่าเป็นบัญชี LINE Pay และ Rabbit Rewards ของตนเอง ก่อนทำการเชื่อมเพื่อป้องกันการผูกผิดบัญชีจากการใช้มือถือของผู้อื่น
+
+หากมีข้อสงสัยเพิ่มเติม สามารถติดต่อ Rabbit Rewards Call Center โทร. 02-150-0523 (วันจันทร์-วันอาทิตย์ ยกเว้นวันหยุดนักขัตฤกษ์ เวลาทำการ 09.00-18.00 น.) ได้เลยนะคะ",สวัสดีค่ะ สำหรับการผูกบัญชี LINE Pay กับ Rabbit Rewards มี 2 วิธีดังนี้ค่ะ\n\n**วิธีที่ 1: ผูกผ่านเมนู Rabbit Rewards บนแอป LINE**\n\n1.  เปิดแอป LINE แล้วไปที่แท็บ **Wallet** หรือ **Pay (Services)**\n2.  สมัคร LINE Pay (ถ้ายังไม่เคยสมัคร)\n3.  เลือกเมนู **Rabbit Rewards** (หากไม่เห็น ให้กด \'ดูทั้งหมด\')\n4.  เข้าสู่ระบบด้วยบัญชี Rabbit Rewards หรือสมัครใหม่\n5.  ยืนยันการเชื่อมบัญชี\n\n<img-name>img-1/IMG-015.jpg</img-name>\n\n**วิธีที่ 2: ผูกผ่านเมนู BTS บนแอป LINE**\n\n1.  เปิด LINE แล้วแตะที่ ไอคอน **BTS**\n2.  ไปที่เมนู **“My Pass / บัตรของฉัน”** > **“My Points / พอยท์ของฉัน”**\n3.  เลือก **“Sign up for Rabbit Rewards / สมัครสมาชิก”**\n4.  กด **“สมัครสมาชิก”** เพื่อยืนยันการเชื่อม\n\n<img-name>img-1/IMG-016.jpg</img-name>\n\nหลังจากผูกสำเร็จ จะสามารถสะสมพอยท์จากการใช้บัตรแรบบิทใน LINE Pay แลกเที่ยวเดินทาง หรือซื้อแพ็กเกจได้ทันทีค่ะ\n\nหากมีข้อสงสัยเพิ่มเติม สามารถสอบถามข้อมูลได้ที่ แรบบิท รีวอร์ดส Call Center โทร. 02-150-0523 หรืออีเมล support@rabbit.co.th ค่ะ,4,"The chatbot's response is mostly accurate and relevant to the user's question about linking the Rabbit Rewards app. It provides both methods for linking LINE Pay with Rabbit Rewards, similar to the reference answer. However, it omits some details present in the reference, such as the specific benefits of linking and the cautionary notes about account linking. Additionally, the chatbot includes an email contact not present in the reference. These minor omissions and additions slightly reduce the completeness and alignment with the reference.",
+12,"ต้องใช้พอยท์เท่าไหร่ในการแลกรับเที่ยว เดินทางบีทีเอสฟรี
+
+
+",[],yes,yes,True,"สำหรับการแลกรับเที่ยวเดินทางบีทีเอสฟรี จะใช้พอยท์แตกต่างกันไปตามประเภทบัตรแรบบิทของคุณค่ะ:
+
+*   **สำหรับผู้ใช้บัตรแรบบิทปกติทั่วไป (Adult Rabbit Card)**:
+    คุณจะต้องใช้ **250 พอยท์** เพื่อแลกรับเที่ยวเดินทางบีทีเอสฟรี 1 เที่ยว
+    <img-name>img-1/IMG-020.jpg</img-name><caption>An image showing that 250 points are required for Adult Rabbit Card users to redeem one free BTS trip.</caption>
+
+*   **สำหรับผู้ใช้บัตรแรบบิทนักเรียนนักศึกษา (Student Rabbit Card)**:
+    คุณจะต้องใช้ **200 พอยท์** เพื่อแลกรับเที่ยวเดินทางบีทีเอสฟรี 1 เที่ยว
+    <img-name>img-1/IMG-021.jpg</img-name><caption>An image showing that 200 points are required for Student Rabbit Card users to redeem one free BTS trip.</caption>
+
+**การเติมเที่ยวเดินทางฟรี:**
+
+*   สำหรับผู้ที่บัตรแรบบิทปกติทั่วไป จะต้องเติมเที่ยวฟรีที่ออฟฟิศจำหน่ายตั๋ว BTS สายสีเขียว
+*   สำหรับผู้ใช้บัตรแรบบิทที่เชื่อม Line Pay เที่ยวฟรีจะถูกเติมเข้าบัญชี Line Pay ที่ผูกเชื่อมกับบัญชีแรบบิทรีวอร์ดสโดยอัตโนมัติ
+*   สำหรับผู้ใช้ Rabbit Wallet เที่ยวฟรีจะถูกเติมเข้ากระเป๋า Wallet บน MyRabbit App ที่ผูกเชื่อมกับบัญชีแรบบิทรีวอร์ดสโดยอัตโนมัติ
+
+**ข้อควรทราบเพิ่มเติม:**
+
+*   เที่ยวฟรีสำหรับนักเรียนนักศึกษา สามารถเติมบนบัตรแรบบิท และ/หรือ บัญชี Line Pay และ/หรือ แรบบิทวอลเล็ท ประเภทนักเรียน นักศึกษาได้เท่านั้น
+*   เที่ยวฟรีสำหรับบุคคลทั่วไป สามารถเติมบนบัตรแรบบิท และ/หรือ บัญชี Line Pay และ/หรือ แรบบิท วอลเล็ทประเภทบุคคลทั่วไปได้เท่านั้น","สำหรับการแลกรับเที่ยวเดินทางบีทีเอสฟรี:
+
+*   **ผู้ที่ใช้บัตรแรบบิทปกติทั่วไป:** จะต้องใช้ 250 พอยท์ เพื่อแลกเป็นเที่ยวเดินทางฟรี 1 เที่ยว
+*   **ผู้ที่ใช้บัตรแรบบิทสำหรับนักเรียน/นักศึกษา:** จะต้องใช้ 200 พอยท์ เพื่อแลกเป็นเที่ยวเดินทางฟรี 1 เที่ยว
+
+นอกจากนี้ ยังมีรายละเอียดเพิ่มเติมเกี่ยวกับการเติมเที่ยวฟรี:
+
+*   สำหรับผู้ที่ใช้บัตรแรบบิทปกติทั่วไป จะต้องเติมเที่ยวฟรีที่ออฟฟิศจำหน่ายตั๋ว BTS สายสีเขียว
+*   สำหรับผู้ใช้บัตรแรบบิทที่เชื่อมต่อกับ Line Pay เที่ยวฟรีจะถูกเติมเข้าบัญชี Line Pay โดยอัตโนมัติ
+*   สำหรับผู้ใช้ Rabbit Wallet เที่ยวฟรีจะถูกเติมเข้ากระเป๋า Wallet บน MyRabbit App โดยอัตโนมัติ",5,"The chatbot's response is accurate and fully answers the user's question, matching the gold standard. It provides the correct point requirements for both Adult and Student Rabbit Card users and includes details on how the free trips are credited, similar to the reference answer. The response is relevant, complete, and helpful.",
+13,"หาพอยจากไหนได้บ้าง
+
+
+","[ChatMessage(role='user', content='ต้องใช้พอยท์เท่าไหร่ในการแลกรับเที่ยว\nเดินทางบีทีเอสฟรี'), ChatMessage(role='assistant', content='สำหรับการแลกรับเที่ยวเดินทางบีทีเอสฟรี จะใช้พอยท์แตกต่างกันไปตามประเภทบัตรแรบบิทของคุณค่ะ:\n\n*   **สำหรับผู้ใช้บัตรแรบบิทปกติทั่วไป (Adult Rabbit Card)**:\n    คุณจะต้องใช้ **250 พอยท์** เพื่อแลกรับเที่ยวเดินทางบีทีเอสฟรี 1 เที่ยว\n    <img-name>img-1/IMG-020.jpg</img-name><caption>An image showing that 250 points are required for Adult Rabbit Card users to redeem one free BTS trip.</caption>\n\n*   **สำหรับผู้ใช้บัตรแรบบิทนักเรียนนักศึกษา (Student Rabbit Card)**:\n    คุณจะต้องใช้ **200 พอยท์** เพื่อแลกรับเที่ยวเดินทางบีทีเอสฟรี 1 เที่ยว\n    <img-name>img-1/IMG-021.jpg</img-name><caption>An image showing that 200 points are required for Student Rabbit Card users to redeem one free BTS trip.</caption>\n\n**การเติมเที่ยวเดินทางฟรี:**\n\n*   สำหรับผู้ที่บัตรแรบบิทปกติทั่วไป จะต้องเติมเที่ยวฟรีที่ออฟฟิศจำหน่ายตั๋ว BTS สายสีเขียว\n*   สำหรับผู้ใช้บัตรแรบบิทที่เชื่อม Line Pay เที่ยวฟรีจะถูกเติมเข้าบัญชี Line Pay ที่ผูกเชื่อมกับบัญชีแรบบิทรีวอร์ดสโดยอัตโนมัติ\n*   สำหรับผู้ใช้ Rabbit Wallet เที่ยวฟรีจะถูกเติมเข้ากระเป๋า Wallet บน MyRabbit App ที่ผูกเชื่อมกับบัญชีแรบบิทรีวอร์ดสโดยอัตโนมัติ\n\n**ข้อควรทราบเพิ่มเติม:**\n\n*   เที่ยวฟรีสำหรับนักเรียนนักศึกษา สามารถเติมบนบัตรแรบบิท และ/หรือ บัญชี Line Pay และ/หรือ แรบบิทวอลเล็ท ประเภทนักเรียน นักศึกษาได้เท่านั้น\n*   เที่ยวฟรีสำหรับบุคคลทั่วไป สามารถเติมบนบัตรแรบบิท และ/หรือ บัญชี Line Pay และ/หรือ แรบบิท วอลเล็ทประเภทบุคคลทั่วไปได้เท่านั้น')]",yes,yes,True,"คุณสามารถสะสมพอยท์ Rabbit Rewards ได้จากหลายช่องทางเลยค่ะ เพื่อให้คุณได้รับพอยท์ไปแลกสิทธิประโยชน์ต่างๆ ได้อย่างเต็มที่ มีดังนี้ค่ะ:
+จากการเดินทางด้วยรถไฟฟ้าบีทีเอส:
+เดินทางด้วยบัตรแรบบิท หรือบัญชี Line Pay / Rabbit Wallet ที่ผูกกับบัญชี Rabbit Rewards ของคุณ
+คุณจะได้รับ 1 พอยท์ต่อ 1 สถานี (ไม่นับสถานีแรกเข้า) สำหรับการเดินทางในเส้นทางสายสุขุมวิท (หมอชิตถึงอ่อนนุช) และ/หรือ สายสีลม (สนามกีฬาแห่งชาติถึงสะพานตากสิน)
+จากการใช้จ่ายกับร้านค้าพันธมิตร:
+ใช้จ่ายผ่านบัตรแรบบิทที่ผูกกับบัญชี Rabbit Rewards ของคุณที่ร้านค้าพันธมิตรที่ร่วมรายการ
+คุณจะได้รับ 1 พอยท์ เมื่อใช้จ่ายครบทุก 20 บาท
+รวมถึงการซื้อสินค้า/บริการที่ร่วมรายการ เช่น ที่ร้าน Turtle
+จากการร่วมกิจกรรมบนแอป Rabbit Rewards:
+ตอบแบบสอบถามบนแอป Rabbit Rewards
+ร่วมกิจกรรมพิเศษต่างๆ เช่น ชาเลนจ์ หรือหมุนกงล้อ ตามเงื่อนไขของแต่ละกิจกรรม
+จากการร่วมแคมเปญและกิจกรรมพิเศษ:
+ร่วมแคมเปญหรือกิจกรรมพิเศษที่ Rabbit Rewards และพันธมิตรกำหนด
+จากการผูกบัญชีกับพาร์ทเนอร์:
+ผูกบัญชีกับพาร์ทเนอร์เพื่อสะสมพอยท์โบนัสเพิ่มเติมมากมาย
+อย่าลืมผูกบัตรแรบบิทของคุณกับบัญชี Rabbit Rewards ก่อนนะคะ เพื่อให้คุณได้รับสิทธิ์การสะสมพอยท์อย่างสมบูรณ์ค่ะ","คุณสามารถสะสมพอยท์ Rabbit Rewards ได้หลายช่องทาง ดังนี้ค่ะ:
+
+*   **เดินทางกับรถไฟฟ้าบีทีเอส:** ใช้บัตร Rabbit, Line Pay หรือ Rabbit Wallet ที่ผูกกับบัญชี Rabbit Rewards
+*   **ใช้จ่ายที่ร้านค้าพันธมิตร:** ใช้บัตร Rabbit ที่ผูกกับบัญชี Rabbit Rewards
+*   **ร่วมกิจกรรมบนแอปฯ Rabbit Rewards:** เช่น ตอบแบบสอบถาม, หมุนกงล้อ หรือกิจกรรมพิเศษ
+*   **ผูกบัญชีกับพาร์ทเนอร์:** เพื่อรับพอยท์โบนัสเพิ่มเติม
+
+สำหรับรายละเอียดเพิ่มเติมเกี่ยวกับวิธีการสะสมพอยท์และร้านค้าพันธมิตร สามารถดูได้ที่: [https://rabbit.co.th/card](https://rabbit.co.th/card) ค่ะ",4,"The chatbot's response is mostly accurate and relevant, providing the main channels for earning Rabbit Rewards points, such as traveling with BTS, spending at partner stores, participating in app activities, and linking accounts with partners. However, it lacks specific details found in the reference answer, such as the exact point accrual rates and specific examples of activities and campaigns. The inclusion of a link for more information is helpful, but the response could be more complete with additional details.",
+14,"สถานีไหนไม่ได้ร่วมการรับพอย
+
+
+","[ChatMessage(role='user', content='ต้องใช้พอยท์เท่าไหร่ในการแลกรับเที่ยว\nเดินทางบีทีเอสฟรี'), ChatMessage(role='assistant', content='สำหรับการแลกรับเที่ยวเดินทางบีทีเอสฟรี จะใช้พอยท์แตกต่างกันไปตามประเภทบัตรแรบบิทของคุณค่ะ:\n\n*   **สำหรับผู้ใช้บัตรแรบบิทปกติทั่วไป (Adult Rabbit Card)**:\n    คุณจะต้องใช้ **250 พอยท์** เพื่อแลกรับเที่ยวเดินทางบีทีเอสฟรี 1 เที่ยว\n    <img-name>img-1/IMG-020.jpg</img-name><caption>An image showing that 250 points are required for Adult Rabbit Card users to redeem one free BTS trip.</caption>\n\n*   **สำหรับผู้ใช้บัตรแรบบิทนักเรียนนักศึกษา (Student Rabbit Card)**:\n    คุณจะต้องใช้ **200 พอยท์** เพื่อแลกรับเที่ยวเดินทางบีทีเอสฟรี 1 เที่ยว\n    <img-name>img-1/IMG-021.jpg</img-name><caption>An image showing that 200 points are required for Student Rabbit Card users to redeem one free BTS trip.</caption>\n\n**การเติมเที่ยวเดินทางฟรี:**\n\n*   สำหรับผู้ที่บัตรแรบบิทปกติทั่วไป จะต้องเติมเที่ยวฟรีที่ออฟฟิศจำหน่ายตั๋ว BTS สายสีเขียว\n*   สำหรับผู้ใช้บัตรแรบบิทที่เชื่อม Line Pay เที่ยวฟรีจะถูกเติมเข้าบัญชี Line Pay ที่ผูกเชื่อมกับบัญชีแรบบิทรีวอร์ดสโดยอัตโนมัติ\n*   สำหรับผู้ใช้ Rabbit Wallet เที่ยวฟรีจะถูกเติมเข้ากระเป๋า Wallet บน MyRabbit App ที่ผูกเชื่อมกับบัญชีแรบบิทรีวอร์ดสโดยอัตโนมัติ\n\n**ข้อควรทราบเพิ่มเติม:**\n\n*   เที่ยวฟรีสำหรับนักเรียนนักศึกษา สามารถเติมบนบัตรแรบบิท และ/หรือ บัญชี Line Pay และ/หรือ แรบบิทวอลเล็ท ประเภทนักเรียน นักศึกษาได้เท่านั้น\n*   เที่ยวฟรีสำหรับบุคคลทั่วไป สามารถเติมบนบัตรแรบบิท และ/หรือ บัญชี Line Pay และ/หรือ แรบบิท วอลเล็ทประเภทบุคคลทั่วไปได้เท่านั้น'), ChatMessage(role='user', content='หาพอยจากไหนได้บ้าง'), ChatMessage(role='assistant', content='คุณสามารถสะสมพอยท์ Rabbit Rewards ได้จากหลายช่องทางเลยค่ะ เพื่อให้คุณได้รับพอยท์ไปแลกสิทธิประโยชน์ต่างๆ ได้อย่างเต็มที่ มีดังนี้ค่ะ:\n\n*   **จากการเดินทางด้วยรถไฟฟ้าบีทีเอส:**\n    *   เดินทางด้วยบัตรแรบบิท หรือบัญชี Line Pay / Rabbit Wallet ที่ผูกกับบัญชี Rabbit Rewards ของคุณ\n    *   คุณจะได้รับ 1 พอยท์ต่อ 1 สถานี (ไม่นับสถานีแรกเข้า) สำหรับการเดินทางในเส้นทางสายสุขุมวิท (หมอชิตถึงอ่อนนุช) และ/หรือ สายสีลม (สนามกีฬาแห่งชาติถึงสะพานตากสิน)\n\n*   **จากการใช้จ่ายกับร้านค้าพันธมิตร:**\n    *   ใช้จ่ายผ่านบัตรแรบบิทที่ผูกกับบัญชี Rabbit Rewards ของคุณที่ร้านค้าพันธมิตรที่ร่วมรายการ\n    *   คุณจะได้รับ 1 พอยท์ เมื่อใช้จ่ายครบทุก 20 บาท\n    *   รวมถึงการซื้อสินค้า/บริการที่ร่วมรายการ เช่น ที่ร้าน Turtle\n\n*   **จากการร่วมกิจกรรมบนแอป Rabbit Rewards:**\n    *   ตอบแบบสอบถามบนแอป Rabbit Rewards\n    *   ร่วมกิจกรรมพิเศษต่างๆ เช่น ชาเลนจ์ หรือหมุนกงล้อ ตามเงื่อนไขของแต่ละกิจกรรม\n\n*   **จากการร่วมแคมเปญและกิจกรรมพิเศษ:**\n    *   ร่วมแคมเปญหรือกิจกรรมพิเศษที่ Rabbit Rewards และพันธมิตรกำหนด\n\n*   **จากการผูกบัญชีกับพาร์ทเนอร์:**\n    *   ผูกบัญชีกับพาร์ทเนอร์เพื่อสะสมพอยท์โบนัสเพิ่มเติมมากมาย\n\nอย่าลืมผูกบัตรแรบบิทของคุณกับบัญชี Rabbit Rewards ก่อนนะคะ เพื่อให้คุณได้รับสิทธิ์การสะสมพอยท์อย่างสมบูรณ์ค่ะ')]",yes,yes,True,"สำหรับการสะสมพอยท์จากการเดินทางด้วยรถไฟฟ้าบีทีเอส จะมีสถานีที่ไม่ได้ร่วมโปรโมชันการรับพอยท์ค่ะ
+คุณจะสามารถสะสมพอยท์ได้เฉพาะการเดินทางในเส้นทางหลักเท่านั้น ได้แก่:
+สายสุขุมวิท: ตั้งแต่สถานีหมอชิต ถึงสถานีอ่อนนุช เท่านั้น
+สายสีลม: ตั้งแต่สถานีสนามกีฬาแห่งชาติ ถึงสถานีสะพานตากสิน เท่านั้น
+ดังนั้น สถานีที่อยู่นอกเหนือจากช่วงที่กำหนดนี้ จะไม่สามารถสะสมพอยท์จากการเดินทางได้ค่ะ และจากข้อมูลที่ให้มา สถานีที่ไม่ได้อยู่ในโปรโมชันสำหรับการสะสมพอยท์อย่างชัดเจนคือ สถานีวงเวียนใหญ่ และ สถานีกรุงธนบุรี ค่ะ",สถานีที่ไม่ได้ร่วมในการสะสมพอยท์จากการเดินทางด้วยรถไฟฟ้าบีทีเอส ได้แก่:\n\n*   **สถานีวงเวียนใหญ่**\n*   **สถานีกรุงธนบุรี**\n\nทั้งนี้ เนื่องจากสถานีทั้งสองไม่ได้อยู่ในโปรโมชันสำหรับการสะสมพอยท์ค่ะ,4,"The chatbot's response is mostly accurate and relevant, identifying the specific stations (วงเวียนใหญ่ and กรุงธนบุรี) that do not participate in the rewards program. However, it lacks the additional context provided in the reference answer about the specific routes and stations where points can be accumulated. This missing information slightly reduces the completeness and helpfulness of the response.",
+15,"พอยเก็บได้นานเเค่ไหน
+
+
+",[],yes,yes,True,"ยินดีให้ข้อมูลเกี่ยวกับการเก็บพอยท์ Rabbit Rewards นะคะ
+แรบบิท พอยท์ ที่คงเหลือในบัญชี Rabbit Rewards ของสมาชิกจะมีอายุไม่เกิน 3 ปีปฏิทิน ค่ะ
+ตัวอย่าง: หากคุณได้รับแรบบิท พอยท์ในวันที่ 30 มิถุนายน 2564 (ซึ่งอยู่ในปีปฏิทินที่ 1) พอยท์เหล่านั้นจะหมดอายุโดยอัตโนมัติเมื่อสิ้นสุดปีปฏิทินที่ 3 นั่นคือในวันที่ 31 ธันวาคม 2566 ค่ะ
+ข้อแนะนำเพิ่มเติม:
+พอยท์ที่ได้รับอาจมีวันหมดอายุที่แตกต่างกันไป ขึ้นอยู่กับเงื่อนไขของกิจกรรมแต่ละประเภทที่ได้รับพอยท์มา
+แนะนำให้คุณตรวจสอบรายละเอียดวันหมดอายุของพอยท์ภายในแอปพลิเคชัน Rabbit Rewards เป็นระยะ เพื่อไม่ให้พอยท์หมดอายุโดยไม่ตั้งใจค่ะ
+แรบบิท พอยท์ ที่คงเหลือในบัญชีอาจมีการแก้ไข เปลี่ยนแปลง ยกเลิก หรือสิ้นสุดลงได้ตามข้อกำหนดและเงื่อนไขอื่น ๆ ซึ่งคุณสามารถศึกษาข้อมูลเพิ่มเติมได้ที่ https://rewards.rabbit.co.th/rr/terms ค่ะ","พอยท์ที่ได้รับมีวันหมดอายุ โดยขึ้นอยู่กับเงื่อนไขของกิจกรรมแต่ละประเภท
+
+แนะนำให้ตรวจสอบรายละเอียดวันหมดอายุของพอยท์ภายในแอป Rabbit Rewards เป็นระยะ
+
+อย่างไรก็ตาม สำหรับพอยท์สะสมรวม > แรบบิท พอยท์ ที่คงเหลือในบัญชีแรบบิท รีวอร์ดสของสมาชิกจะมีอายุไม่เกิน 3 ปีปฏิทิน ยกตัวอย่างเช่น หากสมาชิกได้รับแรบบิท พอยท์ ในวันที่ 30 มิถุนายน 2564(ปีปฏิทินที่ 1) พอยท์ดังกล่าวจะสิ้นอายุลงโดยอัตโนมัติเมื่อสิ้นปีปฏิทินที่ 3 กล่าวคือ วันที่ 31 ธันวาคม 2566
+
+อนึ่ง แรบบิท พอยท์ คงเหลือในบัญชีแรบบิท รีวอร์ดสของสมาชิกยังอาจถูกแก้ไข เปลี่ยนแปลง ยกเลิก หรือสิ้นสุดลงได้ตามข้อกำหนดและเงื่อนไขอื่น ๆ โปรดศึกษาข้อมูลเพิ่มเติมได้ที่ [https://rewards.rabbit.co.th/rr/terms](https://rewards.rabbit.co.th/rr/terms)",5,"The chatbot's response is accurate and fully answers the user's question about the expiration of Rabbit Rewards points. It provides the same key information as the reference answer, including the 3-year expiration period and an example for clarity. It also advises checking the app for specific expiration details and mentions the possibility of changes according to terms and conditions, with a link for further information. The response is complete, relevant, and helpful, closely matching the gold standard.",
+16,"พอยไม่เข้าระบบ ทำไงได้บ้าง
+
+
+","[ChatMessage(role='user', content='พอยเก็บได้นานเเค่ไหน'), ChatMessage(role='assistant', content='สวัสดีค่ะ! ยินดีให้ข้อมูลเกี่ยวกับการเก็บพอยท์ Rabbit Rewards นะคะ\n\nแรบบิท พอยท์ ที่คงเหลือในบัญชี Rabbit Rewards ของสมาชิกจะมีอายุไม่เกิน **3 ปีปฏิทิน** ค่ะ\n\n**ตัวอย่าง:**\nหากคุณได้รับแรบบิท พอยท์ในวันที่ 30 มิถุนายน 2564 (ซึ่งอยู่ในปีปฏิทินที่ 1) พอยท์เหล่านั้นจะหมดอายุโดยอัตโนมัติเมื่อสิ้นสุดปีปฏิทินที่ 3 นั่นคือในวันที่ 31 ธันวาคม 2566 ค่ะ\n\n**ข้อแนะนำเพิ่มเติม:**\n*   พอยท์ที่ได้รับอาจมีวันหมดอายุที่แตกต่างกันไป ขึ้นอยู่กับเงื่อนไขของกิจกรรมแต่ละประเภทที่ได้รับพอยท์มา\n*   แนะนำให้คุณตรวจสอบรายละเอียดวันหมดอายุของพอยท์ภายในแอปพลิเคชัน Rabbit Rewards เป็นระยะ เพื่อไม่ให้พอยท์หมดอายุโดยไม่ตั้งใจค่ะ\n*   แรบบิท พอยท์ ที่คงเหลือในบัญชีอาจมีการแก้ไข เปลี่ยนแปลง ยกเลิก หรือสิ้นสุดลงได้ตามข้อกำหนดและเงื่อนไขอื่น ๆ ซึ่งคุณสามารถศึกษาข้อมูลเพิ่มเติมได้ที่ [https://rewards.rabbit.co.th/rr/terms](https://rewards.rabbit.co.th/rr/terms) ค่ะ')]",yes,yes,True,"หากพอยท์ของคุณไม่เข้าสู่ระบบ Rabbit Rewards ไม่ต้องกังวลนะคะ มีขั้นตอนที่คุณสามารถตรวจสอบเบื้องต้นและดำเนินการได้ดังนี้ค่ะ
+การตรวจสอบเบื้องต้น:
+ตรวจสอบประเภทบัตรและการผูกบัญชี:
+สำหรับบัตรที่ผูกกับ LINE Pay BTS: คุณสามารถตรวจสอบข้อมูลการผูกบัญชีได้ที่แอปพลิเคชัน LINE ค่ะ
+สำหรับบัตรแรบบิททั่วไป: คุณสามารถตรวจสอบข้อมูลการผูกบัญชีได้ที่แอปพลิเคชันหรือเว็บไซต์ Rabbit Rewards โดยไปที่เมนู ""โปรไฟล์"" เลือก ""ข้อมูลส่วนตัว"" แล้วเลือก ""บัตรแรบบิท"" ค่ะ
+ตรวจสอบว่าบัตรแรบบิทของคุณ หรือการผูกบัญชีสมาชิกเป็นไปตามเงื่อนไขที่กำหนดหรือไม่
+ตรวจสอบระยะเวลาการอัปเดตพอยท์:
+พอยท์สะสม Rabbit Rewards จะถูกคำนวณเข้าบัญชีของคุณภายใน 72 ชั่วโมง หลังจากการทำรายการค่ะ
+สำหรับพอยท์จาก BTS Challenge: พอยท์จะถูกเติมในพอยท์สะสมทุกวันพุธประจำสัปดาห์ค่ะ คุณสามารถตรวจสอบวันที่อัปเดตข้อมูลล่าสุดได้บนเมนู ""บีทีเอส ชาเลนจ์"" บนแอปพลิเคชัน Rabbit Rewards
+หากตรวจสอบแล้วพอยท์ยังไม่เข้า หรือขาดหายไป:
+ในกรณีที่คุณตรวจสอบแล้วพบว่าพอยท์สะสม Rabbit Points ขาดหายไปในบัญชี หลังจาก 72 ชั่วโมงที่รายการใช้งานเกิดขึ้นในบัญชี Rabbit Rewards กรุณาติดต่อศูนย์บริการข้อมูลสมาชิกเพื่อทำการตรวจสอบรายการสะสมพอยท์ค่ะ
+โทรศัพท์: 02-150-0523
+อีเมล: support@rabbit.co.th
+ข้อมูลเพิ่มเติม:
+การตรวจสอบรายการสะสมพอยท์จะใช้ระยะเวลาประมาณ 7 วัน
+สามารถตรวจสอบการทำรายการย้อนหลังได้สูงสุด 90 วัน เท่านั้นค่ะ
+หวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ!","สวัสดีค่ะ! หากพอยท์ไม่เข้าสู่ระบบ Rabbit Rewards ค่ะ ดิฉันมีขั้นตอนการตรวจสอบเบื้องต้นดังนี้ค่ะ:
+
+**1. ประเภทบัตรที่ผูกกับ Line Pay BTS:**
+
+*   สมาชิกสามารถเช็คข้อมูลการผูกบัญชีได้ที่แอปพลิเคชัน Line ค่ะ
+
+**2. ประเภทบัตร Rabbit:**
+
+*   สมาชิกสามารถเช็คข้อมูลการผูกบัญชีได้ที่แอปพลิเคชัน หรือเว็บไซต์ Rabbit Rewards (เมนูโปรไฟล์ > ข้อมูลส่วนตัว > บัตร Rabbit) ค่ะ
+*   ตรวจสอบวันที่อัพเดตข้อมูลล่าสุด บนเมนู BTS Challenge ในแอปพลิเคชัน Rabbit Rewards ค่ะ
+
+**3. ระยะเวลาการคำนวณ:**
+
+*   พอยท์สะสม Rabbit Rewards จะถูกคำนวณเข้าบัญชี Rabbit Rewards ของคุณภายใน 72 ชั่วโมงหลังจากการทำรายการค่ะ
+*   สำหรับพอยท์จาก BTS Challenge จะถูกเติมในพอยท์สะสมทุกวันพุธประจำสัปดาห์ค่ะ
+
+**4. หากตรวจสอบแล้วยังไม่พบ:**
+
+*   หากตรวจสอบแล้วพบว่าพอยท์สะสม Rabbit Points ขาดหายในบัญชี หลังจาก 72 ชั่วโมงที่รายการใช้งานที่เกิดขึ้นในบัญชี Rabbit Rewards กรุณาติดต่อศูนย์บริการข้อมูลสมาชิกที่โทร 02-150-0523 เพื่อทำการตรวจสอบรายการสะสมพอยท์ โดยจะใช้ระยะเวลาตรวจสอบ 7 วัน และตรวจสอบการทำรายการย้อนหลัง 90 วันเท่านั้นค่ะ
+
+หวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ หากมีคำถามเพิ่มเติม สามารถสอบถามได้เลยค่ะ",4,"The chatbot's response is mostly accurate, relevant, and helpful. It provides a clear step-by-step guide on how to check the points in the Rabbit Rewards system, similar to the reference answer. However, it lacks the email contact information provided in the reference answer and does not explicitly mention checking if the Rabbit card or account linkage meets the conditions. These omissions slightly reduce the completeness of the response.",
+17,"ต้องการยกเลิกการแลกพอยท์ จะทําอย่างไร
+
+
+","[ChatMessage(role='user', content='พอยเก็บได้นานเเค่ไหน'), ChatMessage(role='assistant', content='สวัสดีค่ะ! ยินดีให้ข้อมูลเกี่ยวกับการเก็บพอยท์ Rabbit Rewards นะคะ\n\nแรบบิท พอยท์ ที่คงเหลือในบัญชี Rabbit Rewards ของสมาชิกจะมีอายุไม่เกิน **3 ปีปฏิทิน** ค่ะ\n\n**ตัวอย่าง:**\nหากคุณได้รับแรบบิท พอยท์ในวันที่ 30 มิถุนายน 2564 (ซึ่งอยู่ในปีปฏิทินที่ 1) พอยท์เหล่านั้นจะหมดอายุโดยอัตโนมัติเมื่อสิ้นสุดปีปฏิทินที่ 3 นั่นคือในวันที่ 31 ธันวาคม 2566 ค่ะ\n\n**ข้อแนะนำเพิ่มเติม:**\n*   พอยท์ที่ได้รับอาจมีวันหมดอายุที่แตกต่างกันไป ขึ้นอยู่กับเงื่อนไขของกิจกรรมแต่ละประเภทที่ได้รับพอยท์มา\n*   แนะนำให้คุณตรวจสอบรายละเอียดวันหมดอายุของพอยท์ภายในแอปพลิเคชัน Rabbit Rewards เป็นระยะ เพื่อไม่ให้พอยท์หมดอายุโดยไม่ตั้งใจค่ะ\n*   แรบบิท พอยท์ ที่คงเหลือในบัญชีอาจมีการแก้ไข เปลี่ยนแปลง ยกเลิก หรือสิ้นสุดลงได้ตามข้อกำหนดและเงื่อนไขอื่น ๆ ซึ่งคุณสามารถศึกษาข้อมูลเพิ่มเติมได้ที่ [https://rewards.rabbit.co.th/rr/terms](https://rewards.rabbit.co.th/rr/terms) ค่ะ'), ChatMessage(role='user', content='พอยไม่เข้าระบบ ทำไงได้บ้าง'), ChatMessage(role='assistant', content='สวัสดีค่ะ! หากพอยท์ของคุณไม่เข้าสู่ระบบ Rabbit Rewards ไม่ต้องกังวลนะคะ มีขั้นตอนที่คุณสามารถตรวจสอบเบื้องต้นและดำเนินการได้ดังนี้ค่ะ\n\n**การตรวจสอบเบื้องต้น:**\n\n1.  **ตรวจสอบประเภทบัตรและการผูกบัญชี:**\n    *   **สำหรับบัตรที่ผูกกับ LINE Pay BTS:** คุณสามารถตรวจสอบข้อมูลการผูกบัญชีได้ที่แอปพลิเคชัน LINE ค่ะ\n    *   **สำหรับบัตรแรบบิททั่วไป:** คุณสามารถตรวจสอบข้อมูลการผูกบัญชีได้ที่แอปพลิเคชันหรือเว็บไซต์ Rabbit Rewards โดยไปที่เมนู ""โปรไฟล์"" เลือก ""ข้อมูลส่วนตัว"" แล้วเลือก ""บัตรแรบบิท"" ค่ะ\n    *   ตรวจสอบว่าบัตรแรบบิทของคุณ หรือการผูกบัญชีสมาชิกเป็นไปตามเงื่อนไขที่กำหนดหรือไม่\n\n2.  **ตรวจสอบระยะเวลาการอัปเดตพอยท์:**\n    *   พอยท์สะสม Rabbit Rewards จะถูกคำนวณเข้าบัญชีของคุณภายใน **72 ชั่วโมง** หลังจากการทำรายการค่ะ\n    *   **สำหรับพอยท์จาก BTS Challenge:** พอยท์จะถูกเติมในพอยท์สะสมทุกวันพุธประจำสัปดาห์ค่ะ คุณสามารถตรวจสอบวันที่อัปเดตข้อมูลล่าสุดได้บนเมนู ""บีทีเอส ชาเลนจ์"" บนแอปพลิเคชัน Rabbit Rewards\n\n**หากตรวจสอบแล้วพอยท์ยังไม่เข้า หรือขาดหายไป:**\n\nในกรณีที่คุณตรวจสอบแล้วพบว่าพอยท์สะสม Rabbit Points ขาดหายไปในบัญชี หลังจาก 72 ชั่วโมงที่รายการใช้งานเกิดขึ้นในบัญชี Rabbit Rewards กรุณาติดต่อศูนย์บริการข้อมูลสมาชิกเพื่อทำการตรวจสอบรายการสะสมพอยท์ค่ะ\n\n*   **โทรศัพท์:** 02-150-0523\n*   **อีเมล:** support@rabbit.co.th\n\n**ข้อมูลเพิ่มเติม:**\n*   การตรวจสอบรายการสะสมพอยท์จะใช้ระยะเวลาประมาณ **7 วัน**\n*   สามารถตรวจสอบการทำรายการย้อนหลังได้สูงสุด **90 วัน** เท่านั้นค่ะ\n\nหวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ!')]",yes,yes,True,"หากคุณต้องการยกเลิกการแลกพอยท์ ต้องขอแจ้งให้ทราบว่า เมื่อคุณได้ทำการแลกพอยท์เป็นคูปองเที่ยวเดินทางฟรี แลกรับสินค้าหรือบริการ หรือแลกเป็นส่วนลดในการซื้อสินค้าหรือบริการแล้ว จะไม่สามารถยกเลิก คืน หรือทอนเป็นเงินสดได้ค่ะ
+ดังนั้น หากคุณได้แลกพอยท์ไปแล้ว รายการนั้นจะไม่สามารถเปลี่ยนแปลงได้ค่ะ",สวัสดีค่ะ! หากคุณต้องการยกเลิกการแลกพอยท์ที่ได้ทำไว้แล้วนั้น โดยปกติแล้ว **จะไม่สามารถยกเลิก คืน หรือทอนเป็นเงินสดได้** ค่ะ เนื่องจากเมื่อคุณทำการแลกพอยท์เป็นคูปองเที่ยวเดินทางฟรี แลกรับสินค้าหรือบริการ หรือแลกเป็นส่วนลดในการซื้อสินค้าหรือบริการแล้ว ถือเป็นการตกลงและใช้สิทธิ์ในการแลกพอยท์นั้นเรียบร้อยแล้ว\n\n**อย่างไรก็ตาม** ในบางกรณี หากเกิดข้อผิดพลาดในการทำรายการ หรือมีเหตุผลอื่น ๆ ที่ทำให้คุณต้องการยกเลิกการแลกพอยท์ คุณสามารถติดต่อศูนย์บริการข้อมูลสมาชิก Rabbit Rewards เพื่อขอคำแนะนำและตรวจสอบความเป็นไปได้ในการดำเนินการดังนี้ค่ะ\n\n*   **โทรศัพท์:** 02-150-0523\n*   **อีเมล:** support@rabbit.co.th\n*   **Facebook Messenger:** [https://www.facebook.com/RabbitReward/](https://www.facebook.com/RabbitReward/)\n\n**เวลาทำการ:** จันทร์ - อาทิตย์ เวลา 9:00 น. - 18:00 น. (ยกเว้นวันหยุดนักขัตฤกษ์)\n\n**ข้อควรทราบ:**\n*   การขอให้ยกเลิกการแลกพอยท์ขึ้นอยู่กับดุลยพินิจของ Rabbit Rewards และอาจมีเงื่อนไขเพิ่มเติมในการพิจารณา\n*   หากได้รับการอนุมัติให้ยกเลิกการแลกพอยท์ พอยท์ที่ใช้ไปอาจถูกคืนกลับไปยังบัญชีของคุณ ขึ้นอยู่กับกรณีและเงื่อนไขที่ Rabbit Rewards กำหนด\n\nหวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ! หากมีคำถามเพิ่มเติม สามารถสอบถามได้เลยค่ะ,4,"The chatbot's response is mostly accurate and relevant, providing detailed information about the inability to cancel point redemption, similar to the reference answer. It also offers additional helpful information on contacting customer service for potential exceptions, which could be beneficial to the user. However, this additional information might not be necessary as the reference answer clearly states that cancellations are not possible. The response is slightly more detailed than needed, which could be seen as a minor deviation from the reference.",
+18,ควย,"[ChatMessage(role='user', content='พอยเก็บได้นานเเค่ไหน'), ChatMessage(role='assistant', content='สวัสดีค่ะ! ยินดีให้ข้อมูลเกี่ยวกับการเก็บพอยท์ Rabbit Rewards นะคะ\n\nแรบบิท พอยท์ ที่คงเหลือในบัญชี Rabbit Rewards ของสมาชิกจะมีอายุไม่เกิน **3 ปีปฏิทิน** ค่ะ\n\n**ตัวอย่าง:**\nหากคุณได้รับแรบบิท พอยท์ในวันที่ 30 มิถุนายน 2564 (ซึ่งอยู่ในปีปฏิทินที่ 1) พอยท์เหล่านั้นจะหมดอายุโดยอัตโนมัติเมื่อสิ้นสุดปีปฏิทินที่ 3 นั่นคือในวันที่ 31 ธันวาคม 2566 ค่ะ\n\n**ข้อแนะนำเพิ่มเติม:**\n*   พอยท์ที่ได้รับอาจมีวันหมดอายุที่แตกต่างกันไป ขึ้นอยู่กับเงื่อนไขของกิจกรรมแต่ละประเภทที่ได้รับพอยท์มา\n*   แนะนำให้คุณตรวจสอบรายละเอียดวันหมดอายุของพอยท์ภายในแอปพลิเคชัน Rabbit Rewards เป็นระยะ เพื่อไม่ให้พอยท์หมดอายุโดยไม่ตั้งใจค่ะ\n*   แรบบิท พอยท์ ที่คงเหลือในบัญชีอาจมีการแก้ไข เปลี่ยนแปลง ยกเลิก หรือสิ้นสุดลงได้ตามข้อกำหนดและเงื่อนไขอื่น ๆ ซึ่งคุณสามารถศึกษาข้อมูลเพิ่มเติมได้ที่ [https://rewards.rabbit.co.th/rr/terms](https://rewards.rabbit.co.th/rr/terms) ค่ะ'), ChatMessage(role='user', content='พอยไม่เข้าระบบ ทำไงได้บ้าง'), ChatMessage(role='assistant', content='สวัสดีค่ะ! หากพอยท์ของคุณไม่เข้าสู่ระบบ Rabbit Rewards ไม่ต้องกังวลนะคะ มีขั้นตอนที่คุณสามารถตรวจสอบเบื้องต้นและดำเนินการได้ดังนี้ค่ะ\n\n**การตรวจสอบเบื้องต้น:**\n\n1.  **ตรวจสอบประเภทบัตรและการผูกบัญชี:**\n    *   **สำหรับบัตรที่ผูกกับ LINE Pay BTS:** คุณสามารถตรวจสอบข้อมูลการผูกบัญชีได้ที่แอปพลิเคชัน LINE ค่ะ\n    *   **สำหรับบัตรแรบบิททั่วไป:** คุณสามารถตรวจสอบข้อมูลการผูกบัญชีได้ที่แอปพลิเคชันหรือเว็บไซต์ Rabbit Rewards โดยไปที่เมนู ""โปรไฟล์"" เลือก ""ข้อมูลส่วนตัว"" แล้วเลือก ""บัตรแรบบิท"" ค่ะ\n    *   ตรวจสอบว่าบัตรแรบบิทของคุณ หรือการผูกบัญชีสมาชิกเป็นไปตามเงื่อนไขที่กำหนดหรือไม่\n\n2.  **ตรวจสอบระยะเวลาการอัปเดตพอยท์:**\n    *   พอยท์สะสม Rabbit Rewards จะถูกคำนวณเข้าบัญชีของคุณภายใน **72 ชั่วโมง** หลังจากการทำรายการค่ะ\n    *   **สำหรับพอยท์จาก BTS Challenge:** พอยท์จะถูกเติมในพอยท์สะสมทุกวันพุธประจำสัปดาห์ค่ะ คุณสามารถตรวจสอบวันที่อัปเดตข้อมูลล่าสุดได้บนเมนู ""บีทีเอส ชาเลนจ์"" บนแอปพลิเคชัน Rabbit Rewards\n\n**หากตรวจสอบแล้วพอยท์ยังไม่เข้า หรือขาดหายไป:**\n\nในกรณีที่คุณตรวจสอบแล้วพบว่าพอยท์สะสม Rabbit Points ขาดหายไปในบัญชี หลังจาก 72 ชั่วโมงที่รายการใช้งานเกิดขึ้นในบัญชี Rabbit Rewards กรุณาติดต่อศูนย์บริการข้อมูลสมาชิกเพื่อทำการตรวจสอบรายการสะสมพอยท์ค่ะ\n\n*   **โทรศัพท์:** 02-150-0523\n*   **อีเมล:** support@rabbit.co.th\n\n**ข้อมูลเพิ่มเติม:**\n*   การตรวจสอบรายการสะสมพอยท์จะใช้ระยะเวลาประมาณ **7 วัน**\n*   สามารถตรวจสอบการทำรายการย้อนหลังได้สูงสุด **90 วัน** เท่านั้นค่ะ\n\nหวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ!'), ChatMessage(role='user', content='ต้องการยกเลิกการแลกพอยท์ จะทําอย่างไร'), ChatMessage(role='assistant', content='สวัสดีค่ะ!\n\nหากคุณต้องการยกเลิกการแลกพอยท์ ต้องขอแจ้งให้ทราบว่า **เมื่อคุณได้ทำการแลกพอยท์เป็นคูปองเที่ยวเดินทางฟรี แลกรับสินค้าหรือบริการ หรือแลกเป็นส่วนลดในการซื้อสินค้าหรือบริการแล้ว จะไม่สามารถยกเลิก คืน หรือทอนเป็นเงินสดได้ค่ะ**\n\nดังนั้น หากคุณได้แลกพอยท์ไปแล้ว รายการนั้นจะไม่สามารถเปลี่ยนแปลงได้ค่ะ')]",no,no,True,ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit Rewards ได้เท่านั้น หากมีคำถามเกี่ยวกับ Rabbit Rewards หรือ BTS สามารถสอบถามได้เลยนะคะ,ขออภัยค่ะ ฉันไม่สามารถตอบคำถามดังกล่าวได้ค่ะ,3,"The chatbot's response is partially correct as it acknowledges the inability to answer the user's inappropriate question. However, it lacks the additional helpful context provided in the reference answer, which redirects the user to ask about Rabbit Rewards or BTS. This omission makes the response less complete and helpful compared to the gold standard.",
+19,"ตรวจสอบเที่ยวเดินทางบนไลน์เพ ย์ได้อย่างไร
+
+
+",[],yes,yes,True,"คุณสามารถตรวจสอบเที่ยวเดินทางบนไลน์เพย์ (Line Pay Rabbit Card) ได้ง่ายๆ ตามขั้นตอนดังนี้ค่ะ
+
+1.  **เข้าสู่ระบบแอปพลิเคชัน LINE** ของคุณ
+2.  ไปที่เมนู **""Wallet""** หรือ **""กระเป๋าไลน์เพย์""**
+3.  เลือกเมนู **""BTS""**
+4.  จากนั้นไปที่เมนู **""My Pass""**
+5.  ระบบจะแสดงจำนวนเที่ยวเดินทางของคุณในรูปแบบ x/x โดยมีสถานะต่างๆ ดังนี้:
+    *   **Inactive Pass / รอเปิดใช้งาน**: แสดงเที่ยวที่เติมแล้วและยังไม่ได้เริ่มใช้เดินทาง เช่น 10/10
+    *   **Active Pass / ใช้อยู่ขณะนี้**: แสดงเที่ยวที่เติมและเริ่มใช้เดินทางแล้ว เช่น 9/10
+    *   **Used/Expired Pass / ใช้แล้ว-หมดอายุ**: แสดงเที่ยวที่เติม ใช้เดินทางแล้ว และเที่ยวหมดอายุแล้ว
+
+<img-name>img-2/IMG-020.jpg</img-name>
+
+หากคุณต้องการสอบถามข้อมูลเพิ่มเติม หรือพบปัญหาในการตรวจสอบสถานะเกี่ยวกับบัญชีไลน์เพย์ หรือบัตรแรบบิทที่ผูกกับบัญชีไลน์เพย์ สามารถติดต่อ Line Pay contact center ได้ผ่าน 3 ช่องทางดังนี้ค่ะ:
+
+*   **ติดต่อ Contact Center**: 02-026-3779 เวลา 09.00 - 22.00 น.
+*   **ผ่าน LINE Official account**: @LPCS เวลา 07.00 - 22.00 น.
+*   **ส่งเรื่องได้ที่**: https://contact-cc.line.me/th (ได้ตลอด 24 ชั่วโมง)","ท่านสามารถตรวจสอบเที่ยวเดินทางบนไลน์เพย์ได้ดังนี้:
+
+1.  เข้าสู่ระบบแอปฯไลน์ > กระเป๋าไลน์เพย์
+2.  ไปที่เมนู BTS
+3.  เมนู My Pass
+
+ท่านจะเห็นจำนวนเที่ยวเดินทาง x/x โดย:
+
+*   Inactive Pass /รอเปิดใช้งาน = แสดงเที่ยวที่เติมและยังไม่ได้ใช้เดินทาง เช่น 10/10
+*   Active Pass/ ใช้อยู่ขณะนี้ = แสดงเที่ยวที่เติมและเริ่มใช้เดินทางแล้ว เช่น 9/10
+*   Used/Expired Pass/ ใช้แล้ว-หมดอายุ = แสดงเที่ยวที่เติม ใช้เดินทางแล้ว และเที่ยวหมดอายุแล้ว
+
+<img-name>img-1/IMG-022.jpg</img-name><caption>A series of screenshots showing how to check remaining BTS trips in the LINE Pay section of the LINE app, illustrating the 'Inactive Pass', 'Active Pass', and 'Used/Expired Pass' statuses.</caption>
+
+หากต้องการข้อมูลเพิ่มเติม สามารถติดต่อ Line Pay contact center ได้ผ่านช่องทางต่อไปนี้:
+
+*   ติดต่อ Contact Center: 02-026-3779 เวลา 09.00 - 22.00 น.
+*   ผ่าน LINE Official account: @LPCS เวลา 07.00 - 22.00 น. (จากเดิม @RLPCS เวลา (จากเดิม 07.00 - 18.00 น.)
+*   ส่งเรื่องได้ที่: https://contact-cc.line.me/th (ได้ตลอด 24 ชั่วโมง)",5,"The chatbot's response is accurate and fully answers the user's question, closely matching the gold standard. It provides clear instructions on how to check the travel trips on LINE Pay, explains the different statuses of the passes, and includes contact information for further assistance. The minor differences in wording do not affect the overall quality or completeness of the response.",
+20,"เเพ็กเก็จรถไฟฟเาสายสีเขียวมีไรบ้าง
+
+
+",[],yes,yes,True,"สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเขียว มีรายละเอียดดังนี้ค่ะ:
+
+**แพ็กเกจเที่ยวเดินทาง รายเดือน**
+
+*   **จำนวนเที่ยว:**
+    *   35 เที่ยว
+    *   25 เที่ยว
+    *   15 เที่ยว
+*   **อายุการใช้งาน:** 30 วัน
+
+และยังมี:
+
+*   **ตั๋วรายเดือนบีทีเอส 10 เที่ยว**
+*   **อายุการใช้งาน:** 60 วัน
+
+แพ็กเกจเหล่านี้มีให้เลือกสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา เพื่อให้คุณสามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้เลยค่ะ
+
+โปรโมชันนี้มีผลตั้งแต่วันที่ 1 เมษายน 2568 ถึงวันที่ 24 สิงหาคม 2568
+
+<img-name>img-2/IMG-004.jpg</img-name>
+
+**เส้นทางที่ครอบคลุม:**
+เที่ยวเดินทางในแพ็กเกจนี้สำหรับเดินทางในเส้นทางบีทีเอสสายสีเขียวหลัก ได้แก่ สถานีหมอชิตถึงสถานีอ่อนนุช และสถานีสนามกีฬาแห่งชาติถึงสถานีสะพานตากสิน รวมถึงสถานีส่วนต่อขยายสถานีกรุงธนบุรี และสถานีวงเวียนใหญ่ รวมเป็น 26 สถานี เท่านั้น (ไม่รวมส่วนต่อขยายรถไฟฟ้าอื่นๆ ในสายสีลม-สุขุมวิท และไม่รวมรถไฟฟ้าสายสีทอง สายสีเหลือง หรือสายสีชมพู)
+
+**เงื่อนไขการใช้งาน:**
+หลังจากเติมเที่ยวเดินทางเข้าบัตรแรบบิทแล้ว ผู้โดยสารจะต้องเดินทางเที่ยวแรกภายใน 7 วัน และใช้เที่ยวเดินทางที่เหลือภายใน 30 หรือ 60 วัน ตามอายุการใช้งานตามเงื่อนไขของแพ็กเกจค่ะ","แพ็กเกจเที่ยวเดินทางสำหรับรถไฟฟ้าสายสีเขียวมีดังนี้:
+
+*   **แพ็กเกจรายเดือน:**
+    *   ตั๋วรายเดือน 35 เที่ยว
+    *   ตั๋วรายเดือน 25 เที่ยว
+    *   ตั๋วรายเดือน 15 เที่ยว (อายุการใช้งาน 30 วัน)
+    *   ตั๋วรายเดือน 10 เที่ยว (อายุการใช้งาน 60 วัน)
+*   **สำหรับบุคคลทั่วไปและนักเรียน/นักศึกษา:** สามารถเลือกจำนวนเที่ยวการเดินทางที่ตอบโจทย์ราคาโปรโมชัน
+*   **ระยะเวลาจำหน่าย:** 1 เมษายน 2568 – 24 สิงหาคม 2568
+
+แพ็กเกจเหล่านี้ใช้ได้สำหรับเส้นทาง BTS สายสีเขียวหลัก ได้แก่ สถานีหมอชิตถึงสถานีอ่อนนุช และสถานีสนามกีฬาแห่งชาติถึงสถานีสะพานตากสิน รวมถึงสถานีส่วนต่อขยายสถานีกรุงธนบุรี และสถานีวงเวียนใหญ่ รวมเป็น 26 สถานี (ไม่รวมส่วนต่อขยายรถไฟฟ้าอื่นๆ ในสายสีลม-สุขุมวิท และไม่รวมรถไฟฟ้าสายสีทอง สายสีเหลือง หรือสายสีชมพู)",4,"The chatbot's response is mostly accurate and relevant to the user's question. It provides details about the travel packages for the BTS Green Line, including the number of trips and the validity period, similar to the reference answer. However, it lacks some minor details such as the specific condition that the first trip must be used within 7 days after loading the trips onto the Rabbit card. Overall, the response is helpful and closely matches the reference answer, with only minor omissions.",
+21,สีเหลืองละ,"[ChatMessage(role='user', content='เเพ็กเก็จรถไฟฟเาสายสีเขียวมีไรบ้าง'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเขียว มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n\n*   **จำนวนเที่ยว:**\n    *   35 เที่ยว\n    *   25 เที่ยว\n    *   15 เที่ยว\n*   **อายุการใช้งาน:** 30 วัน\n\nและยังมี:\n\n*   **ตั๋วรายเดือนบีทีเอส 10 เที่ยว**\n*   **อายุการใช้งาน:** 60 วัน\n\nแพ็กเกจเหล่านี้มีให้เลือกสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา เพื่อให้คุณสามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้เลยค่ะ\n\nโปรโมชันนี้มีผลตั้งแต่วันที่ 1 เมษายน 2568 ถึงวันที่ 24 สิงหาคม 2568\n\n<img-name>img-2/IMG-004.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nเที่ยวเดินทางในแพ็กเกจนี้สำหรับเดินทางในเส้นทางบีทีเอสสายสีเขียวหลัก ได้แก่ สถานีหมอชิตถึงสถานีอ่อนนุช และสถานีสนามกีฬาแห่งชาติถึงสถานีสะพานตากสิน รวมถึงสถานีส่วนต่อขยายสถานีกรุงธนบุรี และสถานีวงเวียนใหญ่ รวมเป็น 26 สถานี เท่านั้น (ไม่รวมส่วนต่อขยายรถไฟฟ้าอื่นๆ ในสายสีลม-สุขุมวิท และไม่รวมรถไฟฟ้าสายสีทอง สายสีเหลือง หรือสายสีชมพู)\n\n**เงื่อนไขการใช้งาน:**\nหลังจากเติมเที่ยวเดินทางเข้าบัตรแรบบิทแล้ว ผู้โดยสารจะต้องเดินทางเที่ยวแรกภายใน 7 วัน และใช้เที่ยวเดินทางที่เหลือภายใน 30 หรือ 60 วัน ตามอายุการใช้งานตามเงื่อนไขของแพ็กเกจค่ะ')]",yes,yes,True,"สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเหลือง (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:
+
+**แพ็กเกจเที่ยวเดินทาง รายเดือน**
+*   **อายุการใช้งาน:** 30 วัน
+*   **จำนวนเที่ยว:** สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:
+    *   15 เที่ยว
+    *   25 เที่ยว
+    *   สูงสุด 35 เที่ยว
+*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา
+
+**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**
+*   **อายุการใช้งาน:** 7 วัน
+*   **จำนวนเที่ยว:** 10 เที่ยว
+*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา
+
+<img-name>img-2/IMG-005.jpg</img-name>
+
+**เส้นทางที่ครอบคลุม:**
+แพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีเหลือง ใช้เดินทางในเส้นทางรถไฟฟ้าสายสีเหลือง 23 สถานี (สถานีลาดพร้าว ถึงสถานีสำโรง) เท่านั้นค่ะ","สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเหลือง มีรายละเอียดดังนี้ค่ะ:
+
+**แพ็กเกจเที่ยวเดินทาง รายเดือน**
+
+*   **จำนวนเที่ยว:**
+    *   35 เที่ยว
+    *   25 เที่ยว
+    *   15 เที่ยว
+
+**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**
+
+*   **จำนวนเที่ยว:** 10 เที่ยว
+*   **อายุการใช้งาน:** 7 วัน
+
+แพ็กเกจเหล่านี้มีให้เลือกสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา เพื่อให้คุณสามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้เลยค่ะ
+
+<img-name>img-2/IMG-006.jpg</img-name>
+
+**เส้นทางที่ครอบคลุม:**
+
+แพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีเหลือง ใช้เดินทางในเส้นทางรถไฟฟ้าสายสีเหลือง 23 สถานี (สถานีลาดพร้าว ถึงสถานีสำโรง) เท่านั้น
+
+หากคุณต้องการซื้อแพ็กเกจนี้ สามารถซื้อได้ที่ห้องจำหน่ายตั๋วของสถานีรถไฟฟ้าสายสีเหลือง โดยชำระเงินได้ทั้งเงินสด และพร้อมเพย์ค่ะ
+
+หากบัตรของคุณผูกกับ Line Pay หรือ Rabbit Wallet ไปแล้ว สามารถซื้อเที่ยวผ่านแอปพลิเคชัน Rabbit Rewards ได้ช่องทางเดียวเท่านั้น และจะไม่ได้รับคูปองร้านค้าพันธมิตรแนบมากับแพ็กเกจในภายหลังค่ะ",4,"The chatbot's response is mostly accurate and relevant, providing detailed information about the Rabbit Rewards program for the Yellow Line, similar to the reference answer. It includes details about the monthly and weekly travel packages, the number of trips, and the coverage area. However, it omits the specific duration of the monthly package (30 days) and includes additional information about purchasing options and payment methods, which, while helpful, were not present in the reference answer. These differences slightly affect completeness and alignment with the reference, but overall, the response is informative and useful.",
+22,ชมพูละ,"[ChatMessage(role='user', content='เเพ็กเก็จรถไฟฟเาสายสีเขียวมีไรบ้าง'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเขียว มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n\n*   **จำนวนเที่ยว:**\n    *   35 เที่ยว\n    *   25 เที่ยว\n    *   15 เที่ยว\n*   **อายุการใช้งาน:** 30 วัน\n\nและยังมี:\n\n*   **ตั๋วรายเดือนบีทีเอส 10 เที่ยว**\n*   **อายุการใช้งาน:** 60 วัน\n\nแพ็กเกจเหล่านี้มีให้เลือกสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา เพื่อให้คุณสามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้เลยค่ะ\n\nโปรโมชันนี้มีผลตั้งแต่วันที่ 1 เมษายน 2568 ถึงวันที่ 24 สิงหาคม 2568\n\n<img-name>img-2/IMG-004.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nเที่ยวเดินทางในแพ็กเกจนี้สำหรับเดินทางในเส้นทางบีทีเอสสายสีเขียวหลัก ได้แก่ สถานีหมอชิตถึงสถานีอ่อนนุช และสถานีสนามกีฬาแห่งชาติถึงสถานีสะพานตากสิน รวมถึงสถานีส่วนต่อขยายสถานีกรุงธนบุรี และสถานีวงเวียนใหญ่ รวมเป็น 26 สถานี เท่านั้น (ไม่รวมส่วนต่อขยายรถไฟฟ้าอื่นๆ ในสายสีลม-สุขุมวิท และไม่รวมรถไฟฟ้าสายสีทอง สายสีเหลือง หรือสายสีชมพู)\n\n**เงื่อนไขการใช้งาน:**\nหลังจากเติมเที่ยวเดินทางเข้าบัตรแรบบิทแล้ว ผู้โดยสารจะต้องเดินทางเที่ยวแรกภายใน 7 วัน และใช้เที่ยวเดินทางที่เหลือภายใน 30 หรือ 60 วัน ตามอายุการใช้งานตามเงื่อนไขของแพ็กเกจค่ะ'), ChatMessage(role='user', content='สีเหลืองละ'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเหลือง (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n*   **อายุการใช้งาน:** 30 วัน\n*   **จำนวนเที่ยว:** สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:\n    *   15 เที่ยว\n    *   25 เที่ยว\n    *   สูงสุด 35 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**\n*   **อายุการใช้งาน:** 7 วัน\n*   **จำนวนเที่ยว:** 10 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n<img-name>img-2/IMG-005.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nแพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีเหลือง ใช้เดินทางในเส้นทางรถไฟฟ้าสายสีเหลือง 23 สถานี (สถานีลาดพร้าว ถึงสถานีสำโรง) เท่านั้นค่ะ')]",yes,yes,True,"สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีชมพู (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:
+แพ็กเกจเที่ยวเดินทาง รายเดือน
+อายุการใช้งาน: 30 วัน
+จำนวนเที่ยว: สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:
+15 เที่ยว
+25 เที่ยว
+สูงสุด 35 เที่ยว
+สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา
+แพ็กเกจเที่ยวเดินทาง รายสัปดาห์
+อายุการใช้งาน: 7 วัน
+จำนวนเที่ยว: 10 เที่ยว
+สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา
+<img-name>img-2/IMG-006.jpg</img-name>
+เส้นทางที่ครอบคลุม: แพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีชมพู ครอบคลุม 30 สถานี (ตั้งแต่สถานีศูนย์ราชการนนทบุรีถึงสถานีมีนบุรี) เท่านั้นค่ะ",สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีชมพู (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n*   **อายุการใช้งาน:** 30 วัน\n*   **จำนวนเที่ยว:**\n    *   15 เที่ยว\n    *   25 เที่ยว\n    *   สูงสุด 35 เที่ยว\n\n**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**\n*   **อายุการใช้งาน:** 7 วัน\n*   **จำนวนเที่ยว:** 10 เที่ยว\n\nสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n<img-name>img-2/IMG-007.jpg</img-name>\n\n**ข้อควรรู้:**\n*   เมื่อเติมเที่ยวเดินทางเข้าบัตรแรบบิทที่ผูกบัญชี แรบบิท ไลน์ เพย์ หรือ แรบบิท วอลเล็ท แล้ว ท่านจะต้องเดินทางเที่ยวแรกภายใน 7 วัน\n*   เที่ยวเดินทางที่เหลือจะมีอายุการใช้งาน 30 หรือ 7 วัน นับจากวันที่มีการใช้งานครั้งแรก\n*   สำหรับเที่ยวเดินทางที่ไม่ได้ใช้ภายในกำหนดเวลาดังกล่าว จะถูกยกเลิกโดยอัตโนมัติค่ะ,4,"The chatbot's response is mostly accurate and relevant to the user's question about the Rabbit Rewards program for the Pink Line. It provides detailed information about the monthly and weekly travel packages, including the duration and number of trips, similar to the reference answer. However, it includes additional information about the usage conditions and an image with a different name, which is not present in the reference. The response is helpful but slightly deviates from the reference by including extra details that were not requested by the user.",
+23,ไปกลับนับ 1 เที่ยว หรือไป 1 กลับ 1,"[ChatMessage(role='user', content='เเพ็กเก็จรถไฟฟเาสายสีเขียวมีไรบ้าง'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเขียว มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n\n*   **จำนวนเที่ยว:**\n    *   35 เที่ยว\n    *   25 เที่ยว\n    *   15 เที่ยว\n*   **อายุการใช้งาน:** 30 วัน\n\nและยังมี:\n\n*   **ตั๋วรายเดือนบีทีเอส 10 เที่ยว**\n*   **อายุการใช้งาน:** 60 วัน\n\nแพ็กเกจเหล่านี้มีให้เลือกสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา เพื่อให้คุณสามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้เลยค่ะ\n\nโปรโมชันนี้มีผลตั้งแต่วันที่ 1 เมษายน 2568 ถึงวันที่ 24 สิงหาคม 2568\n\n<img-name>img-2/IMG-004.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nเที่ยวเดินทางในแพ็กเกจนี้สำหรับเดินทางในเส้นทางบีทีเอสสายสีเขียวหลัก ได้แก่ สถานีหมอชิตถึงสถานีอ่อนนุช และสถานีสนามกีฬาแห่งชาติถึงสถานีสะพานตากสิน รวมถึงสถานีส่วนต่อขยายสถานีกรุงธนบุรี และสถานีวงเวียนใหญ่ รวมเป็น 26 สถานี เท่านั้น (ไม่รวมส่วนต่อขยายรถไฟฟ้าอื่นๆ ในสายสีลม-สุขุมวิท และไม่รวมรถไฟฟ้าสายสีทอง สายสีเหลือง หรือสายสีชมพู)\n\n**เงื่อนไขการใช้งาน:**\nหลังจากเติมเที่ยวเดินทางเข้าบัตรแรบบิทแล้ว ผู้โดยสารจะต้องเดินทางเที่ยวแรกภายใน 7 วัน และใช้เที่ยวเดินทางที่เหลือภายใน 30 หรือ 60 วัน ตามอายุการใช้งานตามเงื่อนไขของแพ็กเกจค่ะ'), ChatMessage(role='user', content='สีเหลืองละ'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเหลือง (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n*   **อายุการใช้งาน:** 30 วัน\n*   **จำนวนเที่ยว:** สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:\n    *   15 เที่ยว\n    *   25 เที่ยว\n    *   สูงสุด 35 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**\n*   **อายุการใช้งาน:** 7 วัน\n*   **จำนวนเที่ยว:** 10 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n<img-name>img-2/IMG-005.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nแพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีเหลือง ใช้เดินทางในเส้นทางรถไฟฟ้าสายสีเหลือง 23 สถานี (สถานีลาดพร้าว ถึงสถานีสำโรง) เท่านั้นค่ะ'), ChatMessage(role='user', content='ชมพูละ'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีชมพู (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n*   **อายุการใช้งาน:** 30 วัน\n*   **จำนวนเที่ยว:** สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:\n    *   15 เที่ยว\n    *   25 เที่ยว\n    *   สูงสุด 35 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**\n*   **อายุการใช้งาน:** 7 วัน\n*   **จำนวนเที่ยว:** 10 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n<img-name>img-2/IMG-006.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nแพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีชมพู ครอบคลุม 30 สถานี (ตั้งแต่สถานีศูนย์ราชการนนทบุรีถึงสถานีมีนบุรี) เท่านั้นค่ะ')]",yes,yes,True,"การนับเที่ยวเดินทางสำหรับแพ็กเกจ จะนับตามจำนวนครั้งที่คุณเดินทางเข้า-ออกสถานีค่ะ
+
+*   **""ไป""** (การเดินทางจากจุดเริ่มต้นไปยังปลายทาง) จะนับเป็น **1 เที่ยว**
+*   **""กลับ""** (การเดินทางจากปลายทางกลับมายังจุดเริ่มต้น) จะนับเป็น **1 เที่ยว**
+
+ดังนั้น หากคุณเดินทางไป-กลับ จะนับเป็น **2 เที่ยว** ค่ะ",สำหรับแพ็กเกจเที่ยวเดินทางของรถไฟฟ้าสายสีเขียว สีเหลือง และสีชมพู จะนับเป็นการเดินทาง 1 เที่ยว ไม่ว่าจะเดินทางไปหรือกลับนะคะ ดังนั้น หากคุณเดินทางไปและกลับในวันเดียวกัน จะถือว่าใช้เที่ยวเดินทาง 2 เที่ยวค่ะ,4,"The chatbot's response is mostly accurate and relevant to the user's question. It correctly explains that each journey, whether going or returning, counts as one trip, and thus a round trip counts as two trips. However, the mention of specific train lines (green, yellow, and pink) is not present in the reference answer and may not be necessary for the user's question. This additional detail does not detract significantly from the overall accuracy but slightly affects the completeness in terms of matching the reference answer.",
+24,ถ้าใช้เที่ยวหมด ก่อน 30 วัน สมัครใหม่ได้เลย หรือต้องรอครบ 30 วัน,"[ChatMessage(role='user', content='เเพ็กเก็จรถไฟฟเาสายสีเขียวมีไรบ้าง'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเขียว มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n\n*   **จำนวนเที่ยว:**\n    *   35 เที่ยว\n    *   25 เที่ยว\n    *   15 เที่ยว\n*   **อายุการใช้งาน:** 30 วัน\n\nและยังมี:\n\n*   **ตั๋วรายเดือนบีทีเอส 10 เที่ยว**\n*   **อายุการใช้งาน:** 60 วัน\n\nแพ็กเกจเหล่านี้มีให้เลือกสำหรับบุคคลทั่วไป และนักเรียน นักศึกษา เพื่อให้คุณสามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้เลยค่ะ\n\nโปรโมชันนี้มีผลตั้งแต่วันที่ 1 เมษายน 2568 ถึงวันที่ 24 สิงหาคม 2568\n\n<img-name>img-2/IMG-004.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nเที่ยวเดินทางในแพ็กเกจนี้สำหรับเดินทางในเส้นทางบีทีเอสสายสีเขียวหลัก ได้แก่ สถานีหมอชิตถึงสถานีอ่อนนุช และสถานีสนามกีฬาแห่งชาติถึงสถานีสะพานตากสิน รวมถึงสถานีส่วนต่อขยายสถานีกรุงธนบุรี และสถานีวงเวียนใหญ่ รวมเป็น 26 สถานี เท่านั้น (ไม่รวมส่วนต่อขยายรถไฟฟ้าอื่นๆ ในสายสีลม-สุขุมวิท และไม่รวมรถไฟฟ้าสายสีทอง สายสีเหลือง หรือสายสีชมพู)\n\n**เงื่อนไขการใช้งาน:**\nหลังจากเติมเที่ยวเดินทางเข้าบัตรแรบบิทแล้ว ผู้โดยสารจะต้องเดินทางเที่ยวแรกภายใน 7 วัน และใช้เที่ยวเดินทางที่เหลือภายใน 30 หรือ 60 วัน ตามอายุการใช้งานตามเงื่อนไขของแพ็กเกจค่ะ'), ChatMessage(role='user', content='สีเหลืองละ'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีเหลือง (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n*   **อายุการใช้งาน:** 30 วัน\n*   **จำนวนเที่ยว:** สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:\n    *   15 เที่ยว\n    *   25 เที่ยว\n    *   สูงสุด 35 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**\n*   **อายุการใช้งาน:** 7 วัน\n*   **จำนวนเที่ยว:** 10 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n<img-name>img-2/IMG-005.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nแพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีเหลือง ใช้เดินทางในเส้นทางรถไฟฟ้าสายสีเหลือง 23 สถานี (สถานีลาดพร้าว ถึงสถานีสำโรง) เท่านั้นค่ะ'), ChatMessage(role='user', content='ชมพูละ'), ChatMessage(role='assistant', content='สวัสดีค่ะ! สำหรับแพ็กเกจเที่ยวเดินทางรถไฟฟ้าสายสีชมพู (จากน้องนมเย็น) มีรายละเอียดดังนี้ค่ะ:\n\n**แพ็กเกจเที่ยวเดินทาง รายเดือน**\n*   **อายุการใช้งาน:** 30 วัน\n*   **จำนวนเที่ยว:** สามารถเลือกจำนวนเที่ยวที่ตอบโจทย์การเดินทางของคุณได้ ไม่ว่าจะเป็น:\n    *   15 เที่ยว\n    *   25 เที่ยว\n    *   สูงสุด 35 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n**แพ็กเกจเที่ยวเดินทาง รายสัปดาห์**\n*   **อายุการใช้งาน:** 7 วัน\n*   **จำนวนเที่ยว:** 10 เที่ยว\n*   สำหรับบุคคลทั่วไป และนักเรียน นักศึกษา\n\n<img-name>img-2/IMG-006.jpg</img-name>\n\n**เส้นทางที่ครอบคลุม:**\nแพ็กเกจสำหรับการเดินทางรถไฟฟ้ามหานคร สายสีชมพู ครอบคลุม 30 สถานี (ตั้งแต่สถานีศูนย์ราชการนนทบุรีถึงสถานีมีนบุรี) เท่านั้นค่ะ'), ChatMessage(role='user', content='ไปกลับนับ 1 เที่ยว หรือไป 1 กลับ 1'), ChatMessage(role='assistant', content='การนับเที่ยวเดินทางสำหรับแพ็กเกจ จะนับตามจำนวนครั้งที่คุณเดินทางเข้า-ออกสถานีค่ะ\n\n*   **""ไป""** (การเดินทางจากจุดเริ่มต้นไปยังปลายทาง) จะนับเป็น **1 เที่ยว**\n*   **""กลับ""** (การเดินทางจากปลายทางกลับมายังจุดเริ่มต้น) จะนับเป็น **1 เที่ยว**\n\nดังนั้น หากคุณเดินทางไป-กลับ จะนับเป็น **2 เที่ยว** ค่ะ')]",yes,yes,True,"คุณสามารถซื้อแพ็กเกจใหม่ได้เลยค่ะ ไม่จำเป็นต้องรอให้ครบ 30 วัน หรือรอให้แพ็กเกจเดิมหมดอายุค่ะ
+ตามข้อมูลที่ให้มา คุณสามารถซื้อแพ็กเกจได้หลายแพ็กเกจในช่วงเวลาเดียวกันและไม่จำกัดจำนวนแพ็กเกจเลยค่ะ
+อย่างไรก็ตาม เพื่อให้การใช้งานเป็นไปอย่างราบรื่นและป้องกันการลืมใช้คูปองหรือเที่ยวเดินทางที่อาจหมดอายุไปก่อน แนะนำให้คุณซื้อแพ็กเกจใหม่และเติมเที่ยวเดินทางเข้าบัตรเมื่อเห็นว่าเที่ยวเดินทางจากแพ็กเกจเดิมใกล้จะหมดแล้วค่ะ",หากคุณใช้เที่ยวเดินทางในแพ็กเกจหมดก่อน 30 วัน คุณสามารถสมัครแพ็กเกจใหม่ได้เลยทันทีค่ะ ไม่จำเป็นต้องรอให้ครบ 30 วัน\n\nอย่างไรก็ตาม สิ่งสำคัญคือต้องตรวจสอบเงื่อนไขของแพ็กเกจแต่ละประเภทก่อนตัดสินใจสมัครใหม่ เพื่อให้แน่ใจว่าคุณเข้าใจระยะเวลาการใช้งาน และข้อกำหนดอื่นๆ ที่เกี่ยวข้องค่ะ,4,"The chatbot's response is mostly accurate and relevant, addressing the user's question about whether they can purchase a new package immediately after using up their trips. It correctly states that there is no need to wait 30 days. However, it lacks the additional helpful advice found in the reference answer about managing package purchases to avoid expiration issues. The suggestion to check package conditions is useful but doesn't fully cover the completeness aspect as the reference does.",
+25,"ขอวิธีการเติมเที่ยวจากคูปอง
+
+
+",[],yes,yes,True,"สำหรับวิธีการเติมเที่ยวจากคูปอง หรือใช้คูปองร้านค้าจากเมนู ""คูปอง"" สามารถทำตามขั้นตอนง่ายๆ ดังนี้ค่ะ:
+
+1.  **ไปที่แอปพลิเคชันแรบบิท รีวอร์ดส (Rabbit Rewards)**
+2.  เข้าสู่เมนู **“สมาชิก”**
+3.  เลือก **“กระเป๋าของฉัน”**
+4.  จากนั้นเลือก **“คูปอง”**
+    *   หากหน้าคูปองแสดงเป็น 0 ให้ลองรีเฟรชหน้าแอปพลิเคชัน คูปองเที่ยวก็จะแสดงขึ้นมาค่ะ
+5.  เมื่อคูปองแสดงขึ้นมาแล้ว ให้กด **“ใช้สิทธิ”** เพื่อเติมเที่ยวตามประเภทการใช้งานบัตรที่คุณต้องการ
+
+**ข้อแนะนำ:** ควรตรวจสอบประเภทการใช้งานบัตรแรบบิทที่ผูกไว้บนบัญชีสมาชิกของคุณก่อนที่จะกดใช้สิทธิ์ทุกครั้งนะคะ
+
+หรืออีกวิธีหนึ่ง คุณสามารถทำรายการได้โดยตรงจาก:
+*   เมนู **""คูปองของฉัน""**
+
+<img-name>img-2/IMG-014.jpg</img-name>
+<img-name>img-2/IMG-015.jpg</img-name>
+
+หวังว่าข้อมูลนี้จะเป็นประโยชน์นะคะ!","แน่นอนค่ะ! วิธีการเติมเที่ยวจากคูปอง หรือใช้คูปองร้านค้า จากเมนู “คูปอง” สามารถทำตามขั้นตอนดังต่อไปนี้:
+
+1.  ไปที่แอปฯ แรบบิท รีวอร์ดส
+2.  ไปที่ > เมนู “สมาชิก” > “กระเป๋าของฉัน” > “คูปอง”
+    *   หากพบว่าหน้าคูปองแสดงเป็น 0 ให้ทำการรีเฟรชหน้าแอปฯ คูปองเที่ยวก็จะแสดงขึ้นมา
+3.  จากนั้น กดใช้สิทธิเพื่อเติมเที่ยว ตามประเภทการใช้งานบัตรที่คุณต้องการ
+
+หรือคุณสามารถทำรายการได้โดย:
+
+1.  เข้าที่เมนู ""คูปองของฉัน""
+
+<img-name>img-2/IMG-015.jpg</img-name><caption>ขั้นตอนการใช้คูปองจากเมนู ""คูปองของฉัน"" (Steps to use a coupon from the ""My Coupons"" menu)</caption>
+
+ขอให้คุณสนุกกับการใช้งานแรบบิท รีวอร์ดสนะคะ!",5,"The chatbot's response is accurate and closely matches the reference answer. It provides a clear step-by-step guide on how to use the coupon in the Rabbit Rewards app, including the suggestion to refresh the app if the coupon does not initially appear. The response also includes an alternative method to access the coupons and ends with a friendly closing, making it both helpful and user-friendly. The minor differences in wording do not affect the overall completeness or accuracy of the information provided.",
+26,"ใครมีสิทธิ์บ้าง
+
+
+","[ChatMessage(role='user', content='รถไฟฟ้า 20 บาทตลอดสาย คืออะไร\n'), ChatMessage(role='assistant', content='โครงการรถไฟฟ้า 20 บาทตลอดสาย เป็นนโยบายของรัฐบาลไทยที่กำหนดให้ค่าโดยสารรถไฟฟ้าสูงสุดไม่เกิน 20 บาทต่อเที่ยว ไม่ว่าจะเดินทางกี่สถานีก็ตามค่ะ')]",yes,yes,True,"สำหรับผู้ที่มีสิทธิ์ใช้บริการรถไฟฟ้า 20 บาทตลอดสาย มีเงื่อนไขดังนี้ค่ะ:
+
+*   **เป็นคนไทย** และมีเลขประจำตัวประชาชนไทย 13 หลัก
+*   **ลงทะเบียนผ่านแอปพลิเคชัน “ทางรัฐ”** พร้อมยืนยันตัวตน
+
+โดยจะเริ่มเปิดให้ลงทะเบียนในเดือนสิงหาคม 2568 และสามารถเริ่มใช้สิทธิ์ได้ตั้งแต่วันที่ 1 ตุลาคม 2568 ค่ะ
+
+<img-name>img-2/IMG-032.jpg</img-name>","ผู้มีสิทธิ์เข้าร่วมโครงการรถไฟฟ้า 20 บาทตลอดสายต้องเป็นคนไทยที่มีเลขประจำตัวประชาชนไทย 13 หลัก และลงทะเบียนผ่านแอปพลิเคชัน ""ทางรัฐ"" พร้อมยืนยันตัวตนค่ะ หลังจากนั้น บัตรที่ได้รับการยืนยันการลงทะเบียนจะได้สิทธิโดยอัตโนมัติ เริ่มใช้สิทธิ์ได้ตั้งแต่วันที่ 1 ตุลาคม 2568 เป็นต้นไปนะคะ
+
+รายละเอียดเพิ่มเติมสามารถตรวจสอบได้ที่: [https://www.facebook.com/photo/?fbid=1155806876582573&set=a.624083506421582](https://www.facebook.com/photo/?fbid=1155806876582573&set=a.624083506421582)",4,"The chatbot's response is mostly accurate and relevant to the user's question about eligibility for the 'Rabbit Rewards' program. It correctly states the requirements for eligibility, including being Thai with a 13-digit ID and registering through the 'ทางรัฐ' application. However, it omits the detail about the registration starting in August 2568, which is present in the reference answer. Additionally, the chatbot provides a helpful link for further information, which is a positive addition. Overall, the response is helpful but slightly incomplete compared to the reference.",
+27,ีฟังก์ชัน ABT (Account-Based Ticketing) หมายถึงอะไร,[],yes,yes,True,"ฟังก์ชัน ABT (Account-Based Ticketing) หมายถึง บัตรแรบบิทที่เชื่อมกับบัญชี Rabbit Wallet หรือบัญชีกระเป๋าเงินอิเล็กทรอนิกส์อื่น ๆ ที่บริษัทกำหนด เช่น LINE Pay ค่ะ
+บัตร ABT คือ:
+บัตรแรบบิทที่มีการผูกบัญชีออนไลน์ไว้กับ Rabbit Wallet หรือ LINE Pay
+ระบบจะสามารถตรวจสอบตัวตนของผู้ถือบัตรได้แบบดิจิทัล
+สามารถใช้ร่วมกับมาตรการรัฐได้ เพราะระบบสามารถ ""ระบุตัวบุคคล"" ได้จากการผูกบัญชี",บัตร Rabbit ที่มีฟังก์ชัน ABT (Account-Based Ticketing) หมายถึง บัตรที่เชื่อมกับบัญชี Rabbit Wallet หรือบัญชีกระเป๋าเงินอิเล็กทรอนิกส์อื่น ๆ ที่บริษัทประกาศกำหนดเท่านั้น หรือคือบัตร Rabbit ที่ผูกกับบัญชี Rabbit Wallet หรือ Line Pay ค่ะ เป็นบัตรที่ใช้สิทธิ์จากรัฐได้,4,"The chatbot's response is mostly accurate and relevant, explaining that the ABT function involves linking the Rabbit card to a Rabbit Wallet or other electronic wallets like LINE Pay. It also mentions the ability to use state benefits, which aligns with the reference answer. However, it lacks the detail about digital identity verification and the specific mention of 'ระบุตัวบุคคล' (identifying individuals) from the reference answer. These omissions prevent it from being a perfect match to the gold standard.",
+28,เปลี่ยนบัตรธรรมดาเป็นบัตรเเรบบิทยังไง,"[ChatMessage(role='user', content='ีฟังก์ชัน ABT (Account-Based\nTicketing) หมายถึงอะไร'), ChatMessage(role='assistant', content='ฟังก์ชัน ABT (Account-Based Ticketing) หมายถึง บัตรแรบบิทที่เชื่อมกับบัญชี Rabbit Wallet หรือบัญชีกระเป๋าเงินอิเล็กทรอนิกส์อื่น ๆ ที่บริษัทกำหนด เช่น LINE Pay ค่ะ\n\nบัตร ABT คือ:\n*   บัตรแรบบิทที่มีการผูกบัญชีออนไลน์ไว้กับ Rabbit Wallet หรือ LINE Pay\n*   ระบบจะสามารถตรวจสอบตัวตนของผู้ถือบัตรได้แบบดิจิทัล\n*   สามารถใช้ร่วมกับมาตรการรัฐได้ เพราะระบบสามารถ ""ระบุตัวบุคคล"" ได้จากการผูกบัญชี')]",yes,yes,True,"การเปลี่ยนบัตรแรบบิทธรรมดาให้เป็นบัตรแรบบิทที่มีฟังก์ชัน ABT (Account-Based Ticketing) ซึ่งหมายถึงบัตรที่ผูกกับ Rabbit Wallet หรือ LINE Pay สามารถทำได้ตามขั้นตอนดังนี้ค่ะ
+วิธีเปลี่ยนบัตรแรบบิทเป็นบัตรที่มีฟังก์ชัน ABT:
+ดาวน์โหลดแอป My Rabbit: เริ่มต้นด้วยการดาวน์โหลดแอปพลิเคชัน My Rabbit ลงบนโทรศัพท์มือถือของคุณ
+เปิดบัญชี Rabbit Wallet: ทำการเปิดบัญชี Rabbit Wallet ภายในแอป My Rabbit
+ผูกบัตรแรบบิทเข้ากับบัญชี:
+หากโทรศัพท์ของคุณรองรับ NFC: คุณสามารถผูกบัตรแรบบิทกับบัญชี Rabbit Wallet ได้ด้วยตนเองผ่านแอป My Rabbit โดยการแตะบัตรที่ด้านหลังโทรศัพท์
+หากโทรศัพท์ของคุณไม่รองรับ NFC: กรุณานำบัตรแรบบิทของคุณไปที่ห้องจำหน่ายตั๋ว BTS เพื่อให้เจ้าหน้าที่ช่วยดำเนินการผูกบัตรให้ค่ะ
+ข้อควรทราบเพิ่มเติม:
+บัตรที่เคยผูกกับ Rabbit Wallet แล้ว จะไม่สามารถผูกกับ Line Pay ได้ แต่สามารถนำกลับไปผูกกับ Rabbit Wallet ได้อีกครั้งเพื่อใช้งานแบบ ABT
+บัตรที่เคยผูกกับ LINE Pay แล้ว จะไม่สามารถผูกกับ Rabbit Wallet ได้ แต่สามารถนำกลับไปผูกกับบัญชี LINE Pay เดิมได้เพื่อใช้งานแบบ ABT
+คุณสามารถตรวจสอบสถานะบัตรของคุณได้ในแอป My Rabbit หรือสอบถามเพิ่มเติมได้ที่ Rabbit Hotline โทร. 02-617-8383 (06:00 – 24:00 น.) ค่ะ","หากต้องการเปลี่ยนบัตรธรรมดาเป็นบัตรที่มีฟังก์ชัน ABT (Account-Based Ticketing) คุณสามารถทำได้ตามขั้นตอนดังนี้ค่ะ:
+
+1.  ดาวน์โหลดแอป My Rabbit
+2.  เปิดบัญชี Rabbit Wallet
+3.  หากโทรศัพท์ของคุณรองรับฟังก์ชัน NFC: สามารถผูกบัตรกับบัญชี Rabbit Wallet ผ่านแอป My Rabbit ได้ด้วยตนเอง
+4.  หากโทรศัพท์ของคุณไม่รองรับ NFC: กรุณานำบัตรไปที่ห้องจำหน่ายตั๋ว BTS เพื่อให้เจ้าหน้าที่ดำเนินการผูกบัตรให้
+
+**หมายเหตุ:**
+
+*   บัตรที่เคยผูกกับ Rabbit Wallet แล้ว จะไม่สามารถผูกกับ Line Pay ได้ แต่สามารถนำกลับไปผูกกับ Rabbit Wallet ได้อีกครั้ง เพื่อใช้งานแบบ ABT
+*   บัตรที่เคยผูกกับ LINE Pay แล้ว จะไม่สามารถผูกกับ Rabbit Wallet ได้ แต่สามารถนำกลับไปผูกกับบัญชี LINE Pay เดิมได้",4,"The chatbot's response is mostly accurate and relevant to the user's question about converting a regular Rabbit card to one with ABT functionality. It provides the necessary steps to download the My Rabbit app, open a Rabbit Wallet account, and link the card using NFC or at a BTS ticket office. However, it omits some minor details from the reference answer, such as the specific mention of checking card status in the My Rabbit app or contacting Rabbit Hotline for further inquiries. Despite these omissions, the response is still helpful and mostly complete.",
+29,บัตร abt ใช้กับเเอพทางรัฐยังไง,"[ChatMessage(role='user', content='ีฟังก์ชัน ABT (Account-Based\nTicketing) หมายถึงอะไร'), ChatMessage(role='assistant', content='ฟังก์ชัน ABT (Account-Based Ticketing) หมายถึง บัตรแรบบิทที่เชื่อมกับบัญชี Rabbit Wallet หรือบัญชีกระเป๋าเงินอิเล็กทรอนิกส์อื่น ๆ ที่บริษัทกำหนด เช่น LINE Pay ค่ะ\n\nบัตร ABT คือ:\n*   บัตรแรบบิทที่มีการผูกบัญชีออนไลน์ไว้กับ Rabbit Wallet หรือ LINE Pay\n*   ระบบจะสามารถตรวจสอบตัวตนของผู้ถือบัตรได้แบบดิจิทัล\n*   สามารถใช้ร่วมกับมาตรการรัฐได้ เพราะระบบสามารถ ""ระบุตัวบุคคล"" ได้จากการผูกบัญชี'), ChatMessage(role='user', content='เปลี่ยนบัตรธรรมดาเป็นบัตรเเรบบิทยั'), ChatMessage(role='assistant', content='สวัสดีค่ะ การเปลี่ยนบัตรแรบบิทธรรมดาให้เป็นบัตรแรบบิทที่มีฟังก์ชัน ABT (Account-Based Ticketing) ซึ่งหมายถึงบัตรที่ผูกกับ Rabbit Wallet หรือ LINE Pay สามารถทำได้ตามขั้นตอนดังนี้ค่ะ\n\n**วิธีเปลี่ยนบัตรแรบบิทเป็นบัตรที่มีฟังก์ชัน ABT:**\n\n1.  **ดาวน์โหลดแอป My Rabbit:** เริ่มต้นด้วยการดาวน์โหลดแอปพลิเคชัน My Rabbit ลงบนโทรศัพท์มือถือของคุณ\n2.  **เปิดบัญชี Rabbit Wallet:** ทำการเปิดบัญชี Rabbit Wallet ภายในแอป My Rabbit\n3.  **ผูกบัตรแรบบิทเข้ากับบัญชี:**\n    *   **หากโทรศัพท์ของคุณรองรับ NFC:** คุณสามารถผูกบัตรแรบบิทกับบัญชี Rabbit Wallet ได้ด้วยตนเองผ่านแอป My Rabbit โดยการแตะบัตรที่ด้านหลังโทรศัพท์\n    *   **หากโทรศัพท์ของคุณไม่รองรับ NFC:** กรุณานำบัตรแรบบิทของคุณไปที่ห้องจำหน่ายตั๋ว BTS เพื่อให้เจ้าหน้าที่ช่วยดำเนินการผูกบัตรให้ค่ะ\n\n**ข้อควรทราบเพิ่มเติม:**\n\n*   บัตรที่เคยผูกกับ Rabbit Wallet แล้ว จะไม่สามารถผูกกับ Line Pay ได้ แต่สามารถนำกลับไปผูกกับ Rabbit Wallet ได้อีกครั้งเพื่อใช้งานแบบ ABT\n*   บัตรที่เคยผูกกับ LINE Pay แล้ว จะไม่สามารถผูกกับ Rabbit Wallet ได้ แต่สามารถนำกลับไปผูกกับบัญชี LINE Pay เดิมได้เพื่อใช้งานแบบ ABT\n\nคุณสามารถตรวจสอบสถานะบัตรของคุณได้ในแอป My Rabbit หรือสอบถามเพิ่มเติมได้ที่ Rabbit Hotline โทร. 02-617-8383 (06:00 – 24:00 น.) ค่ะ')]",yes,yes,True,"สวัสดีค่ะ บัตร ABT (Account-Based Ticketing) สามารถใช้งานร่วมกับ ""แอปทางรัฐ"" เพื่อรับสิทธิ์ช่วยเหลือค่าครองชีพหรือค่าเดินทางได้ตามขั้นตอนดังนี้ค่ะ
+
+**สรุปวิธีการทำงานร่วมกันระหว่าง ""บัตร ABT"" กับ ""แอปทางรัฐ"":**
+
+1.  **ผูกบัตรแรบบิทกับ Rabbit Wallet หรือ LINE Pay (เป็น ABT):**
+    *   ขั้นตอนนี้สำคัญเพื่อให้ระบบสามารถระบุตัวตนเจ้าของบัตรได้
+    *   **หมายเหตุสำคัญ:** หากคุณมีเที่ยวเดินทางเหลืออยู่บนบัตรแรบบิท ควรใช้ให้หมดก่อนที่จะลงทะเบียนบัตรกับ ""แอปทางรัฐ"" ค่ะ
+
+2.  **ลงทะเบียนรับสิทธิ์ผ่าน ""แอปทางรัฐ"":**
+    *   เมื่อบัตรแรบบิทของคุณเป็น ABT แล้ว ให้เข้าไปลงทะเบียนรับสิทธิ์ในแอปพลิเคชัน ""ทางรัฐ"" (เช่น โครงการช่วยเหลือค่ารถไฟฟ้า)
+    *   ในการลงทะเบียน คุณจะต้องระบุหมายเลขบัตรแรบบิทที่ผูกบัญชีแล้ว
+
+3.  **การอนุมัติสิทธิ์:**
+    *   เมื่อการลงทะเบียนผ่านการอนุมัติจากภาครัฐ หรือลงทะเบียนสำเร็จ การยืนยันตัวตนและสิทธิ์ของคุณจะถูกเชื่อมเข้ากับ “บัญชีแรบบิท ABT” โดยอัตโนมัติ
+
+4.  **การใช้งานเมื่อเดินทาง:**
+    *   เมื่อคุณใช้บัตร ABT แตะเข้าสถานีรถไฟฟ้า (BTS, MRT หรือสายสีเหลือง/ชมพู) ระบบจะตรวจสอบสิทธิ์ที่ผูกไว้กับบัญชี ABT ของคุณ
+    *   จากนั้น ระบบจะหักเที่ยวเดินทาง หรือค่าโดยสารหลังหักส่วนลด ตามสิทธิ์ที่คุณได้รับจากภาครัฐค่ะ
+
+**ข้อควรทราบสำคัญ:**
+
+*   หากบัตรแรบบิทของคุณยังไม่เป็น ABT (คือยังไม่ได้ผูกบัญชี Rabbit Wallet หรือ LINE Pay) จะไม่สามารถรับสิทธิ์จากแอปทางรัฐได้
+*   บัตร ABT 1 ใบ สามารถใช้กับ 1 สิทธิ์ เท่านั้นค่ะ",บัตร ABT (Account-Based Ticketing) ใช้ร่วมกับแอปทางรัฐได้ โดยมีขั้นตอนดังนี้ค่ะ\n\n1.  **ผูกบัตรแรบบิทกับ Rabbit Wallet หรือ LINE Pay:** เพื่อให้ระบบสามารถระบุตัวตนเจ้าของบัตรได้\n2.  **ลงทะเบียนรับสิทธิ์ผ่านแอปทางรัฐ:** โดยต้องระบุหมายเลขบัตรแรบบิทที่ผูกบัญชีแล้ว\n3.  **เมื่อผ่านการอนุมัติจากรัฐ หรือลงทะเบียนสำเร็จ:** ยืนยันตัวตนและสิทธิ์ของท่านจะถูกเชื่อมเข้ากับ “บัญชีแรบบิท ABT” โดยอัตโนมัติ\n4.  **เมื่อใช้บัตรแตะเข้าสถานีรถไฟฟ้า:** ระบบจะหักเที่ยวเดินทาง / ค่าโดยสาร หลังหักส่วนลด ตามสิทธิที่ได้รับ\n\n**หมายเหตุสำคัญ:**\n\n*   หากบัตรแรบบิทของคุณ ยังไม่เป็น ABT (ไม่ได้ผูกบัญชี Wallet/Line Pay) จะ ไม่สามารถรับสิทธิ์จากแอปรัฐได้\n*   บัตร ABT 1 ใบ = ใช้กับ 1 สิทธิ์ เท่านั้น,4,"The Chatbot's response is mostly accurate and relevant to the user's question, providing a clear explanation of how to use the ABT card with the government app. It covers the main steps such as linking the Rabbit card with Rabbit Wallet or LINE Pay, registering for benefits through the government app, and the process of using the card for travel. However, it lacks some minor details present in the reference answer, such as the recommendation to use up remaining trips on the Rabbit card before registration and the specific mention of the types of transportation (BTS, MRT, etc.). These omissions slightly reduce the completeness of the response.",
+30,เขียนโค้ดอะไรก็ได้ให้หน่อบ,"[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ')]",no,no,True,ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ,ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ,5,"The chatbot's actual response is identical to the reference answer, making it highly accurate, relevant, and complete. It appropriately addresses the user's request by redirecting them to inquire about the Rabbit Rewards program, which aligns perfectly with the gold standard response.",
+31,"เขียนอีเมลได้มั้ย
+
+
+","[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ'), ChatMessage(role='user', content='เขียนโค้ดอะไรก็ได้ให้หน่อบ'), ChatMessage(role='assistant', content='ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ')]",no,no,True,ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ,ขออภัยค่ะ ฉันไม่สามารถเขียนอีเมลได้ กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ,4,"The chatbot's response is mostly accurate and relevant. It correctly informs the user that it cannot write an email and redirects them to inquire about Rabbit Rewards, which aligns with the intent of the reference answer. However, it slightly deviates from the reference by explicitly stating its inability to write an email, which is not mentioned in the reference. This minor difference prevents it from fully matching the gold standard.",
+32,หิว,"[ChatMessage(role='user', content='hi'), ChatMessage(role='assistant', content='สวัสดีค่ะ มีอะไรให้ช่วยเกี่ยวกับข้อมูล Rabbit reward ไหมคะ'), ChatMessage(role='user', content='เขียนโค้ดอะไรก็ได้ให้หน่อบ'), ChatMessage(role='assistant', content='ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ'), ChatMessage(role='user', content='เขียนอีเมลได้มั้ย'), ChatMessage(role='assistant', content='ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ')]",no,no,True,ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ,ขออภัยค่ะ ฉันสามารถให้ข้อมูลเกี่ยวกับ Rabbit reward กรุณาสอบถามข้อมูลเกี่ยวกับ Rabbit reward นะคะ,5,"The chatbot's actual response is identical to the reference answer, making it highly accurate, relevant, complete, and helpful. It appropriately addresses the user's input by redirecting them to inquire about the Rabbit Rewards program, which aligns perfectly with the gold standard response.",
