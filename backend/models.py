@@ -26,6 +26,7 @@ ConversationHistory = List[Dict[str, str]]
 
 # --- Constants ---
 CLASSIFICATION_MODEL = "jai-chat-1-3-2"
+RERANKER_MODEL = "typhoon-gemma-12b"
 SUBQUERY_MODEL = "jai-chat-1-3-2"
 NORMAL_RAG_MODEL = 'typhoon-gemma-12b'
 NON_RAG_MODEL = "jai-chat-1-3-2"
@@ -197,6 +198,42 @@ class LLMFinanceAnalyzer:
         else:
             logger.error("RAG classification LLM call failed.")
             return 'yes'
+    @observe()
+    async def classify_relevance(self, query: str, document_content: str) -> bool:
+        """
+        Classifies if a document is relevant to a given query using an LLM.
+        Returns True for 'yes', False otherwise.
+        """
+        # truncated_content = document_content # Truncate to manage token count
+
+        prompt = (
+            "You are an expert relevance classifier. Your task is to determine if the provided "
+            "DOCUMENT is use to answer USER QUERY. Be strictly"
+            # "Focus on direct relevance. If the document is only vaguely related or just mentions similar topics, it is not relevant. "
+            "Respond with only the word 'yes' or 'no'."
+        )
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": f"USER QUERY:\n---\n{query}\n---\n\nDOCUMENT:\n---\n{document_content}\n---"}
+        ]
+
+        # Use a fast and cheap model for this simple classification task
+        result = await self._call_llm(
+            model=RERANKER_MODEL,
+            messages=messages,
+            temperature=0,
+            max_tokens=5, # 'yes' or 'no' is very short
+            stream=False
+        )
+        
+
+        if isinstance(result, str) and 'no' in result.lower():
+            logger.debug(f"Relevance classification for query '{query[:30]}...': NO")
+            return False
+
+        logger.debug(f"Relevance classification for query '{query[:30]}...': Yes (Result: '{result}')")
+        return True
+
 
     @observe()
     async def generate_subquery(self, conversation: ConversationHistory) -> Optional[str]:
