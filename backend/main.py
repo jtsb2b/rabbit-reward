@@ -169,8 +169,8 @@ async def handle_chat(request: ChatRequest) -> Response:
 
             # 3. Generate Response (Streaming)
             stage = "RAG Generation (Streaming)"
-            if len(full_conversation) >5:
-                full_conversation = full_conversation[-5:]
+            if len(full_conversation) >7:
+                full_conversation = full_conversation[-7:]
             response_generator = llm_analyzer.generate_normal_response(retrieved_data, full_conversation)
 
             async def stream_wrapper(gen: AsyncGenerator[str, None]):
