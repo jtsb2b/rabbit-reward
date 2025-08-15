@@ -6,6 +6,7 @@ from motor.motor_asyncio import AsyncIOMotorClient # IMPORT AsyncMongoClient
 from pythainlp.tokenize import word_tokenize # Moved import here
 import models # Keep standard import
 import asyncio
+from typing import Optional, Dict
 # import time # No longer needed for reranker
 # import numpy as np # No longer needed for reranker
 # import onnxruntime as ort # No longer needed for reranker
@@ -36,7 +37,7 @@ class MongoHybridSearch:
             # Consider making collection name configurable
             self.collection = self.database["rabbit-reward"]
             # self.collection_fact = self.database["SCG_financial_report_jai"]
-            
+            self.llm_analyzer = models.LLMFinanceAnalyzer()
             self.embedder = models.Embedder() # Instantiate Embedder class from models
             logger.info("MongoHybridSearch initialized successfully.")
         except Exception as e:
@@ -176,12 +177,26 @@ class MongoHybridSearch:
 
 
             fused_documents = self.weighted_reciprocal_rank([vec_docs, key_docs], top_k)
-            
             if len(fused_documents) < exact_top_k:
                 exact_top_k = len(fused_documents) 
+            fused_documents = fused_documents[:exact_top_k] 
             
+            async def check_and_get_relevant(doc: Dict) -> Optional[Dict]:
+                # Use a helper to run the classification and return the doc if relevant
+                is_relevant = await self.llm_analyzer.classify_relevance(query=query, document_content=doc.get("content", ""))
+                if is_relevant:
+                    return doc
+                return None
+            tasks = [check_and_get_relevant(doc) for doc in fused_documents]
+            relevance_results = await asyncio.gather(*tasks)
+
+            # Filter out None values (non-relevant docs)
+            relevant_docs = [doc for doc in relevance_results if doc is not None]
+            logger.info(f"Found {len(relevant_docs)} relevant documents after LLM classification (out of {len(fused_documents)}).")
+            # if len(relevant_docs) < exact_top_k:
+            #     exact_top_k = len(relevant_docs) 
             # Return only the content strings, limited to exact_top_k
-            return [doc["content"] for doc in fused_documents[:exact_top_k]]
+            return [doc["content"] for doc in relevant_docs]
 
         except Exception as e:
             logger.error(f"Error in atlas_hybrid_search for query '{query}': {e}", exc_info=True)
