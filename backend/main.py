@@ -11,8 +11,9 @@ from fastapi.responses import StreamingResponse, JSONResponse
 from pydantic import BaseModel, Field
 import uvicorn
 from dotenv import load_dotenv
-
-from models import LLMFinanceAnalyzer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
+from models import LLMFinanceAnalyzer, Embedder
 from functions import MongoHybridSearch
 from systemprompt import (
     get_rag_classification_prompt,
@@ -64,6 +65,7 @@ app = FastAPI(
 try:
     llm_analyzer = LLMFinanceAnalyzer()
     search_engine = MongoHybridSearch()
+    embedder = Embedder()
     logger.info("Successfully initialized LLMAnalyzer and MongoHybridSearch.")
 except Exception as e:
     logger.critical(f"Fatal error during initialization: {e}", exc_info=True)
@@ -156,8 +158,8 @@ async def handle_chat(request: ChatRequest) -> Response:
                     # if not unique_docs:
                     #     logger.warning("RAG: Database search returned no unique documents.")
                     #     return create_json_error_response("ฉันไม่พบข้อมูลที่เกี่ยวข้องกับคำถามของคุณค่ะ", stage + " - No Documents Found", rag_decision, 404)
-
-                    retrieved_data = "\n-------\n".join(docs)
+                    contexts_for_llm = [doc.get("content", "") for doc in docs]
+                    retrieved_data = "\n-------\n".join(contexts_for_llm)
                     logger.info(f"RAG: Retrieved {len(docs)} unique documents.")
                     debug_info["retrieved_data_snippet"] = retrieved_data[:500] + "..."
 
@@ -173,18 +175,47 @@ async def handle_chat(request: ChatRequest) -> Response:
                 full_conversation = full_conversation[-7:]
             response_generator = llm_analyzer.generate_normal_response(retrieved_data, full_conversation)
 
-            async def stream_wrapper(gen: AsyncGenerator[str, None]):
+            async def stream_and_find_image(gen: AsyncGenerator[str, None], docs: List[Dict]):
+                full_response_text = ""
                 try:
                     async for chunk in gen:
+                        full_response_text += chunk
                         yield chunk
                         await asyncio.sleep(0.02)
                     logger.info("Finished RAG stream transmission.")
+                    
+                    if full_response_text.strip():
+                        # print(docs)
+                        response_embedding = await embedder.embed(full_response_text, "document")
+                        if response_embedding:
+                            doc_embeddings = [doc.get("embedding") for doc in docs if doc.get("embedding")]
+                            doc_indices_with_embedding = [i for i, doc in enumerate(docs) if doc.get("embedding")]
+                            
+                            if doc_embeddings:
+                                similarities = cosine_similarity([response_embedding], doc_embeddings)[0]
+                                best_doc_index_local = np.argmax(similarities)
+                                best_doc_index_global = doc_indices_with_embedding[best_doc_index_local]
+                                best_doc = docs[best_doc_index_global]
+                                # print(f"Best matching document index: {best_doc}, similarity score: {similarities[best_doc_index_local]}")
+                                # **NEW LOGIC FOR CORRECT IMAGE STRUCTURE**
+                                image_list = best_doc.get("images", [])
+                                if image_list and isinstance(image_list, list):
+                                    for i, image_info in enumerate(image_list):
+                                        first_image_info = image_list[i] # Get the first image from the list
+                                        image_path = first_image_info.get("path")
+                                        image_caption = first_image_info.get("caption", "") # Get caption, default to empty
+                                        
+                                        if image_path:
+                                            logger.info(f"Found best matching image: {image_path} with score {similarities[best_doc_index_local]}")
+                                            # Send path and caption in one token
+                                            yield f"\n<img-name>{image_path}</img-name><caption>{image_caption}</caption>"
                 except Exception as e_stream:
                     logger.error(f"Error during stream transmission: {e_stream}", exc_info=True)
                     yield f"\n[STREAM_ERROR: {e_stream}]\n"
+                
 
             headers = {"X-Final-Stage": stage, "X-RAG-Decision": rag_decision}
-            return StreamingResponse(stream_wrapper(response_generator), media_type=STREAMING_CONTENT_TYPE, headers=headers)
+            return StreamingResponse(stream_and_find_image(response_generator, docs), media_type=STREAMING_CONTENT_TYPE, headers=headers)
 
         else: # rag_decision == 'no'
             # --- Non-RAG Pipeline (JSON Response) ---
