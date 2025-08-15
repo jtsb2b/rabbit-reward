@@ -130,6 +130,27 @@ def embed(text, input_type):
         logger.error(f"Error occurred during embedding: {e}")
         return None
 import ast
+IMG_CAP_PATTERN = re.compile(r"<img-name>(.*?)</img-name>(?:\s*<caption>(.*?)</caption>)?", re.DOTALL | re.IGNORECASE)
+def parse_images(answer_text: str):
+    """
+    Extract all <img-name>...</img-name> and optional <caption>...</caption> pairs.
+    Returns a tuple: (cleaned_answer_without_tags, images_list)
+    where images_list = [{'path': <img-name>, 'caption': <caption or ''>}, ...]
+    """
+    images = []
+    for img_name, caption in IMG_CAP_PATTERN.findall(answer_text or ""):
+        print(f"Found image: {img_name}, caption: {caption}")
+        img_name_clean = (img_name or "").strip()
+        caption_clean = (caption or "").strip()
+        if img_name_clean:
+            images.append({"path": img_name_clean, "caption": caption_clean})
+
+    # Remove all occurrences from the answer for clean storage/embedding
+    cleaned = IMG_CAP_PATTERN.sub("", answer_text or "")
+    # Normalize whitespace after removal
+    cleaned = re.sub(r"[ \t]+\n", "\n", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned).strip()
+    return cleaned, images
 def preprocess(path: str, collection_name: str):
     try:
         if not os.path.exists(path):
@@ -149,12 +170,17 @@ def preprocess(path: str, collection_name: str):
                                 line = json.loads(line.strip())
                                 if line.keys() == {"q","a"}:
                                     question = line["q"]
-                                    answer = line["a"]
-                                    document_tokenized = tokenize(question + "\n" + answer)
+                                    raw_answer = line["a"]
+                                    # seperate the image and caption from answer
+                                    clean_answer, images = parse_images(raw_answer)
+                                    full_content = (question + "\n" + clean_answer).strip()
+
+                                    document_tokenized = tokenize(full_content)
                                     data = {
-                                        "content": question + "\n" + answer,
+                                        "content": full_content,
                                         "content_tokenized": " ".join(document_tokenized),
                                         "source": file_name,
+                                        "images": images
                                         # "quarter": quarter,
                                         # "year": year,
                                         # "type": "qa"
@@ -210,7 +236,7 @@ def preprocess(path: str, collection_name: str):
 
 
 if __name__ == "__main__":
-    preprocess("/Users/jullajakkarnjanaekarin/Documents/rabbit-reward/preprocess","rabbit-reward")
+    preprocess("/Users/jullajakkarnjanaekarin/Documents/rabbit-reward/preprocess","rabbit-reward-segmented")
     # process_financial_ratio("/Users/jullajakkarnjanaekarin/Documents/SCG_test/financial_ratio.xlsx","SCG_financial_report_jai")
     # process_one_report("/Users/jullajakkarnjanaekarin/Documents/SCG_test/chunked_scg_one_report.md","SCG_financial_report_jai_report")
     
