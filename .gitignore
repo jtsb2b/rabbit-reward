@@ -11,3 +11,4 @@ data-2.txt
 data-3.txt
 
 *.pyc
+__pycache__/
