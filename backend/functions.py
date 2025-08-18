@@ -75,7 +75,7 @@ class MongoHybridSearch:
 
     async def atlas_hybrid_search(self, collection_name :str, query: str, top_k: int, exact_top_k: int,
                             vector_index_name: str, keyword_index_name: str,
-                            ) -> list[Dict]:
+                            ) -> list[str]:
         """
         Perform hybrid search using Atlas Vector Search & Keyword Search.
         Returns a list of document content strings.
@@ -117,7 +117,7 @@ class MongoHybridSearch:
                         # }
                     }
                 },
-                {"$project": {"_id": 1, "content": 1,"images":1, "embedding":1, "score": {"$meta": "vectorSearchScore"}}}
+                {"$project": {"_id": 1, "content": 1, "score": {"$meta": "vectorSearchScore"}}}
             ]
             vector_results_cursor = self.collection.aggregate(vector_pipeline)
             vector_results = await vector_results_cursor.to_list(length=top_k)
@@ -151,8 +151,6 @@ class MongoHybridSearch:
                     "$project": {
                         "_id": 1,
                         "content": 1,
-                        "images":1,
-                        "embedding":1,
                         "score": {"$meta": "searchScore"}
                     }
                 },
@@ -166,8 +164,8 @@ class MongoHybridSearch:
             # Apply Weighted Reciprocal Rank Fusion (WRRF)
             # Prepare results in the expected format for WRRF: list of dicts with _id and content
             print(f"Vector results: {len(vector_results)}, Keyword results: {len(keyword_results)}")
-            vec_docs = [{"_id": str(doc["_id"]), "content": doc.get("content", ""), "images" : doc.get("images",""), "embedding": doc.get("embedding","")} for doc in vector_results]
-            key_docs = [{"_id": str(doc["_id"]), "content": doc.get("content", ""), "images" : doc.get("images",""), "embedding": doc.get("embedding","")} for doc in keyword_results]
+            vec_docs = [{"_id": str(doc["_id"]), "content": doc.get("content", "")} for doc in vector_results]
+            key_docs = [{"_id": str(doc["_id"]), "content": doc.get("content", "")} for doc in keyword_results]
 
             # Handle potential missing 'content' key more robustly
             # Ensure content is string
@@ -181,24 +179,24 @@ class MongoHybridSearch:
             fused_documents = self.weighted_reciprocal_rank([vec_docs, key_docs], top_k)
             if len(fused_documents) < exact_top_k:
                 exact_top_k = len(fused_documents) 
-            # fused_documents = fused_documents[:exact_top_k] 
+            fused_documents = fused_documents[:exact_top_k] 
             
-            # async def check_and_get_relevant(doc: Dict) -> Optional[Dict]:
-            #     # Use a helper to run the classification and return the doc if relevant
-            #     is_relevant = await self.llm_analyzer.classify_relevance(query=query, document_content=doc.get("content", ""))
-            #     if is_relevant:
-            #         return doc
-            #     return None
-            # tasks = [check_and_get_relevant(doc) for doc in fused_documents]
-            # relevance_results = await asyncio.gather(*tasks)
+            async def check_and_get_relevant(doc: Dict) -> Optional[Dict]:
+                # Use a helper to run the classification and return the doc if relevant
+                is_relevant = await self.llm_analyzer.classify_relevance(query=query, document_content=doc.get("content", ""))
+                if is_relevant:
+                    return doc
+                return None
+            tasks = [check_and_get_relevant(doc) for doc in fused_documents]
+            relevance_results = await asyncio.gather(*tasks)
 
-            # # Filter out None values (non-relevant docs)
-            # relevant_docs = [doc for doc in relevance_results if doc is not None]
-            # logger.info(f"Found {len(relevant_docs)} relevant documents after LLM classification (out of {len(fused_documents)}).")
+            # Filter out None values (non-relevant docs)
+            relevant_docs = [doc for doc in relevance_results if doc is not None]
+            logger.info(f"Found {len(relevant_docs)} relevant documents after LLM classification (out of {len(fused_documents)}).")
             # if len(relevant_docs) < exact_top_k:
             #     exact_top_k = len(relevant_docs) 
             # Return only the content strings, limited to exact_top_k
-            return fused_documents[:exact_top_k]
+            return [doc["content"] for doc in relevant_docs]
 
         except Exception as e:
             logger.error(f"Error in atlas_hybrid_search for query '{query}': {e}", exc_info=True)
