@@ -28,7 +28,7 @@ ConversationHistory = List[Dict[str, str]]
 CLASSIFICATION_MODEL = "jai-chat-1-3-2"
 RERANKER_MODEL = "typhoon-gemma-12b"
 SUBQUERY_MODEL = "jai-chat-1-3-2"
-NORMAL_RAG_MODEL = 'typhoon-gemma-12b'
+NORMAL_RAG_MODEL = 'gemini-2.5-flash'
 NON_RAG_MODEL = "jai-chat-1-3-2"
 
 # --- Embedding Setup (Global Scope) ---
@@ -222,7 +222,6 @@ class LLMFinanceAnalyzer:
             model=RERANKER_MODEL,
             messages=messages,
             temperature=0,
-            max_tokens=5, # 'yes' or 'no' is very short
             stream=False
         )
         
@@ -233,6 +232,38 @@ class LLMFinanceAnalyzer:
 
         logger.debug(f"Relevance classification for query '{query[:30]}...': Yes (Result: '{result}')")
         return True
+    
+    @observe()
+    async def select_relevant_documents(self, query: str, documents: str) -> bool:
+        
+        import ast
+        messages = [
+            
+            {"role": "user", "content": f"""{documents}\n from the context, select a single or group(up to 4, if it's more than 4, rank from the most relavant) of documents that are relevant to the query: {query}. Here is the common knowledge:
+1. The Rabbit Rewards program in Thailand: This program allows users to earn and redeem points for BTS Skytrain travel and at partner merchants.
+2. Rabbit reward application and registration
+3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู(น้องนมเย็น) เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย
+4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว.
+
+Do not describe, answer as a list of number of the documents. example [0,2,4] \n\n"""}
+        ]
+
+        # Use a fast and cheap model for this simple classification task
+        result = await self._call_llm(
+            model=RERANKER_MODEL,
+            messages=messages,
+            temperature=0,
+            max_tokens=5, # 'yes' or 'no' is very short
+            stream=False
+        )
+        try : 
+            result = ast.literal_eval(result)
+            return result
+        except Exception as e:
+            logger.error(f"Error parsing result from select_relevant_documents: {e}")
+            return None
+
+        
 
 
     @observe()
