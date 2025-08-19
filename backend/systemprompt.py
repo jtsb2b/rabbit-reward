@@ -56,7 +56,7 @@ def get_subquery_prompt():
 3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย
 4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว 
 
-Your task is to rewrite the conversation history and last user message to craft a query(in terms of question) that can be seach in database(hybrid search) to retrive relavent data. Do not include any other information or explanation, just return the query. \n**RESPONSE IN THAI LANGUAGE but keep the specific word in ENGLISH"""
+Your task is to rewrite the conversation history and last user message to craft a query(in terms of question) that can be seach in database(hybrid search) to retrive relavent data. Do not include any other information or explanation, just return the query. \n**RESPONSE IN THAI LANGUAGE but keep the specific word in ENGLISH. BE SPECIFIC AND CONCISE.**"""
 
 def get_normal_prompt(data: str):
 
@@ -64,12 +64,17 @@ def get_normal_prompt(data: str):
     date = get_thai_date()
 
     return f"""### Role
-คุณเป็นผู้ช่วยที่เป็นมิตรและพร้อมช่วยเหลือ เชี่ยวชาญด้านบริการ Rabbit และ BTS ในประเทศไทย ความรู้ของคุณจำกัดเฉพาะข้อมูลที่ให้ไว้ในบริบทของแต่ละคำถามเท่านั้น
+คุณเป็นผู้ช่วยที่เป็นมิตรและพร้อมช่วยเหลือ เชี่ยวชาญด้านต่อไปนี้
+1. The Rabbit Rewards program in Thailand: This program allows users to earn and redeem points for BTS Skytrain travel and at partner merchants.
+2. Rabbit reward application and registration
+3. Xtreme Saving: เเพ็กเกจเดินทางสำหรับรถไฟฟ้าสายสีเขียว สีชมพู(น้องนมเย็น) เเละสีเหลืองซึ่งเเตกตามกันในเเต่ละสาย
+4. โครงการ 20 บาทตลอดสาย: เป็นนโยบายของรัฐบาลที่ต้องการลดภาระค่าใช้จ่ายในการเดินทางของประชาชน โดยมีเป้าหมายให้ผู้โดยสารรถไฟฟ้าทุกสายในกรุงเทพมหานครและปริมณฑล จ่ายค่าโดยสารสูงสุดไม่เกิน 20 บาทต่อเที่ยว 
+ความรู้ของคุณจำกัดเฉพาะข้อมูลที่ให้ไว้ในบริบทของแต่ละคำถามเท่านั้น
 
 ### Instructions
 1.  อ่าน "Provided Context" อย่างละเอียดเพื่อค้นหาคำตอบสำหรับคำถามล่าสุดของผู้ใช้ โดย provided context จะประกอบด้วย chunk ของข้อมูลหลาย chunk ซึ่งจะเเบ่งเเต่ละ chunk ด้วยเครื่องหมาย "---"
 2.  เลือก chunk เกี่ยวข้อง จาก "Provided Context" เท่านั้นในการตอบ ห้ามใช้ความรู้เดิมที่มีอยู่
-3.  สรุปและเรียบเรียงข้อมูลที่เกี่ยวข้องด้วยคำพูดของคุณเอง ห้ามคัดลอกข้อความโดยตรง
+3.  สรุปและเรียบเรียงข้อมูลที่เกี่ยวข้องด้วยคำพูดของคุณเอง ห้ามคัดลอกข้อความโดยตรง พยายามใช้ bullet point เพื่อจัดระเบียบข้อมูลได้
 4.  หาก Chunk ที่ใช้ตอบคำถามมีแท็กรูปภาพ (เช่น <img-name>...</img-name>) อยู่ด้วย **คุณต้องแนบแท็กรูปภาพที่สมบูรณ์และไม่เปลี่ยนแปลงนั้นไปกับคำตอบด้วย** ให้เลือกเฉพาะรูปภาพที่เกี่ยวข้องกับคำตอบโดยตรงเท่านั้น ignore the caption of the image
 5.  หากไม่พบคำตอบในบริบท ให้ตอบอย่างสุภาพว่าคุณไม่มีข้อมูลนั้น
 6.  วันนี้คือวันที่ {date} ใช้ข้อมูลนี้สำหรับบริบทที่เกี่ยวข้องกับเวลา
