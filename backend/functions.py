@@ -62,7 +62,7 @@ class MongoHybridSearch:
                 query=query,
                 
                 top_k=100, # Consider making configurable
-                exact_top_k=15, # Consider making configurable
+                exact_top_k=17, # Consider making configurable
                 vector_index_name=DEFAULT_VECTOR_INDEX,
                 keyword_index_name=DEFAULT_KEYWORD_INDEX,
                 
@@ -181,22 +181,50 @@ class MongoHybridSearch:
                 exact_top_k = len(fused_documents) 
             fused_documents = fused_documents[:exact_top_k] 
             
-            async def check_and_get_relevant(doc: Dict) -> Optional[Dict]:
-                # Use a helper to run the classification and return the doc if relevant
-                is_relevant = await self.llm_analyzer.classify_relevance(query=query, document_content=doc.get("content", ""))
-                if is_relevant:
-                    return doc
-                return None
-            tasks = [check_and_get_relevant(doc) for doc in fused_documents]
-            relevance_results = await asyncio.gather(*tasks)
+            # async def check_and_get_relevant(doc: Dict) -> Optional[Dict]:
+            #     # Use a helper to run the classification and return the doc if relevant
+            #     is_relevant = await self.llm_analyzer.classify_relevance(query=query, document_content=doc.get("content", ""))
+            #     if is_relevant:
+            #         return doc
+            #     return None
+            # tasks = [check_and_get_relevant(doc) for doc in fused_documents]
+            # relevance_results = await asyncio.gather(*tasks)
 
-            # Filter out None values (non-relevant docs)
-            relevant_docs = [doc for doc in relevance_results if doc is not None]
-            logger.info(f"Found {len(relevant_docs)} relevant documents after LLM classification (out of {len(fused_documents)}).")
-            # if len(relevant_docs) < exact_top_k:
-            #     exact_top_k = len(relevant_docs) 
-            # Return only the content strings, limited to exact_top_k
-            return [doc["content"] for doc in relevant_docs]
+            # # Filter out None values (non-relevant docs)
+            # relevant_docs = [doc for doc in relevance_results if doc is not None]
+            # logger.info(f"Found {len(relevant_docs)} relevant documents after LLM classification (out of {len(fused_documents)}).")
+            # # if len(relevant_docs) < exact_top_k:
+            # #     exact_top_k = len(relevant_docs) 
+            # # Return only the content strings, limited to exact_top_k
+            # return [doc["content"] for doc in relevant_docs]
+            if not fused_documents:
+                logger.info("No documents to rank after fusion.")
+                return []
+            
+            # 1. Format documents for the LLM
+            # docs_for_selection = {
+            #     idx: doc.get("content", "") 
+            #     for idx, doc in enumerate(fused_documents)
+            # }
+
+            # # 2. Call the LLM to get indices of relevant documents
+            # selected_indices = await self.llm_analyzer.select_relevant_documents(
+            #     query=query, 
+            #     documents=docs_for_selection
+            # )
+
+            # # 3. Filter the original fused_documents list based on the selected indices
+            # relevant_docs = []
+            # if selected_indices:
+            #     # Create a set for efficient lookup and filter out-of-bounds indices
+            #     valid_indices = set(idx for idx in selected_indices if 0 <= idx < len(fused_documents))
+            #     relevant_docs = [fused_documents[i] for i in sorted(list(valid_indices))] # Sort to maintain some order
+            #     return [doc["content"] for doc in relevant_docs]
+
+            # else:
+            #     return [e["content"] for e in fused_documents] # If no indices selected, return all content
+            # --- END OF NEW LOGIC ---
+            return [e["content"] for e in fused_documents]
 
         except Exception as e:
             logger.error(f"Error in atlas_hybrid_search for query '{query}': {e}", exc_info=True)
