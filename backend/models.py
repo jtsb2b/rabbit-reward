@@ -154,9 +154,10 @@ class LLMFinanceAnalyzer:
                     async def _async_stream_generator():
                         try:
                             async for chunk in response_stream:
-                                delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
+                                # delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
                                 
                                 if delta_content:
+                                    delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
                                     yield delta_content
                         except Exception as stream_err:
                             logger.error(f"Error during LLM stream ({model}): {stream_err}", exc_info=True)
