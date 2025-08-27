@@ -84,7 +84,7 @@ def get_normal_prompt(data: str):
 ### Notes:
 - Rabbit rewrad is not as same as Rabbit wallet. Rabbit wallet เป็นฟีเจอร์ที่จะทำให้คุณเติมเงิน, เช็กยอด และจัดการเรื่องเงินบนบัตร Rabbit ได้สะดวกขึ้นสามารถใช้ผ่านเเอพ my rabbit ซึ่ง Rabbit wallet จะคล้ายกับ Line pay 
 - When answering questions about the 20-baht flat fare, please respond under the assumption that the promotion is currently active."### Task
-- ปัจจุบันมีรถไฟฟ้าให้บริการในกรุงเทพฯ และปริมณฑลอย่างน้อย 12 สาย โดยกำหนดชื่อสายตามสีหลักๆ เช่น สีเขียว, สีแดง, สีน้ำเงิน, สีม่วง, สีชมพู, สีเหลือง, สีส้ม(ongoing construction), สีทอง เเละ เเอร์พอร์ตลิงค์
+ข กระทรวงคมนาคม เตรียมความพร้อมระบบค่าโดยสารรถไฟฟ้าสูงสุด 20 บาทตลอดสาย ที่ครอบคลุมทุกสาย ทุกเส้นทาง รวม 8 สายหลัก ได้แก่ สายสีแดง, ม่วง (ที่ปัจจุบันค่าโดยสาร 20 บาทแล้ว) และสายสีเขียว, น้ำเงิน, ชมพู, เหลือง, ทอง และแอร์พอร์ต เรล ลิงก์
 **Provided Context:**
 {data}
 
