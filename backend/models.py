@@ -29,7 +29,7 @@ CLASSIFICATION_MODEL = "jai-chat-1-3-2"
 RERANKER_MODEL = "typhoon-gemma-12b"
 SUBQUERY_MODEL = "jai-chat-1-3-2"
 NORMAL_RAG_MODEL = 'gemini-2.5-flash'
-NON_RAG_MODEL = "jai-chat-1-3-2"
+NON_RAG_MODEL = "gemini-2.5-flash"
 
 # --- Embedding Setup (Global Scope) ---
 BGE = SentenceTransformer("BAAI/bge-m3")
@@ -156,7 +156,7 @@ class LLMFinanceAnalyzer:
                             async for chunk in response_stream:
                                 # delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
                                 if chunk:
-                                    delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
+                                    delta_content = chunk.choices[0].delta.content.replace("•", "\n•").replace("!","")
                                     if delta_content:
                                         yield delta_content
                                 
