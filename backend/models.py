@@ -329,7 +329,7 @@ Do not describe, answer as a list of number of the documents. example [0,2,4] \n
         result = await self._call_llm(model=NON_RAG_MODEL, messages=messages, temperature=0, stream=False)
         
         if isinstance(result, str):
-            return result
+            return result.replace("!","")
         
         logger.error("generate_non_rag_response call failed or returned non-string.")
         return None
