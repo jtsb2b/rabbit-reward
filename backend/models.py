@@ -155,9 +155,14 @@ class LLMFinanceAnalyzer:
                         try:
                             async for chunk in response_stream:
                                 # delta_content = chunk.choices[0].delta.content.replace("•", "\n•")
+                                
                                 if chunk:
-                                    delta_content = chunk.choices[0].delta.content.replace("•", "\n•").replace("!","")
-                                    if delta_content:
+                                    content = chunk.choices[0].delta.content
+                                    if content:
+                                        # Clean up content by removing unwanted characters
+                                        
+                                        delta_content = content.replace("•", "\n•").replace("!","")
+                                        
                                         yield delta_content
                                 
                         except Exception as stream_err:
