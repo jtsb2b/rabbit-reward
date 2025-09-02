@@ -190,6 +190,8 @@ async def handle_chat(request: ChatRequest) -> Response:
             # --- Non-RAG Pipeline (JSON Response) ---
             stage = "Non-RAG Generation"
             logger.info("Executing Non-RAG Pipeline")
+            if len(full_conversation) >7:
+                full_conversation = full_conversation[-9:]
 
             final_response = await llm_analyzer.generate_non_rag_response(full_conversation)
             if final_response is None:
