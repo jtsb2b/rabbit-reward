@@ -148,9 +148,14 @@ class LLMFinanceAnalyzer:
         while attempt <= max_retries:
             try:
                 if stream:
-                    response_stream = await client.chat.completions.create(
-                        model=model, messages=messages, stream=True
+                    if model.startswith("gemini-"):
+                        response_stream = await client.chat.completions.create(
+                        model=model, messages=messages, stream=True, reasoning_effort="none"
                     )
+                    else:
+                        response_stream = await client.chat.completions.create(
+                            model=model, messages=messages, stream=True
+                        )
                     async def _async_stream_generator():
                         try:
                             async for chunk in response_stream:
