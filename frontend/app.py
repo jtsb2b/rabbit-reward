@@ -16,6 +16,8 @@ BACKEND_URL = os.getenv("BACKEND_API_URL", "http://127.0.0.1:8000/chat")
 USER_ID = "streamlit_user_01"
 REQUEST_TIMEOUT = 180
 CAPTION_FONT_SIZE_PX = 16
+BOT_AVATAR_EMOJI = "🐰"
+USER_AVATAR_EMOJI = "🧑‍💻"
 
 # --- Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -113,7 +115,8 @@ with st.sidebar:
 
 # --- Display Chat History ---
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    avatar = USER_AVATAR_EMOJI if message["role"] == "user" else BOT_AVATAR_EMOJI
+    with st.chat_message(message["role"], avatar=avatar):
         content = str(message.get("content", ""))
         if message["role"] == "assistant":
             render_assistant_message(content)
@@ -124,7 +127,7 @@ for message in st.session_state.messages:
 # --- Chat Input and Processing ---
 if prompt := st.chat_input("Ask about Rabbit Rewards..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar=USER_AVATAR_EMOJI):
         st.markdown(prompt)
 
     history_for_api = [
@@ -138,9 +141,9 @@ if prompt := st.chat_input("Ask about Rabbit Rewards..."):
     }
     logger.info("Sending payload to backend.")
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=BOT_AVATAR_EMOJI):
         response_placeholder = st.empty()
-        response_placeholder.markdown("Thinking... 🤔")
+        response_placeholder.markdown("Consulting with rabbit partner... 🥕")
 
         assistant_reply_content = ""
         final_debug_info = {}
