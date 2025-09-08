@@ -16,7 +16,8 @@ BACKEND_URL = os.getenv("BACKEND_API_URL", "http://127.0.0.1:8000/chat")
 USER_ID = "streamlit_user_01"
 REQUEST_TIMEOUT = 180
 CAPTION_FONT_SIZE_PX = 16
-BOT_AVATAR_EMOJI = "🐰"
+# imogi from picture
+BOT_AVATAR_EMOJI = "asset/rabbit-logo.png"
 USER_AVATAR_EMOJI = "🧑‍💻"
 
 # --- Logging ---
@@ -143,7 +144,7 @@ if prompt := st.chat_input("Ask about Rabbit Rewards..."):
 
     with st.chat_message("assistant", avatar=BOT_AVATAR_EMOJI):
         response_placeholder = st.empty()
-        response_placeholder.markdown("Consulting with rabbit partner... 🥕")
+        response_placeholder.markdown("รอสักครู่นะคะ กำลังหาคำตอบให้ค่าาา🥕...")
 
         assistant_reply_content = ""
         final_debug_info = {}
