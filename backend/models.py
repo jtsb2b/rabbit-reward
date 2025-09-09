@@ -166,7 +166,7 @@ class LLMFinanceAnalyzer:
                                     if content:
                                         # Clean up content by removing unwanted characters
                                         
-                                        delta_content = content.replace("•", "\n•").replace("!","")
+                                        delta_content = content.replace("•", "\n•")
                                         
                                         yield delta_content
                                 
@@ -325,7 +325,11 @@ Do not describe, answer as a list of number of the documents. example [0,2,4] \n
             
             if isinstance(result_generator, AsyncGenerator):
                 async for chunk in result_generator:
-                    yield chunk
+                    if lang == "th":
+                        print(chunk)
+                        yield chunk.replace("!","")
+                    else:
+                        yield chunk
             else:
                 yield "[ERROR: Failed to initiate normal RAG stream.]"
         except Exception as e:
@@ -339,7 +343,9 @@ Do not describe, answer as a list of number of the documents. example [0,2,4] \n
         result = await self._call_llm(model=NON_RAG_MODEL, messages=messages, temperature=0, stream=False)
         
         if isinstance(result, str):
-            return result.replace("!","")
-        
+            if lang == "th":
+                return result.replace("!","")
+            else:
+                return result
         logger.error("generate_non_rag_response call failed or returned non-string.")
         return None
