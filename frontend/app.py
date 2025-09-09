@@ -33,7 +33,30 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 if "last_debug_info" not in st.session_state:
     st.session_state.last_debug_info = None
+def detect_thai_or_english(text: str) -> str:
+    """
+    Detects if a string is primarily Thai, English, or a mix of both.
 
+    This works by checking for the presence of characters in the Unicode
+    ranges specific to each language.
+    """
+    if not text or text.isspace():
+        return "en"
+
+    
+    
+
+    for char in text:
+        # Check for Thai characters (including vowels, tone marks, etc.)
+        # Thai Unicode block is U+0E00 to U+0E7F
+        
+        if '\u0e00' <= char <= '\u0e7f':
+            return "th"
+        
+        
+
+    
+    return "en"
 # --- Helper Function for Rendering ---
 def render_assistant_message(content: str):
     """
@@ -128,6 +151,11 @@ for message in st.session_state.messages:
 # --- Chat Input and Processing ---
 if prompt := st.chat_input("Ask about Rabbit Rewards..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
+    lang = detect_thai_or_english(prompt)
+    if lang == 'th':
+        think_message = "รอสักครู่นะคะ กำลังหาคำตอบให้ค่าาา🥕..."
+    else:
+        think_message = "Please wait a moment, I’m looking for the answer 🥕..."
     with st.chat_message("user", avatar=USER_AVATAR_EMOJI):
         st.markdown(prompt)
 
@@ -144,7 +172,7 @@ if prompt := st.chat_input("Ask about Rabbit Rewards..."):
 
     with st.chat_message("assistant", avatar=BOT_AVATAR_EMOJI):
         response_placeholder = st.empty()
-        response_placeholder.markdown("รอสักครู่นะคะ กำลังหาคำตอบให้ค่าาา🥕...")
+        response_placeholder.markdown(think_message)
 
         assistant_reply_content = ""
         final_debug_info = {}
