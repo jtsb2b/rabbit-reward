@@ -87,6 +87,31 @@ def generate_pseudo_conversation(conversation: List[Dict[str, str]]) -> List[Dic
     """Generates a pseudo-conversation string from history for the subquery model."""
     pseudo_conversation = "".join(f"{msg.get('role', 'unknown')}: {msg.get('content', '')}\n" for msg in conversation)
     return [{'role': "user", "content": pseudo_conversation.strip()}]
+def detect_thai_or_english(text: str) -> str:
+    """
+    Detects if a string is primarily Thai, English, or a mix of both.
+
+    This works by checking for the presence of characters in the Unicode
+    ranges specific to each language.
+    """
+    if not text or text.isspace():
+        return "en"
+
+    
+    
+
+    for char in text:
+        # Check for Thai characters (including vowels, tone marks, etc.)
+        # Thai Unicode block is U+0E00 to U+0E7F
+        
+        if '\u0e00' <= char <= '\u0e7f':
+            return "th"
+        
+        
+
+    
+    return "en"
+
 
 # --- API Endpoint ---
 @app.post("/chat")
@@ -122,6 +147,8 @@ async def handle_chat(request: ChatRequest) -> Response:
         rag_decision = await llm_analyzer.classify_rag_requirement(pseudo_conversation)
         debug_info["classification"]["rag_decision_result"] = rag_decision
 
+        lang = detect_thai_or_english(full_conversation[-1].get("content"))
+        print(f"lang detected:{lang}")
         if rag_decision not in ['yes', 'no']:
             logger.warning(f"RAG classification returned an unexpected value: '{rag_decision}'. Defaulting to 'no'.")
             rag_decision = 'yes'
@@ -171,7 +198,7 @@ async def handle_chat(request: ChatRequest) -> Response:
             stage = "RAG Generation (Streaming)"
             if len(full_conversation) >7:
                 full_conversation = full_conversation[-7:]
-            response_generator = llm_analyzer.generate_normal_response(retrieved_data, full_conversation)
+            response_generator = llm_analyzer.generate_normal_response(retrieved_data, full_conversation, lang)
 
             async def stream_wrapper(gen: AsyncGenerator[str, None]):
                 try:
@@ -193,7 +220,7 @@ async def handle_chat(request: ChatRequest) -> Response:
             if len(full_conversation) >7:
                 full_conversation = full_conversation[-9:]
 
-            final_response = await llm_analyzer.generate_non_rag_response(full_conversation)
+            final_response = await llm_analyzer.generate_non_rag_response(full_conversation,lang)
             if final_response is None:
                 return create_json_error_response("ขออภัยค่ะ เกิดข้อผิดพลาดในการประมวลผลคำถามของคุณ", stage + " - Error: Generation Failed", rag_decision, 500)
 

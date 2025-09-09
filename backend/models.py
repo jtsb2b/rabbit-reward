@@ -311,12 +311,12 @@ Do not describe, answer as a list of number of the documents. example [0,2,4] \n
         return final_content
 
     @observe()
-    async def generate_normal_response(self, data: str, conversation: ConversationHistory) -> AsyncGenerator[str, None]:
+    async def generate_normal_response(self, data: str, conversation: ConversationHistory, lang: str) -> AsyncGenerator[str, None]:
         """Generate a RAG response, yielding text chunks."""
         try:
             
             
-            system_prompt = get_normal_prompt( data)
+            system_prompt = get_normal_prompt( data, lang)
             messages = [{"role": "system", "content": system_prompt}] + conversation
 
             result_generator = await self._call_llm(
@@ -333,9 +333,9 @@ Do not describe, answer as a list of number of the documents. example [0,2,4] \n
             yield f"[ERROR: {e}]"
 
     @observe()
-    async def generate_non_rag_response(self, conversation: ConversationHistory) -> Optional[str]:
+    async def generate_non_rag_response(self, conversation: ConversationHistory, lang : str) -> Optional[str]:
         """Generate response for non-RAG questions."""
-        messages = [{"role": "system", "content": get_non_rag_prompt()}] + conversation
+        messages = [{"role": "system", "content": get_non_rag_prompt(lang)}] + conversation
         result = await self._call_llm(model=NON_RAG_MODEL, messages=messages, temperature=0, stream=False)
         
         if isinstance(result, str):
