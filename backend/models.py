@@ -327,9 +327,9 @@ Do not describe, answer as a list of number of the documents. example [0,2,4] \n
                 async for chunk in result_generator:
                     if lang == "th":
                         print(chunk)
-                        yield chunk.replace("!","")
+                        yield chunk.replace("!","").replace("เซลล์","").replace("เเอดมิน","").replace("พนักงานขาย","").replace("คนสวย","")
                     else:
-                        yield chunk
+                        yield chunk.replace("เซลล์","").replace("เเอดมิน","").replace("พนักงานขาย","").replace("คนสวย","").replace("สวัสดีค่ะ!","สวัสดีค่ะ").replace("สวัสดีค่า!","สวัสดีค่า")
             else:
                 yield "[ERROR: Failed to initiate normal RAG stream.]"
         except Exception as e:
